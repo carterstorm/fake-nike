@@ -1,11 +1,9 @@
 import { HashRouter } from "react-router-dom";
-import { Navigation } from "../common/Navigation";
+import { NavigationElement } from "../common/NavigationElement";
 
 const App = () => (
   <HashRouter>
-    <Navigation>
-
-    </Navigation>
+    <NavigationElement />
   </HashRouter>
 );
 
