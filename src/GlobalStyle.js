@@ -11,6 +11,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     #root {
-        color: black;
+        font-family: 'Montserrat', sans-serif;
     }
 `;
