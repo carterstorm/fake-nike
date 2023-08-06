@@ -34,7 +34,10 @@ export const UserMenuList = styled.ul`
 
 export const UserMenuItem = styled.li`
     padding: 0 14px;
-    border-right: 1px solid ${({ theme }) => theme.colors.black};;
+    border-right: 1px solid black;
+    &:nth-last-child(1) {
+        border-right: none;
+    }
 `;
 
 // export const Header = styled.header`
