@@ -15,6 +15,13 @@ import {
     // NavigationItem,
 } from "./styled";
 
+const userMenuData = [
+    { id: 1, title: "Znajdź sklep" },
+    { id: 2, title: "Pomoc" },
+    { id: 3, title: "Dołącz do nas" },
+    { id: 4, title: "Zaloguj się" },
+];
+
 export const HeaderElement = () => (
     <Container>
         <DesktopMenu>
@@ -24,18 +31,11 @@ export const HeaderElement = () => (
                 </Brand>
             </BrandContainer>
             <UserMenuList>
-                <UserMenuItem>
-                    Znajdź sklep
-                </UserMenuItem>
-                <UserMenuItem>
-                    Pomoc
-                </UserMenuItem>
-                <UserMenuItem>
-                    Dołącz do nas
-                </UserMenuItem>
-                <UserMenuItem>
-                    Zaloguj się
-                </UserMenuItem>
+                {userMenuData.map(({ id, title }) => (
+                    <UserMenuItem key={id}>
+                        {title}
+                    </UserMenuItem>
+                ))}
             </UserMenuList>
         </DesktopMenu>
         {/* <Header>
