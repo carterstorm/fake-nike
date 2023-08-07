@@ -66,31 +66,6 @@ export const Logo = styled.a`
     cursor: pointer;
 `;
 
-export const Navigation = styled.nav``;
-
-export const NavigationList = styled.ul`
-    display: flex;
-    list-style: none;
-    padding: 0 0 0 125px;
-    margin: 0;
-    font-weight: 500;
-`;
-
-export const NavigationItem = styled.li``;
-
-export const NavigationLink = styled.a`
-    display: flex;
-    align-items: center;
-    height: 60px;
-    padding: 0 12px;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-
-    &:hover {
-        border-bottom: 2px solid black;
-    };
-`;
-
 export const UserOptions = styled.aside`
     display: flex;
     align-items: center;

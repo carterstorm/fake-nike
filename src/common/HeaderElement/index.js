@@ -1,5 +1,6 @@
 import { JordanLogo } from "../../assets/svg/Jordan_Logo";
 import { NikeLogo } from "../../assets/svg/Nike_Logo";
+import { Navigation } from "./Navigation";
 
 import {
     DesktopMenu,
@@ -11,10 +12,6 @@ import {
     UserMenuItem,
     LogoContainer,
     Logo,
-    Navigation,
-    NavigationList,
-    NavigationItem,
-    NavigationLink,
     UserOptions,
     SearchBox,
     Button,
@@ -29,14 +26,6 @@ const userMenuData = [
     { id: 2, title: "Pomoc" },
     { id: 3, title: "Dołącz do nas" },
     { id: 4, title: "Zaloguj się" },
-];
-
-const navigationData = [
-    { id: 1, name: "Nowe i polecane" },
-    { id: 2, name: "Mężczyźni" },
-    { id: 3, name: "Kobiety" },
-    { id: 4, name: "Dzieci" },
-    { id: 5, name: "Wyprzedaż" },
 ];
 
 export const HeaderElement = () => (
@@ -61,15 +50,7 @@ export const HeaderElement = () => (
                     <NikeLogo />
                 </Logo>
             </LogoContainer>
-            <Navigation>
-                <NavigationList>
-                    {navigationData.map(({ id, name }) => (
-                        <NavigationItem key={id}>
-                            <NavigationLink>{name}</NavigationLink>
-                        </NavigationItem>
-                    ))}
-                </NavigationList>
-            </Navigation>
+            <Navigation></Navigation>
 
             <UserOptions>
                 <SearchBox>
