@@ -8,14 +8,3 @@ export const Header = styled.header`
     display: flex;
     justify-content: space-between;
 `;
-
-export const LogoContainer = styled.div``;
-
-export const Logo = styled.a`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-`;
