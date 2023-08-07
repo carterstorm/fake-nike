@@ -7,7 +7,8 @@ export const ButtonElement = styled.button`
     border-radius: 50%;
     padding: 0;
     cursor: pointer;
-
+    background-color: transparent;
+    
     &:hover {
         background-color: ${({ theme }) => theme.colors.grayBackgroundHover};
     };
