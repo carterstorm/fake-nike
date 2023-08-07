@@ -1,18 +1,27 @@
 import { JordanLogo } from "../../assets/svg/Jordan_Logo";
+import { NikeLogo } from "../../assets/svg/Nike_Logo";
 
 import {
     DesktopMenu,
     Container,
-    // Header,
+    Header,
     UserMenuList,
     BrandContainer,
     Brand,
     UserMenuItem,
-    // LogoContainer,
-    // Logo,
-    // Navigation,
-    // NavigationList,
-    // NavigationItem,
+    LogoContainer,
+    Logo,
+    Navigation,
+    NavigationList,
+    NavigationItem,
+    NavigationLink,
+    UserOptions,
+    SearchBox,
+    Button,
+    SearchInput,
+    ButtonsList,
+    ButtonsItem,
+    SearchButton,
 } from "./styled";
 
 const userMenuData = [
@@ -20,6 +29,14 @@ const userMenuData = [
     { id: 2, title: "Pomoc" },
     { id: 3, title: "Dołącz do nas" },
     { id: 4, title: "Zaloguj się" },
+];
+
+const navigationData = [
+    { id: 1, name: "Nowe i polecane" },
+    { id: 2, name: "Mężczyźni" },
+    { id: 3, name: "Kobiety" },
+    { id: 4, name: "Dzieci" },
+    { id: 5, name: "Wyprzedaż" },
 ];
 
 export const HeaderElement = () => (
@@ -38,19 +55,36 @@ export const HeaderElement = () => (
                 ))}
             </UserMenuList>
         </DesktopMenu>
-        {/* <Header>
+        <Header>
             <LogoContainer>
-                <Logo></Logo>
+                <Logo>
+                    <NikeLogo />
+                </Logo>
             </LogoContainer>
             <Navigation>
                 <NavigationList>
-                    <NavigationItem>Nowe i polecane</NavigationItem>
-                    <NavigationItem>Mężczyźni</NavigationItem>
-                    <NavigationItem>Kobiety</NavigationItem>
-                    <NavigationItem>Dzieci</NavigationItem>
-                    <NavigationItem>Wyprzedaż</NavigationItem>
+                    {navigationData.map(({ id, name }) => (
+                        <NavigationItem key={id}>
+                            <NavigationLink>{name}</NavigationLink>
+                        </NavigationItem>
+                    ))}
                 </NavigationList>
             </Navigation>
-        </Header> */}
+
+            <UserOptions>
+                <SearchBox>
+                    <SearchButton></SearchButton>
+                    <SearchInput placeholder="Wyszukaj" />
+                </SearchBox>
+                <ButtonsList>
+                    <ButtonsItem>
+                        <Button></Button>
+                    </ButtonsItem>
+                    <ButtonsItem>
+                        <Button></Button>
+                    </ButtonsItem>
+                </ButtonsList>
+            </UserOptions>
+        </Header>
     </Container >
 );
