@@ -1,6 +1,7 @@
 export const theme = {
     colors: {
-        lightGray: "#f5f5f5",
+        grayBackgroundHover: "#e5e5e5",
+        lightGrayBackground: "#f5f5f5",
         black: "#000",
     }
 };
