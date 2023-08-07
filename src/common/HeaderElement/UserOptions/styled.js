@@ -21,6 +21,7 @@ export const SearchInput = styled.input`
     font-weight: 500;
     background-color: ${({ theme }) => theme.colors.lightGrayBackground};
     outline: none;
+    
     &:hover {
         background-color: ${({ theme }) => theme.colors.grayBackgroundHover};
     }
