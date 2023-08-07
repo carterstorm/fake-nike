@@ -1,4 +1,4 @@
-import { JordanLogo } from "../../assets/svg/Jordan_Logo";
+import { JordanLogo } from "../../../assets/svg/Jordan_Logo";
 import {
     Brand,
     BrandContainer,

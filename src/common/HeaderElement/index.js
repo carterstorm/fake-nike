@@ -1,19 +1,13 @@
 import { NikeLogo } from "../../assets/svg/Nike_Logo";
-import { Menu } from "../DesktopMenu";
+import { Menu } from "./Menu";
 import { Navigation } from "./Navigation";
+import { UserOptions } from "./UserOptions";
 
 import {
     Container,
     Header,
     LogoContainer,
     Logo,
-    UserOptions,
-    SearchBox,
-    Button,
-    SearchInput,
-    ButtonsList,
-    ButtonsItem,
-    SearchButton,
 } from "./styled";
 
 export const HeaderElement = () => (
@@ -26,21 +20,7 @@ export const HeaderElement = () => (
                 </Logo>
             </LogoContainer>
             <Navigation />
-
-            <UserOptions>
-                <SearchBox>
-                    <SearchButton></SearchButton>
-                    <SearchInput placeholder="Wyszukaj" />
-                </SearchBox>
-                <ButtonsList>
-                    <ButtonsItem>
-                        <Button></Button>
-                    </ButtonsItem>
-                    <ButtonsItem>
-                        <Button></Button>
-                    </ButtonsItem>
-                </ButtonsList>
-            </UserOptions>
+            <UserOptions />
         </Header>
     </Container >
 );
