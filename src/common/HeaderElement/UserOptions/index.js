@@ -1,9 +1,7 @@
+import { SearchButton } from "../../Button/styled";
+import { Buttons } from "./ButtonsList";
 import {
-    Button,
-    ButtonsItem,
-    ButtonsList,
     SearchBox,
-    SearchButton,
     SearchInput,
     Wrapper
 } from "./styled";
@@ -12,17 +10,10 @@ export const UserOptions = () => {
     return (
         <Wrapper>
             <SearchBox>
-                <SearchButton></SearchButton>
+                <SearchButton />
                 <SearchInput placeholder="Wyszukaj" />
             </SearchBox>
-            <ButtonsList>
-                <ButtonsItem>
-                    <Button></Button>
-                </ButtonsItem>
-                <ButtonsItem>
-                    <Button></Button>
-                </ButtonsItem>
-            </ButtonsList>
+            <Buttons />
         </Wrapper>
     );
 };
