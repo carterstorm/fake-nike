@@ -10,6 +10,10 @@ export const SearchBox = styled.div`
     display: flex;
     align-items: center;
     margin-right: 10px;
+
+    @media (max-width: 960px) and (orientation: landscape) {
+        display: none;
+    };
 `;
 
 export const SearchInput = styled.input`

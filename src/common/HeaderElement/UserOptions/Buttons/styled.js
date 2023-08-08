@@ -8,10 +8,29 @@ export const ButtonsList = styled.ul`
 `;
 
 export const ButtonsItem = styled.li`
-    padding: 0 10px;
+    padding: 0 5px;
     &:nth-last-child(1) {
-        padding: 0;
+        padding: 0 0 0 5px;
+        display: none;
     };
+
+    &:nth-child(1) {
+        display: none;
+    } 
+
+    @media (max-width: 960px) and (orientation: landscape) {
+        &:nth-child(1) {
+            display: block;
+        } 
+
+        &:nth-child(2) {
+            display: none;
+        } 
+
+        &:nth-last-child(1) {
+        display: block;
+    };
+    }
 `;
 export const ButtonElement = styled.button`
     display: flex;
