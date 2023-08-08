@@ -11,6 +11,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     #root {
-        font-family: 'Helvetica', sans-serif;
+        font-family: 'Nunito', sans-serif;
     }
 `;

@@ -30,7 +30,7 @@ export const UserMenuList = styled.ul`
 `;
 
 export const UserMenuItem = styled.li`
-    padding: 0 10px;
+    padding: 0 15px;
     margin: 0 2px;
     border-right: 1px solid black;
     cursor: pointer;
