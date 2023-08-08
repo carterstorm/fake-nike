@@ -1,5 +1,5 @@
 import { HashRouter } from "react-router-dom";
-import { HeaderElement } from "../common/HeaderElement";
+import { HeaderElement } from "../features/HeaderElement";
 
 const App = () => (
   <HashRouter>
