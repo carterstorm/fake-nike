@@ -10,7 +10,7 @@ export const DesktopMenu = styled.aside`
     font-weight: 400;
     background-color: ${({ theme }) => theme.colors.lightGrayBackground};
 
-    @media (max-width: 960px) and (orientation: landscape) {
+    @media (max-width: 960px) {
         display: none;
     };
 `;

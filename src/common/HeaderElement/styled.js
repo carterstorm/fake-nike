@@ -6,7 +6,7 @@ export const Header = styled.header`
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 960px) and (orientation: landscape) {
+    @media (max-width: 960px) {
         padding: 0 16px;
     };
 `;

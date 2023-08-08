@@ -11,7 +11,7 @@ export const SearchBox = styled.div`
     align-items: center;
     margin-right: 10px;
 
-    @media (max-width: 960px) and (orientation: landscape) {
+    @media (max-width: 960px) {
         display: none;
     };
 `;

@@ -11,25 +11,25 @@ export const NavList = styled.ul`
 `;
 
 export const NavItem = styled.li`
-    @media (max-width: 1200px) and (orientation: landscape) {
+    @media (max-width: 1200px) {
         &:nth-last-child(1) {
             display: none;
         }
     }
 
-    @media (max-width: 1100px) and (orientation: landscape) {
+    @media (max-width: 1100px) {
         &:nth-last-child(2) {
             display: none;
         }
     }
 
-    @media (max-width: 1000px) and (orientation: landscape) {
+    @media (max-width: 1000px) {
         &:nth-last-child(3) {
             display: none;
         }
     }
 
-    @media (max-width: 960px) and (orientation: landscape) {
+    @media (max-width: 960px) {
         display: none;
     }
 `;

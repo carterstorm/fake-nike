@@ -18,7 +18,7 @@ export const ButtonsItem = styled.li`
         display: none;
     } 
 
-    @media (max-width: 960px) and (orientation: landscape) {
+    @media (max-width: 960px) {
         &:nth-child(1) {
             display: block;
         } 
