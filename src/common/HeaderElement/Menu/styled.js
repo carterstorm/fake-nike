@@ -9,6 +9,10 @@ export const DesktopMenu = styled.aside`
     font-size: 12px;
     font-weight: 400;
     background-color: ${({ theme }) => theme.colors.lightGrayBackground};
+
+    @media (max-width: 960px) {
+        display: none;
+    };
 `;
 
 export const BrandContainer = styled.div`
