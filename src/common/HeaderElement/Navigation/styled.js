@@ -5,7 +5,7 @@ export const Nav = styled.nav``;
 export const NavList = styled.ul`
     display: flex;
     list-style: none;
-    padding: 0 0 0 125px;
+    padding: 0 0 0 150px;
     margin: 0;
     font-weight: 500;
 `;

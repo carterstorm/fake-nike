@@ -6,6 +6,7 @@ export const Wrapper = styled.aside`
 `;
 
 export const SearchBox = styled.div`
+    position: relative;
     display: flex;
     align-items: center;
     margin-right: 10px;

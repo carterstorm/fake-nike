@@ -1,5 +1,7 @@
-import { SearchButton } from "../../Button/styled";
-import { Buttons } from "./ButtonsList";
+import { Buttons } from "./Buttons";
+import { SearchButton, SearchButtonImage } from "./Buttons/styled";
+import search_icon from "../../../assets/svg/search_icon.svg";
+
 import {
     SearchBox,
     SearchInput,
@@ -10,10 +12,16 @@ export const UserOptions = () => {
     return (
         <Wrapper>
             <SearchBox>
-                <SearchButton />
-                <SearchInput placeholder="Wyszukaj" />
+                <SearchButton>
+                    <SearchButtonImage
+                        alt="search"
+                        src={search_icon}
+                    />
+                </SearchButton>
+                <SearchInput
+                    placeholder="Wyszukaj" />
             </SearchBox>
-            <Buttons />
+            <Buttons></Buttons>
         </Wrapper>
     );
 };
