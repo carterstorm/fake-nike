@@ -1,12 +1,10 @@
-import { Nav, NavItem, NavLink, NavList } from "./styled";
-
-const navigationData = [
-    { id: 1, name: "Nowe i polecane" },
-    { id: 2, name: "Mężczyźni" },
-    { id: 3, name: "Kobiety" },
-    { id: 4, name: "Dzieci" },
-    { id: 5, name: "Wyprzedaż" },
-];
+import { navigationData } from "../../../data";
+import {
+    Nav,
+    NavItem,
+    NavLink,
+    NavList
+} from "./styled";
 
 export const Navigation = () => {
     return (
