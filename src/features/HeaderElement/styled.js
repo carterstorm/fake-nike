@@ -5,7 +5,6 @@ export const Header = styled.header`
     padding: 0 36px;
     display: flex;
     justify-content: space-between;
-
     @media (max-width: 960px) {
         padding: 0 16px;
     };

@@ -10,6 +10,9 @@ import {
     ButtonsList
 } from "./styled";
 
+import { useDispatch } from "react-redux";
+import { toogleHide } from "../../hideSlice";
+
 const buttonsElements = [
     { id: 1, alt: "search", item: search },
     { id: 2, alt: "favorite", item: favorite },
@@ -18,6 +21,14 @@ const buttonsElements = [
 ];
 
 export const Buttons = () => {
+    const dispatch = useDispatch();
+
+    const handleButtonClick = (alt) => {
+        if (alt === "menu") {
+            dispatch(toogleHide());
+        };
+    };
+
     return (
         <ButtonsList>
             {buttonsElements.map(({ id, alt, item }) => (
@@ -26,6 +37,7 @@ export const Buttons = () => {
                         <ButtonImage
                             alt={alt}
                             src={item}
+                            onClick={() => handleButtonClick(alt)}
                         />
                     </ButtonElement>
                 </ButtonsItem>
