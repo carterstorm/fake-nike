@@ -2,9 +2,10 @@ import { Menu } from "./Menu";
 import { LogoContainer } from "./LogoContainer";
 import { Navigation } from "./Navigation";
 import { UserOptions } from "./UserOptions";
+import { SideMenu } from "./SideMenu";
 
 import {
-    Header,
+    Header
 } from "./styled";
 
 export const HeaderElement = () => (
@@ -14,6 +15,7 @@ export const HeaderElement = () => (
             <LogoContainer />
             <Navigation />
             <UserOptions />
+            <SideMenu></SideMenu>
         </Header>
     </>
 );
