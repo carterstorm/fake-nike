@@ -1,4 +1,4 @@
-import { navigationData } from "../../../data";
+import { navigationData } from "../../data";
 import {
     Nav,
     NavItem,

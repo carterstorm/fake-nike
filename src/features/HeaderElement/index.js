@@ -1,8 +1,8 @@
 import { Menu } from "./Menu";
 import { LogoContainer } from "./LogoContainer";
-import { Navigation } from "./Navigation";
 import { UserOptions } from "./UserOptions";
 import { SideMenu } from "./SideMenu";
+import { Navigation } from "../../common/Navigation";
 
 import {
     Header
