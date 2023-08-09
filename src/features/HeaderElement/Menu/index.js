@@ -1,8 +1,6 @@
-import { JordanLogo } from "../../../assets/svg/Jordan_Logo";
 import { userMenuData } from "../../../data";
+import { JordanBrand } from "../../../common/JordanBrand";
 import {
-    Brand,
-    BrandContainer,
     DesktopMenu,
     UserMenuItem,
     UserMenuList
@@ -11,11 +9,7 @@ import {
 export const Menu = () => {
     return (
         <DesktopMenu>
-            <BrandContainer>
-                <Brand>
-                    <JordanLogo />
-                </Brand>
-            </BrandContainer>
+            <JordanBrand />
             <UserMenuList>
                 {userMenuData.map(({ id, title }) => (
                     <UserMenuItem key={id}>
