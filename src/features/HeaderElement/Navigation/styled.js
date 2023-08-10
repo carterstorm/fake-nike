@@ -1,6 +1,10 @@
 import { styled } from "styled-components";
 
-export const Nav = styled.nav``;
+export const Nav = styled.nav`
+    @media (max-width: 960px) {
+        display: none;
+    }
+`;
 
 export const NavList = styled.ul`
     display: flex;
@@ -27,10 +31,6 @@ export const NavItem = styled.li`
         &:nth-last-child(3) {
             display: none;
         }
-    }
-
-    @media (max-width: 960px) {
-        display: none;
     }
 `;
 
