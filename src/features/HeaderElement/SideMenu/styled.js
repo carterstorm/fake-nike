@@ -46,36 +46,6 @@ export const NavMobile = styled.nav`
     padding: 0 22px 150px 36px;
 `;
 
-export const NavList = styled.ul`
-    list-style: none;
-    margin: 0;
-    padding: 0;
-`;
-
-export const NavItem = styled.li`
-`;
-
-export const NavButton = styled.button`
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-`;
-
-export const NavButtonText = styled.p`
-    display: flex;
-    width: 236px;
-    margin: 0;
-    font-weight: 500;
-    font-size: 24px;
-`;
-
-export const NavButtonIcon = styled.img`
-    width: 24px;
-`;
-
 export const JoinUsBox = styled.div`
     padding-top: 16px;
 `;

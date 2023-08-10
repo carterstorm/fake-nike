@@ -1,20 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectHide, toogleHide } from "../hideSlice";
-import { mobileSupportButtonsData, navigationData } from "../../../data";
-import nextArrow from "../../../assets/svg/next_arrow.svg";
+import { mobileSupportButtonsData } from "../../../data";
+
 import close from "../../../assets/svg/close.svg";
 import { JordanLogo } from "../../../assets/svg/Jordan_Logo";
+import { MobileNavigation } from "./MobileNavigation";
 
 import {
     CloseButton,
     CloseButtonContainer,
     Container,
     NavMobile,
-    NavItem,
-    NavButton,
-    NavButtonIcon,
-    NavList,
-    NavButtonText,
     CloseButtonImage,
     JordanLink,
     JordanText,
@@ -52,16 +48,7 @@ export const SideMenu = () => {
                 </CloseButton>
             </CloseButtonContainer>
             <NavMobile>
-                <NavList>
-                    {navigationData.map(({ id, name }) => (
-                        <NavItem key={id}>
-                            <NavButton>
-                                <NavButtonText>{name}</NavButtonText>
-                                <NavButtonIcon src={nextArrow} />
-                            </NavButton>
-                        </NavItem>
-                    ))}
-                </NavList>
+                <MobileNavigation />
 
                 <JoinUsBox>
                     <JordanLink>
