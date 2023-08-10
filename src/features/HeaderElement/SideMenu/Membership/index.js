@@ -4,7 +4,8 @@ import {
     Paragraph,
     Buttons,
     Button,
-    Text
+    Text,
+    JoinUsButton
 } from "./styled";
 
 export const Membership = () => (
@@ -14,9 +15,9 @@ export const Membership = () => (
             <ReadMore> Dowiedz się więcej.</ReadMore>
         </Paragraph>
         <Buttons>
-            <Button>
+            <JoinUsButton>
                 <Text>Dołącz do nas</Text>
-            </Button>
+            </JoinUsButton>
             <Button>
                 <Text>Zaloguj się</Text>
             </Button>

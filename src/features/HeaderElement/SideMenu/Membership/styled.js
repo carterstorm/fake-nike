@@ -40,6 +40,16 @@ export const Button = styled.a`
     };
 `;
 
+export const JoinUsButton = styled(Button)`
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.black};
+    border: none;
+
+    &:hover {
+        background-color: ${({ theme }) => theme.colors.grayFont};
+    }
+`;
+
 export const Text = styled.span`
     display: inline-block;
     padding: 10px 25px;
