@@ -2,7 +2,7 @@ import { Menu } from "./Menu";
 import { LogoContainer } from "./LogoContainer";
 import { UserOptions } from "./UserOptions";
 import { SideMenu } from "./SideMenu";
-import { Navigation } from "../../common/Navigation";
+import { Navigation } from "./Navigation";
 
 import {
     Header
