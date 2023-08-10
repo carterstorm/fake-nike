@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectHide, toogleHide } from "../hideSlice";
-import { mobileSupportButtonsData } from "../../../data";
+import { jordanData, mobileSupportButtonsData } from "../../../data";
 
 import close from "../../../assets/svg/close.svg";
-import { JordanLogo } from "../../../assets/svg/Jordan_Logo";
 import { MobileNavigation } from "./MobileNavigation";
 
 import {
@@ -12,9 +11,6 @@ import {
     Container,
     NavMobile,
     CloseButtonImage,
-    JordanLink,
-    JordanText,
-    JordanContainer,
     JoinUsBox,
     MembershipContainer,
     MembershipParagraph,
@@ -46,12 +42,9 @@ export const SideMenu = () => {
                 <MobileNavigation />
 
                 <JoinUsBox>
-                    <JordanLink>
-                        <JordanContainer>
-                            <JordanLogo></JordanLogo>
-                        </JordanContainer>
-                        <JordanText>Jordan</JordanText>
-                    </JordanLink>
+                    <OptionsList
+                        data={jordanData}
+                    />
                     <MembershipContainer>
                         <MembershipParagraph>
                             Zostań członkiem Nike i uzyskaj dostęp do najlepszych sportowych produktów, inspiracji i historii.

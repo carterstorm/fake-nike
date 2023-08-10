@@ -5,6 +5,7 @@ import menu from "../src/assets/svg/menu_icon.svg";
 import help from "../src/assets/svg/help.svg";
 import localMall from "../src/assets/svg/localMall.svg";
 import store from "../src/assets/svg/store.svg";
+import jordanLogo from "../src/assets/svg/jordanLogo.svg";
 
 export const navigationData = [
     { id: 1, name: "Nowe i polecane" },
@@ -33,4 +34,8 @@ export const mobileSupportButtonsData = [
     { id: 2, name: "Zamówienia", src: localMall },
     { id: 3, name: "Znajdź sklep", src: store },
     { id: 4, name: "Pomoc", src: help },
+];
+
+export const jordanData = [
+    { id: 1, name: "Jordan", src: jordanLogo },
 ];

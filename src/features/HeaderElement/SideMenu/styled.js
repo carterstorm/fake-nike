@@ -50,25 +50,6 @@ export const JoinUsBox = styled.div`
     padding-top: 16px;
 `;
 
-export const JordanLink = styled.a`
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-`;
-
-export const JordanContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-`;
-
-export const JordanText = styled.p`
-    margin: 0;
-    padding-left: 12px;
-`;
-
 export const MembershipContainer = styled.div`
     margin-top: 50px;
     margin-right: 20px;
