@@ -9,7 +9,6 @@ export const Container = styled.aside`
     height: 100%;
     overflow-y: scroll;
     background-color: ${({ theme }) => theme.colors.white};
-    /* background-color: red; */
     transition: .25s;
 `;
 
@@ -44,10 +43,6 @@ export const CloseButtonImage = styled.img`
 
 export const NavMobile = styled.nav`
     padding: 0 22px 150px 36px;
-`;
-
-export const JoinUsBox = styled.div`
-    padding-top: 16px;
 `;
 
 export const MembershipContainer = styled.div`

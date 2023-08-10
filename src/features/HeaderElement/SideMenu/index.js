@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectHide, toogleHide } from "../hideSlice";
 import { jordanData, mobileSupportButtonsData } from "../../../data";
-
 import close from "../../../assets/svg/close.svg";
 import { MobileNavigation } from "./MobileNavigation";
 
@@ -11,7 +10,6 @@ import {
     Container,
     NavMobile,
     CloseButtonImage,
-    JoinUsBox,
     MembershipContainer,
     MembershipParagraph,
     MembershipMore,
@@ -40,25 +38,20 @@ export const SideMenu = () => {
             </CloseButtonContainer>
             <NavMobile>
                 <MobileNavigation />
-
-                <JoinUsBox>
-                    <OptionsList
-                        data={jordanData}
-                    />
-                    <MembershipContainer>
-                        <MembershipParagraph>
-                            Zostań członkiem Nike i uzyskaj dostęp do najlepszych sportowych produktów, inspiracji i historii.
-                            <MembershipMore> Dowiedz się więcej.</MembershipMore>
-                        </MembershipParagraph>
-                    </MembershipContainer>
-                </JoinUsBox>
-
+                <OptionsList
+                    data={jordanData}
+                />
+                <MembershipContainer>
+                    <MembershipParagraph>
+                        Zostań członkiem Nike i uzyskaj dostęp do najlepszych sportowych produktów, inspiracji i historii.
+                        <MembershipMore> Dowiedz się więcej.</MembershipMore>
+                    </MembershipParagraph>
+                </MembershipContainer>
                 <MobileSupportButtons>
                     <OptionsList
                         data={mobileSupportButtonsData}
                     />
                 </MobileSupportButtons>
-
             </NavMobile>
         </Container>
     );
