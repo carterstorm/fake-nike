@@ -2,7 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectHide, toogleHide } from "../hideSlice";
 import { jordanData, mobileSupportButtonsData } from "../../../data";
 import close from "../../../assets/svg/close.svg";
+
 import { MobileNavigation } from "./MobileNavigation";
+import { OptionsList } from "./OptionsList";
+import { Membership } from "./Membership";
 
 import {
     CloseButton,
@@ -10,12 +13,8 @@ import {
     Container,
     NavMobile,
     CloseButtonImage,
-    MembershipContainer,
-    MembershipParagraph,
-    MembershipMore,
     MobileSupportButtons,
 } from "./styled";
-import { OptionsList } from "./OptionsList";
 
 export const SideMenu = () => {
     const dispatch = useDispatch();
@@ -41,12 +40,7 @@ export const SideMenu = () => {
                 <OptionsList
                     data={jordanData}
                 />
-                <MembershipContainer>
-                    <MembershipParagraph>
-                        Zostań członkiem Nike i uzyskaj dostęp do najlepszych sportowych produktów, inspiracji i historii.
-                        <MembershipMore> Dowiedz się więcej.</MembershipMore>
-                    </MembershipParagraph>
-                </MembershipContainer>
+                <Membership />
                 <MobileSupportButtons>
                     <OptionsList
                         data={mobileSupportButtonsData}
