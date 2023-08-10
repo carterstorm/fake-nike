@@ -30,7 +30,7 @@ export const userMenuData = [
 
 export const mobileSupportButtonsData = [
     { id: 1, name: "Koszyk", src: shoppingBag },
-    { id: 2, name: "Zamówienia", src: store },
-    { id: 3, name: "Znajdź sklep", src: localMall },
+    { id: 2, name: "Zamówienia", src: localMall },
+    { id: 3, name: "Znajdź sklep", src: store },
     { id: 4, name: "Pomoc", src: help },
 ];
