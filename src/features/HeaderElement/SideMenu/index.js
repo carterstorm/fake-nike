@@ -14,19 +14,14 @@ import {
     CloseButtonImage,
     JordanLink,
     JordanText,
-    OptionsList,
-    OptionItem,
-    OptionImage,
     JordanContainer,
     JoinUsBox,
     MembershipContainer,
     MembershipParagraph,
     MembershipMore,
     MobileSupportButtons,
-    OptionLink,
-    OptionParagraph,
-    Image,
 } from "./styled";
+import { OptionsList } from "./OptionsList";
 
 export const SideMenu = () => {
     const dispatch = useDispatch();
@@ -66,18 +61,9 @@ export const SideMenu = () => {
                 </JoinUsBox>
 
                 <MobileSupportButtons>
-                    <OptionsList>
-                        {mobileSupportButtonsData.map(({ id, name, src }) => (
-                            <OptionItem key={id}>
-                                <OptionLink>
-                                    <OptionImage>
-                                        <Image src={src}></Image>
-                                    </OptionImage>
-                                    <OptionParagraph>{name}</OptionParagraph>
-                                </OptionLink>
-                            </OptionItem>
-                        ))}
-                    </OptionsList>
+                    <OptionsList
+                        data={mobileSupportButtonsData}
+                    />
                 </MobileSupportButtons>
 
             </NavMobile>
