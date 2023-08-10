@@ -32,6 +32,7 @@ export const ButtonsItem = styled.li`
     };
     }
 `;
+
 export const ButtonElement = styled.button`
     display: flex;
     align-items: center;
@@ -52,7 +53,6 @@ export const ButtonElement = styled.button`
 export const ButtonImage = styled.img`
     width: 24px;
 `;
-
 
 export const SearchButton = styled(ButtonElement)`
     position: absolute;
