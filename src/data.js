@@ -2,7 +2,9 @@ import favorite from "../src/assets/svg/favorite_icon.svg";
 import shoppingBag from "../src/assets/svg/shoppingBag_icon.svg";
 import search from "../src/assets/svg/search_icon.svg";
 import menu from "../src/assets/svg/menu_icon.svg";
-
+import help from "../src/assets/svg/help.svg";
+import localMall from "../src/assets/svg/localMall.svg";
+import store from "../src/assets/svg/store.svg";
 
 export const navigationData = [
     { id: 1, name: "Nowe i polecane" },
@@ -24,4 +26,11 @@ export const userMenuData = [
     { id: 2, title: "Pomoc" },
     { id: 3, title: "Dołącz do nas" },
     { id: 4, title: "Zaloguj się" },
+];
+
+export const mobileSupportButtonsData = [
+    { id: 1, name: "Koszyk", src: shoppingBag },
+    { id: 2, name: "Zamówienia", src: store },
+    { id: 3, name: "Znajdź sklep", src: localMall },
+    { id: 4, name: "Pomoc", src: help },
 ];
