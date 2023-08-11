@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const DesktopMenu = styled.aside`
+export const Menu = styled.aside`
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -1,14 +1,14 @@
 import { userMenuData } from "../../../data";
 import { JordanBrand } from "../../../common/JordanBrand";
 import {
-    DesktopMenu,
+    Menu,
     UserMenuItem,
     UserMenuList
 } from "./styled";
 
-export const Menu = () => {
+export const DesktopMenu = () => {
     return (
-        <DesktopMenu>
+        <Menu>
             <JordanBrand />
             <UserMenuList>
                 {userMenuData.map(({ id, title }) => (
@@ -17,6 +17,6 @@ export const Menu = () => {
                     </UserMenuItem>
                 ))}
             </UserMenuList>
-        </DesktopMenu>
+        </Menu>
     );
 };

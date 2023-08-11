@@ -1,4 +1,4 @@
-import { Menu } from "./Menu";
+import { DesktopMenu } from "./DesktopMenu";
 import { LogoContainer } from "./LogoContainer";
 import { UserOptions } from "./UserOptions";
 import { SideMenu } from "./SideMenu";
@@ -10,12 +10,13 @@ import {
 
 export const HeaderElement = () => (
     <>
-        <Menu />
+        <DesktopMenu />
         <Header>
             <LogoContainer />
             <Navigation />
             <UserOptions />
             <SideMenu></SideMenu>
+
         </Header>
     </>
 );
