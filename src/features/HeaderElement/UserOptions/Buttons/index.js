@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { buttonsElements } from "../../../../data";
-import { toogleHide } from "../../hideSlice";
+import { toggleHide } from "../../hideSlice";
 
 import {
     ButtonElement,
@@ -14,7 +14,7 @@ export const Buttons = () => {
 
     const handleButtonClick = (alt) => {
         if (alt === "menu") {
-            dispatch(toogleHide());
+            dispatch(toggleHide());
         };
     };
 

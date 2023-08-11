@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectHide, toogleHide } from "../hideSlice";
+import { selectHide, toggleHide } from "../hideSlice";
 import { jordanData, mobileSupportButtonsData } from "../../../data";
 import close from "../../../assets/svg/close.svg";
 
@@ -21,7 +21,7 @@ export const SideMenu = () => {
     const hide = useSelector(selectHide);
 
     const handleButtonClick = () => {
-        dispatch(toogleHide());
+        dispatch(toggleHide());
     };
 
     return (

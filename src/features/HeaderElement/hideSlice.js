@@ -6,14 +6,14 @@ const hideSlice = createSlice({
         hide: false,
     },
     reducers: {
-        toogleHide: state => {
+        toggleHide: state => {
             state.hide = !state.hide;
         },
     },
 });
 
 export const {
-    toogleHide,
+    toggleHide,
 } = hideSlice.actions;
 
 export const selectHideState = state => state.hide;
