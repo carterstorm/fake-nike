@@ -22,11 +22,12 @@ export const Buttons = () => {
         <ButtonsList>
             {buttonsElements.map(({ id, alt, item }) => (
                 <ButtonsItem key={id}>
-                    <ButtonElement>
+                    <ButtonElement
+                        onClick={() => handleButtonClick(alt)}
+                    >
                         <ButtonImage
                             alt={alt}
                             src={item}
-                            onClick={() => handleButtonClick(alt)}
                         />
                     </ButtonElement>
                 </ButtonsItem>
