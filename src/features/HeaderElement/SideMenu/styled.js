@@ -4,7 +4,7 @@ export const Container = styled.aside`
     position: fixed;
     z-index: 2;
     top: 0;
-    right: ${({ hide }) => hide ? "0" : "-320px"};
+    right: ${({ hide }) => hide ? "-320px" : "0"};
     width: 320px;
     height: 100%;
     overflow-y: scroll;
