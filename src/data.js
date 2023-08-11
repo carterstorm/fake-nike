@@ -39,3 +39,29 @@ export const mobileSupportButtonsData = [
 export const jordanData = [
     { id: 1, name: "Jordan", src: jordanLogo },
 ];
+
+
+export const announcmentData = [
+    {
+        id: 1,
+        heading: "Odkryj nasze wyprzedaże",
+        text: "Dodano nowe modele. Sprawdź nasze wyprzedaże i najlepsze oferty.",
+        firstLink: "Przeglądaj",
+        secoundLink: null,
+    },
+    {
+        id: 2,
+        heading: "Przeglądaj wszystkie nowości",
+        text: null,
+        firstLink: "Przeglądaj",
+        secoundLink: null,
+    },
+    {
+        id: 3,
+        heading: "Bezpłatna dostawa i zwrot",
+        text: "Społeczność Nike: bezpłatna dostawa i 30 dni na bezpłatny zwrot.",
+        firstLink: "Dowiedz się więcej",
+        secoundLink: "Dołącz do nas",
+    },
+
+];

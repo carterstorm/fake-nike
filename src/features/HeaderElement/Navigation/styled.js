@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
 
 export const Nav = styled.nav`
+    /* padding: 2px; */
+    
     @media (max-width: 960px) {
         display: none;
     }
@@ -37,7 +39,7 @@ export const NavItem = styled.li`
 export const NavLink = styled.a`
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 58px;
     padding: 0 15px;
     border-bottom: 2px solid transparent;
     cursor: pointer;
