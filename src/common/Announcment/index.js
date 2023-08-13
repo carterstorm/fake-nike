@@ -1,4 +1,4 @@
-import { announcmentData } from "../../../data";
+import { announcmentData } from "../../data";
 import {
     Wrapper,
     Item,
@@ -9,7 +9,7 @@ import {
     Title,
     LinkContainer,
 } from "./styled";
-import { useAnnouncmentEffect } from "../../../hooks/useAnnouncmentEffect";
+import { useAnnouncmentEffect } from "../../hooks/useAnnouncmentEffect";
 
 export const Announcment = () => {
     const index = useAnnouncmentEffect(announcmentData, 5);

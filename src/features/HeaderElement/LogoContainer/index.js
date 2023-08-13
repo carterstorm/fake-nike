@@ -1,7 +1,7 @@
 import { NikeLogo, Logo, Wrapper } from "./styled";
 import nikeLogo from "../../../assets/svg/nike_logo.svg";
 
-export const LogoContainer = () => {
+export const NikeContainer = () => {
     return (
         <Wrapper>
             <Logo to={`/`}>
