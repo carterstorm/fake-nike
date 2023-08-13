@@ -8,11 +8,11 @@ import store from "../src/assets/svg/store.svg";
 import jordanLogo from "../src/assets/svg/jordanLogo.svg";
 
 export const navigationData = [
-    { id: 1, name: "Nowe i polecane" },
-    { id: 2, name: "Mężczyźni" },
-    { id: 3, name: "Kobiety" },
-    { id: 4, name: "Dzieci" },
-    { id: 5, name: "Wyprzedaż" },
+    { id: 1, name: "Nowe i polecane", path: "nowe-i-polecane" },
+    { id: 2, name: "Mężczyźni", path: "mezczyzni" },
+    { id: 3, name: "Kobiety", path: "kobiety" },
+    { id: 4, name: "Dzieci", path: "dzieci" },
+    { id: 5, name: "Wyprzedaż", path: "wyprzedaz" },
 ];
 
 export const buttonsElements = [

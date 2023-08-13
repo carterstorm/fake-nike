@@ -2,17 +2,21 @@ import { navigationData } from "../../../data";
 import {
     Nav,
     NavItem,
-    NavLink,
-    NavList
+    NavList,
+    StyledNavLink
 } from "./styled";
 
 export const Navigation = () => {
     return (
         <Nav>
             <NavList>
-                {navigationData.map(({ id, name }) => (
-                    <NavItem key={id}>
-                        <NavLink>{name}</NavLink>
+                {navigationData.map(({ id, name, path }) => (
+                    <NavItem
+                        key={id}>
+                        <StyledNavLink
+                            to={`/${path}`}>
+                            {name}
+                        </StyledNavLink>
                     </NavItem>
                 ))}
             </NavList>
