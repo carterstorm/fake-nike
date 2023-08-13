@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    height: 58px;
+    min-height: 58px;
     width: 100%;
     padding-top: 10px;
     background-color: ${({ theme }) => theme.colors.lightGrayBackground};
@@ -34,11 +34,24 @@ export const Title = styled.p`
 `;
 
 export const TextBox = styled.div`
+    display: flex;
+    padding: 0 20px;
     font-size: 12px;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const Text = styled.span`
 
+`;
+
+export const LinkContainer = styled.div`
+    @media (max-width: 600px) {
+        padding-bottom: 5px;
+    };
 `;
 
 export const Link = styled.a`

@@ -7,6 +7,7 @@ import {
     Text,
     TextBox,
     Title,
+    LinkContainer,
 } from "./styled";
 import { useAnnouncmentEffect } from "../../../hooks/useAnnouncmentEffect";
 
@@ -21,8 +22,10 @@ export const Announcment = () => {
                         <Title>{heading}</Title>
                         <TextBox>
                             <Text>{text}</Text>
-                            <Link>{firstLink}</Link>
-                            <Link>{secoundLink}</Link>
+                            <LinkContainer>
+                                <Link>{firstLink}</Link>
+                                <Link>{secoundLink}</Link>
+                            </LinkContainer>
                         </TextBox>
                     </Item>
                 ))}
