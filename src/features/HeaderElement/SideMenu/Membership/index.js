@@ -1,11 +1,10 @@
+import { ButtonElement } from "../../../../common/ButtonElement";
+import { Login } from "../../../../common/ButtonElement/styled";
 import {
     Container,
     ReadMore,
     Paragraph,
     Buttons,
-    Button,
-    Text,
-    JoinUsButton
 } from "./styled";
 
 export const Membership = () => (
@@ -15,12 +14,12 @@ export const Membership = () => (
             <ReadMore> Dowiedz się więcej.</ReadMore>
         </Paragraph>
         <Buttons>
-            <JoinUsButton>
-                <Text>Dołącz do nas</Text>
-            </JoinUsButton>
-            <Button>
-                <Text>Zaloguj się</Text>
-            </Button>
+            <ButtonElement>
+                Dołącz do nas
+            </ButtonElement>
+            <Login>
+                Zaloguj się
+            </Login>
         </Buttons>
     </Container>
 );

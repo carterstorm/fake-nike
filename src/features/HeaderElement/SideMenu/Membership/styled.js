@@ -26,31 +26,3 @@ export const Buttons = styled.div`
     display: flex;
     flex-direction: column;
 `;
-
-export const Button = styled.a`
-    width: fit-content;
-    margin-top: 8px;
-    border-radius: 30px;
-    border: 1.5px solid ${({ theme }) => theme.colors.grayFont};
-    background-color: ${({ theme }) => theme.colors.white};
-    cursor: pointer;
-
-    &:hover {
-        border-color: ${({ theme }) => theme.colors.black};
-    };
-`;
-
-export const JoinUsButton = styled(Button)`
-    color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme }) => theme.colors.black};
-    border: none;
-
-    &:hover {
-        background-color: ${({ theme }) => theme.colors.grayFont};
-    }
-`;
-
-export const Text = styled.span`
-    display: inline-block;
-    padding: 10px 25px;
-`;
