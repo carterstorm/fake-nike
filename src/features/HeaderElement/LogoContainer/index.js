@@ -4,7 +4,7 @@ import nikeLogo from "../../../assets/svg/nike_logo.svg";
 export const LogoContainer = () => {
     return (
         <Wrapper>
-            <Logo>
+            <Logo to={`/`}>
                 <NikeLogo
                     src={nikeLogo}
                 />
