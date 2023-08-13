@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
     height: 58px;
     width: 100%;
     padding-top: 10px;
@@ -14,7 +14,7 @@ export const List = styled.ul`
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 300vw;
+    width: ${({ announcmentDataLength }) => announcmentDataLength * (100)}vw;
 `;
 
 export const Item = styled.li`
@@ -22,6 +22,8 @@ export const Item = styled.li`
     flex-direction: column;
     align-items: center;
     width: 100vw;
+    transition: .5s ease;
+    transform: translateX(${({ index }) => index * (-100)}vw);  
 `;
 
 export const Title = styled.p`
