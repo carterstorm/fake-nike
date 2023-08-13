@@ -5,7 +5,7 @@ import {
     LinksContainer,
     Section,
     SubTitle,
-    Title
+    // Title
 } from "./styled";
 
 export const ThematicSection = () => (
