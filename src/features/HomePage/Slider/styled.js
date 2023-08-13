@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const Wrapper = styled.div`
     margin-top: 48px;
     overflow: hidden;
+    position: relative;
 `;
 
 export const ImagesContainer = styled.ul`
@@ -14,7 +15,8 @@ export const ImagesContainer = styled.ul`
 `;
 
 export const ImageContainer = styled.li`
-
+    transform: translateX(${({ slideIndex }) => slideIndex * (-100)}vw);
+    transition: 1s ease;
 `;
 
 export const Image = styled.img`
