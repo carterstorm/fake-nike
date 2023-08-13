@@ -14,7 +14,7 @@ export const List = styled.ul`
     list-style: none;
     margin: 0;
     padding: 0;
-    width: ${({ announcmentDataLength }) => announcmentDataLength * (100)}vw;
+    width: ${({ announcmentLength }) => announcmentLength * (100)}vw;
 `;
 
 export const Item = styled.li`
