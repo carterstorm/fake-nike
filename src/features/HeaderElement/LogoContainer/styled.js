@@ -6,7 +6,9 @@ export const Logo = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
     cursor: pointer;
+`;
+
+export const NikeLogo = styled.img`
+    height: 60px;
 `;
