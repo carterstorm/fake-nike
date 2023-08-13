@@ -21,6 +21,7 @@ export const Item = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     width: 100vw;
     transition: .5s ease;
     transform: translateX(${({ index }) => index * (-100)}vw);  
