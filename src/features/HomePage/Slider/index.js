@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { getView } from "../../../getView";
+import { Arrow } from "../Arrow";
+
 import {
     Image,
     Item,
@@ -54,24 +58,49 @@ const categoriesData = [
     },
 ];
 
-export const Slider = () => (
-    <Wrapper>
-        <ItemsContainer>
-            {categoriesData.map(({ id, description, image, alt }) => (
-                <Item key={id}>
-                    <ItemLink href="#">
-                        <ItemImage>
-                            <Image
-                                src={image}
-                                alt={alt}
-                            />
-                        </ItemImage>
-                        <ItemText>
-                            <Text>{description}</Text>
-                        </ItemText>
-                    </ItemLink>
-                </Item>
-            ))}
-        </ItemsContainer>
-    </Wrapper>
-);
+export const Slider = () => {
+    const [index, setIndex] = useState(0);
+    const categories = getView(categoriesData, index);
+    const categoriesLength = categories.length;
+
+    const handlePrevClick = () => {
+        index - 1 < 0 ? setIndex(categoriesLength - 1) : setIndex(index - 1)
+    };
+
+    const handleNextClick = () => {
+        index + 1 >= categoriesLength ? setIndex(0) : setIndex(index + 1)
+    };
+
+    return (
+        <Wrapper>
+            <Arrow
+                direction={"left"}
+                onClick={handlePrevClick}
+            />
+            <ItemsContainer>
+                {categories.map(({ id, description, image, alt }) => (
+                    <Item
+                        key={id}>
+                        <ItemLink href="#">
+                            <ItemImage>
+                                <Image
+                                    src={image}
+                                    alt={alt}
+                                />
+                            </ItemImage>
+                            <ItemText>
+                                <Text>
+                                    {description}
+                                </Text>
+                            </ItemText>
+                        </ItemLink>
+                    </Item>
+                ))}
+            </ItemsContainer>
+            <Arrow
+                direction={"right"}
+                onClick={handleNextClick}
+            />
+        </Wrapper>
+    );
+};
