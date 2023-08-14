@@ -21,6 +21,6 @@ export const ImageContainer = styled.li`
 
 export const Image = styled.img`
     width: 100vw;
-    height: 550px;
+    height: 40vw;
     object-fit: cover;
 `;
