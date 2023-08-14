@@ -10,7 +10,7 @@ export const Wrapper = styled.section`
 
     @media (max-width: 1900px) {
         width: 100vw;
-    }
+    };
 `;
 
 export const ItemsContainer = styled.ul`
@@ -41,7 +41,7 @@ export const ItemImage = styled.div`
     @media (max-width: 1900px) {
         width: 300px;
         height: 300px;
-    }
+    };
 `;
 
 export const Image = styled.img`
@@ -52,7 +52,7 @@ export const Image = styled.img`
     @media (max-width: 1900px) {
         width: 300px;
         height: 300px;
-    }
+    };
 `;
 
 export const ItemText = styled.figcaption`
@@ -60,7 +60,6 @@ export const ItemText = styled.figcaption`
 `;
 
 export const Text = styled.h4`
-    font-size: 20px;
     font-weight: 300;
     color: ${({ theme }) => theme.colors.grayFont};
     margin: 0;

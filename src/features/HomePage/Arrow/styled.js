@@ -6,10 +6,10 @@ export const ArrowButton = styled.button`
     margin: auto;
     top: 0;
     bottom: 0;
-    left: ${({ direction }) => direction === "left" && "24px"};
-    right: ${({ direction }) => direction === "right" && "24px"};
-    width: 30px;
-    height: 30px;
+    left: ${({ direction }) => direction === "left" && "30px"};
+    right: ${({ direction }) => direction === "right" && "30px"};
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,5 +24,5 @@ export const ArrowButton = styled.button`
 `;
 
 export const ArrowImage = styled.img`
-    width: 20px;
+    width: 24px;
 `;
