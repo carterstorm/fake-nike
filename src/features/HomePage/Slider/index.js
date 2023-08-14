@@ -1,48 +1,77 @@
-import { useState } from "react";
-import { sliderData } from "../../HomePage/sliderData";
-import { Arrow } from "../Arrow";
-
 import {
     Image,
-    ImageContainer,
-    ImagesContainer,
+    Item,
+    ItemImage,
+    ItemLink,
+    ItemText,
+    ItemsContainer,
+    Text,
     Wrapper
-} from "./styled";
+} from "./styled"
 
-export const Slider = () => {
-    const [slideIndex, setSlideIndex] = useState(0);
+const categoriesData = [
+    {
+        id: 1,
+        description: "Ubrania do biegania",
+        image: "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_500,c_limit/68f7f042-6926-4425-b298-e14b033fedc7/oficjalna-strona-internetowa-nike.jpg",
+        alt: "Ubrania do biegania",
+    },
+    {
+        id: 2,
+        description: "Kurtki",
+        image: "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_500,c_limit/aa5512db-0ba9-4f20-92dd-ace2b121fe2a/oficjalna-strona-internetowa-nike.jpg",
+        alt: "Kurtki",
+    },
+    {
+        id: 3,
+        description: "Legginsy do biegania",
+        image: "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_500,c_limit/12ea9316-c3ee-44a0-8afc-5ae98e4d86f5/oficjalna-strona-internetowa-nike.jpg",
+        alt: "Legginsy do biegania",
+    },
+    {
+        id: 4,
+        description: "Spodenki",
+        image: "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_500,c_limit/ad52dda7-0566-4923-bc47-699d547bccbb/oficjalna-strona-internetowa-nike.jpg",
+        alt: "Spodenki",
+    },
+    {
+        id: 5,
+        description: "Koszulki",
+        image: "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_500,c_limit/28c98169-9927-45bb-9634-41fa099d6782/oficjalna-strona-internetowa-nike.jpg",
+        alt: "Koszulki",
+    },
+    {
+        id: 6,
+        description: "Produkty sportowe",
+        image: "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_300,c_limit/392db850-0c9e-4dc1-8ef9-2a02f012d62e/oficjalna-strona-internetowa-nike.jpg",
+        alt: "Produkty sportowe",
+    },
+    {
+        id: 7,
+        description: "Buty sportowe i treningowe",
+        image: "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_300,c_limit/a96cfb29-c149-4b69-a5c2-af875a79073c/oficjalna-strona-internetowa-nike.jpg",
+        alt: "Buty sportowe i treningowe",
+    },
+];
 
-    const handleClick = (direction) => {
-        if (direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : sliderData.length - 1);
-        } else {
-            setSlideIndex(slideIndex < sliderData.length - 1 ? slideIndex + 1 : 0);
-        };
-    };
-
-    return (
-        <Wrapper>
-            <Arrow
-                direction="left"
-                onClick={() => handleClick("left")}
-            />
-            <ImagesContainer>
-                {sliderData.map(({ id, src, alt }) => (
-                    <ImageContainer
-                        slideIndex={slideIndex}
-                        key={id}
-                    >
-                        <Image
-                            src={src}
-                            alt={alt}
-                        />
-                    </ImageContainer>
-                ))}
-            </ImagesContainer>
-            <Arrow
-                direction="right"
-                onClick={() => handleClick("right")}
-            />
-        </Wrapper>
-    );
-};
+export const Slider = () => (
+    <Wrapper>
+        <ItemsContainer>
+            {categoriesData.map(({ id, description, image, alt }) => (
+                <Item key={id}>
+                    <ItemLink href="#">
+                        <ItemImage>
+                            <Image
+                                src={image}
+                                alt={alt}
+                            />
+                        </ItemImage>
+                        <ItemText>
+                            <Text>{description}</Text>
+                        </ItemText>
+                    </ItemLink>
+                </Item>
+            ))}
+        </ItemsContainer>
+    </Wrapper>
+);

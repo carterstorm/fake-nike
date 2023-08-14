@@ -1,26 +1,67 @@
 import { styled } from "styled-components";
 
-export const Wrapper = styled.div`
-    margin-top: 48px;
-    overflow: hidden;
+export const Wrapper = styled.section`
+    padding: 10px 0;
     position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 95vw;
+
+    @media (max-width: 1900px) {
+        width: 100vw;
+    }
 `;
 
-export const ImagesContainer = styled.ul`
-    display: flex;
+export const ItemsContainer = styled.ul`
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    grid-gap: 15px;
     list-style: none;
-    margin: 0;
     padding: 0;
-    width: 300vw;
+    margin: 0;
+    overflow: hidden;
 `;
 
-export const ImageContainer = styled.li`
-    transform: translateX(${({ slideIndex }) => slideIndex * (-100)}vw);
-    transition: 1s ease;
+export const Item = styled.li`
+
+`;
+
+export const ItemLink = styled.a`
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+`;
+
+export const ItemImage = styled.div`
+    width: 500px;
+    height: 500px;
+
+    @media (max-width: 1900px) {
+        width: 300px;
+        height: 300px;
+    }
 `;
 
 export const Image = styled.img`
-    width: 100vw;
-    height: 40vw;
-    object-fit: cover;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+
+    @media (max-width: 1900px) {
+        width: 300px;
+        height: 300px;
+    }
+`;
+
+export const ItemText = styled.figcaption`
+    margin-top: 14px;
+`;
+
+export const Text = styled.h4`
+    font-size: 20px;
+    font-weight: 300;
+    color: ${({ theme }) => theme.colors.grayFont};
+    margin: 0;
 `;
