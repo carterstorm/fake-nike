@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { getView } from "../../../getView";
 import { Arrow } from "../Arrow";
 
@@ -64,12 +64,55 @@ export const Slider = () => {
     const categories = getView(categoriesData, index);
     const categoriesLength = categories.length;
 
+    const touchRef = useRef({
+        startX: 0,
+        startY: 0,
+    });
+
     const handlePrevClick = () => {
         index - 1 < 0 ? setIndex(categoriesLength - 1) : setIndex(index - 1)
     };
 
     const handleNextClick = () => {
         index + 1 >= categoriesLength ? setIndex(0) : setIndex(index + 1)
+    };
+
+    const handleTouchStart = (event) => {
+        touchRef.current.startX = event.touches[0].clientX;
+        touchRef.current.startY = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (event) => {
+        const deltaX = event.changedTouches[0].clientX - touchRef.current.startX;
+        const deltaY = event.changedTouches[0].clientY - touchRef.current.startY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX > 0) {
+                handlePrevClick();
+            } else {
+                handleNextClick();
+            };
+        };
+    };
+
+    const handleMouseDown = (event) => {
+        touchRef.current.startX = event.clientX;
+    };
+
+    const handleMouseUp = (event) => {
+        const deltaX = event.clientX - touchRef.current.startX;
+
+        if (Math.abs(deltaX) > 50) {
+            if (deltaX > 0) {
+                handlePrevClick();
+            } else {
+                handleNextClick();
+            };
+        };
+    };
+
+    const handleDragStart = (event) => {
+        event.preventDefault();
     };
 
     return (
@@ -79,7 +122,13 @@ export const Slider = () => {
                 onClick={handlePrevClick}
             />
             <Number>{index + 1}/{categoriesLength}</Number>
-            <ItemsContainer>
+            <ItemsContainer
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                onMouseDown={handleMouseDown}
+                onMouseUp={handleMouseUp}
+                onDragStart={handleDragStart}
+            >
                 {categories.map(({ id, description, image, alt }) => (
                     <Item
                         key={id}>
