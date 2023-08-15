@@ -13,6 +13,17 @@ export const Wrapper = styled.section`
     };
 `;
 
+export const Number = styled.span`
+    position: absolute;
+    top: 35px;
+    left: 55vw;
+    background-color: ${({ theme }) => theme.colors.numberColor};
+    color: ${({ theme }) => theme.colors.white};
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 200;
+`;
+
 export const ItemsContainer = styled.ul`
     display: grid;
     grid-template-columns: repeat(7, 1fr);

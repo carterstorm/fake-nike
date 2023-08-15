@@ -9,6 +9,7 @@ import {
     ItemLink,
     ItemText,
     ItemsContainer,
+    Number,
     Text,
     Wrapper
 } from "./styled"
@@ -77,6 +78,7 @@ export const Slider = () => {
                 direction={"left"}
                 onClick={handlePrevClick}
             />
+            <Number>{index + 1}/{categoriesLength}</Number>
             <ItemsContainer>
                 {categories.map(({ id, description, image, alt }) => (
                     <Item
@@ -90,7 +92,7 @@ export const Slider = () => {
                             </ItemImage>
                             <ItemText>
                                 <Text>
-                                    {description}
+                                    {id === index + 1 ? description : null}
                                 </Text>
                             </ItemText>
                         </ItemLink>
