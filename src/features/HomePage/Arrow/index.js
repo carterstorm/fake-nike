@@ -11,6 +11,7 @@ export const Arrow = ({ direction, onClick }) => (
         onClick={onClick}
     >
         <ArrowImage
+            direction={direction}
             src={arrow}
             alt="Arrow"
         />

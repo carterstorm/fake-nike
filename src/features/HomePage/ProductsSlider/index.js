@@ -1,3 +1,5 @@
+import { Arrow } from "../Arrow";
+
 import {
     Buttons,
     Category,
@@ -22,7 +24,8 @@ export const ProductsSlider = () => {
             <Header>
                 <Heading>Popularne w tym tygodniu</Heading>
                 <Buttons>
-
+                    <Arrow direction="left" />
+                    <Arrow direction="right" />
                 </Buttons>
             </Header>
             <List>

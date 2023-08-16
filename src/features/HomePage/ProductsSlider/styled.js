@@ -19,8 +19,11 @@ export const Heading = styled.h4`
 `;
 
 export const Buttons = styled.div`
-    width: 200px;
-    height: 60px;
+    position: relative;
+    top: 0;
+    right: -30px;
+    width: 150px;
+    height: 40px;
 `;
 
 export const List = styled.ul`
