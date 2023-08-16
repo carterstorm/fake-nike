@@ -6,7 +6,7 @@ export const Container = styled.div`
     margin: 48px 48px 0;
     text-align: center;
 
-    @media (max-width: 960px) {
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         margin: 48px 24px 0;
     };
 `;

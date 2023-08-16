@@ -15,13 +15,13 @@ export const Button = styled.a`
     };
 
     &:hover {
-        background-color: ${({ theme }) => theme.colors.grayFont};
+        background-color: ${({ theme }) => theme.colors.gray};
     };
 `;
 
 export const Login = styled(Button)`
     background-color: ${({ theme }) => theme.colors.white};
-    border: 1.5px solid ${({ theme }) => theme.colors.grayFont};
+    border: 1.5px solid ${({ theme }) => theme.colors.gray};
     color: ${({ theme }) => theme.colors.black};
 
     &:hover {

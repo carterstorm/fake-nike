@@ -9,7 +9,7 @@ export const Container = styled.div`
 export const Paragraph = styled.p`
     font-size: 20px;
     font-weight: 400;
-    color: ${({ theme }) => theme.colors.grayFont};
+    color: ${({ theme }) => theme.colors.gray};
     line-height: 1.45;
     margin: 0;
     padding-bottom: 16px;

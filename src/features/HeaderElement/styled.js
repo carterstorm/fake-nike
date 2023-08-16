@@ -5,7 +5,7 @@ export const Header = styled.header`
     padding: 0 36px;
     display: flex;
     justify-content: space-between;
-    @media (max-width: 960px) {
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         padding: 0 16px;
     };
 `;

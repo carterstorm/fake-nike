@@ -18,7 +18,7 @@ export const ButtonsItem = styled.li`
         display: none;
     } 
 
-    @media (max-width: 960px) {
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         &:nth-child(1) {
             display: block;
         } 
@@ -46,7 +46,7 @@ export const ButtonElement = styled.button`
     background-color: transparent;
     
     &:hover {
-        background-color: ${({ theme }) => theme.colors.grayBackgroundHover};
+        background-color: ${({ theme }) => theme.colors.grayHover};
     };
 `;
 

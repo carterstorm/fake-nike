@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
 
 export const Nav = styled.nav`
-    @media (max-width: 960px) {
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         display: none;
     }
 `;

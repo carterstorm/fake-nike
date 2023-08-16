@@ -8,9 +8,9 @@ export const Menu = styled.aside`
     padding: 0 36px;
     font-size: 12px;
     font-weight: 400;
-    background-color: ${({ theme }) => theme.colors.lightGrayBackground};
+    background-color: ${({ theme }) => theme.colors.lightGray};
 
-    @media (max-width: 960px) {
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         display: none;
     };
 `;

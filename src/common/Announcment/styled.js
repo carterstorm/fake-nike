@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     min-height: 58px;
     width: 100%;
     padding-top: 10px;
-    background-color: ${({ theme }) => theme.colors.lightGrayBackground};
+    background-color: ${({ theme }) => theme.colors.lightGray};
     border-bottom: 1px solid #e1e1e1;
     overflow: hidden;
 `;
@@ -39,7 +39,7 @@ export const TextBox = styled.div`
     padding: 0 20px;
     font-size: 12px;
 
-    @media (max-width: 600px) {
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         flex-direction: column;
         align-items: center;
     }
@@ -50,7 +50,7 @@ export const Text = styled.span`
 `;
 
 export const LinkContainer = styled.div`
-    @media (max-width: 600px) {
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         padding-bottom: 5px;
     };
 `;

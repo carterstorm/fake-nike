@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
     transform: translate(-50%,0);
     width: 95vw;
 
-    @media (max-width: 1900px) {
+    @media (max-width: ${({ theme }) => theme.media.desktopMax}px) {
         width: 100vw;
     };
 `;
@@ -49,7 +49,7 @@ export const ItemImage = styled.div`
     width: 500px;
     height: 500px;
 
-    @media (max-width: 1900px) {
+    @media (max-width: ${({ theme }) => theme.media.desktopMax}px) {
         width: 300px;
         height: 300px;
     };
@@ -60,7 +60,7 @@ export const Image = styled.img`
     height: 500px;
     border-radius: 10px;
 
-    @media (max-width: 1900px) {
+    @media (max-width: ${({ theme }) => theme.media.desktopMax}px) {
         width: 300px;
         height: 300px;
     };
@@ -72,6 +72,6 @@ export const ItemText = styled.figcaption`
 
 export const Text = styled.h4`
     font-weight: 300;
-    color: ${({ theme }) => theme.colors.grayFont};
+    color: ${({ theme }) => theme.colors.gray};
     margin: 0;
 `;

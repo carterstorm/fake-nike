@@ -11,7 +11,7 @@ export const SearchBox = styled.div`
     align-items: center;
     margin-right: 10px;
 
-    @media (max-width: 960px) {
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         display: none;
     };
 `;
@@ -24,10 +24,10 @@ export const SearchInput = styled.input`
     padding-left: 45px;
     font-size: 14px;
     font-weight: 500;
-    background-color: ${({ theme }) => theme.colors.lightGrayBackground};
+    background-color: ${({ theme }) => theme.colors.lightGray};
     outline: none;
     
     &:hover {
-        background-color: ${({ theme }) => theme.colors.grayBackgroundHover};
+        background-color: ${({ theme }) => theme.colors.grayHover};
     }
 `;

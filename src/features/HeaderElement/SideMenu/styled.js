@@ -33,7 +33,7 @@ export const CloseButton = styled.button`
     background-color: transparent;
 
     &:hover {
-        background-color: ${({ theme }) => theme.colors.grayBackgroundHover};
+        background-color: ${({ theme }) => theme.colors.grayHover};
     };
 `;
 
