@@ -24,8 +24,8 @@ export const ProductsSlider = () => {
             <Header>
                 <Heading>Popularne w tym tygodniu</Heading>
                 <Buttons>
-                    <Arrow direction="left" />
-                    <Arrow direction="right" />
+                    <Arrow direction="left" left={"0"} />
+                    <Arrow direction="right" right={"0"} />
                 </Buttons>
             </Header>
             <List>

@@ -119,6 +119,7 @@ export const Slider = () => {
         <Wrapper>
             <Arrow
                 direction={"left"}
+                left={"30"}
                 onClick={handlePrevClick}
             />
             <Number>{index + 1}/{categoriesLength}</Number>
@@ -150,6 +151,7 @@ export const Slider = () => {
             </ItemsContainer>
             <Arrow
                 direction={"right"}
+                right={"30"}
                 onClick={handleNextClick}
             />
         </Wrapper>

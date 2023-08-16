@@ -33,6 +33,7 @@ export const ImagesSlider = () => {
         <Wrapper>
             <Arrow
                 direction="left"
+                left={"30"}
                 onClick={() => handleClick("left")}
             />
             <ImagesContainer>
@@ -50,6 +51,7 @@ export const ImagesSlider = () => {
             </ImagesContainer>
             <Arrow
                 direction="right"
+                right={"30"}
                 onClick={() => handleClick("right")}
             />
         </Wrapper>

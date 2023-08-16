@@ -20,9 +20,7 @@ export const Heading = styled.h4`
 
 export const Buttons = styled.div`
     position: relative;
-    top: 0;
-    right: -30px;
-    width: 150px;
+    width: 90px;
     height: 40px;
 `;
 

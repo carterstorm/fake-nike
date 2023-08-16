@@ -5,9 +5,8 @@ export const ArrowButton = styled.button`
     z-index: 1;
     top: 50%;
     transform: translateY(-50%);
-    
-    left: ${({ direction }) => direction === "left" && "30px"};
-    right: ${({ direction }) => direction === "right" && "30px"};
+    left: ${({ left }) => left}px;
+    right: ${({ right }) => right}px;
     width: 40px;
     height: 40px;
     display: flex;
