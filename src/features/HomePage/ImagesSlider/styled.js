@@ -23,4 +23,8 @@ export const Image = styled.img`
     width: 100vw;
     height: 45vw;
     object-fit: cover;
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        height: 150vw;
+    }
 `;
