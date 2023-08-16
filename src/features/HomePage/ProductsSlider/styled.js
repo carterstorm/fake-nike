@@ -47,8 +47,8 @@ export const ImageContainer = styled.div`
 
 export const Image = styled.img`
     object-fit: cover;
-    width: 31vw;
-    height: 31vw;
+    width: calc((95vw - 30px)/3);
+    height: calc((95vw - 30px)/3);
 `;
 
 export const Description = styled.figcaption`

@@ -42,6 +42,74 @@ export const ProductsSlider = () => {
                         </Description>
                     </Link>
                 </Item>
+
+                <Item>
+                    <Link href="#">
+                        <ImageContainer>
+                            <Image />
+                        </ImageContainer>
+                        <Description>
+                            <TextBox>
+                                <Title>Nike Dunk Low</Title>
+                                <Category>Buty damskie</Category>
+                            </TextBox>
+                            <PriceBox>
+                                <Price>549,99zł</Price>
+                            </PriceBox>
+                        </Description>
+                    </Link>
+                </Item>
+
+                <Item>
+                    <Link href="#">
+                        <ImageContainer>
+                            <Image />
+                        </ImageContainer>
+                        <Description>
+                            <TextBox>
+                                <Title>Nike Dunk Low</Title>
+                                <Category>Buty damskie</Category>
+                            </TextBox>
+                            <PriceBox>
+                                <Price>549,99zł</Price>
+                            </PriceBox>
+                        </Description>
+                    </Link>
+                </Item>
+
+                <Item>
+                    <Link href="#">
+                        <ImageContainer>
+                            <Image />
+                        </ImageContainer>
+                        <Description>
+                            <TextBox>
+                                <Title>Nike Dunk Low</Title>
+                                <Category>Buty damskie</Category>
+                            </TextBox>
+                            <PriceBox>
+                                <Price>549,99zł</Price>
+                            </PriceBox>
+                        </Description>
+                    </Link>
+                </Item>
+
+                <Item>
+                    <Link href="#">
+                        <ImageContainer>
+                            <Image />
+                        </ImageContainer>
+                        <Description>
+                            <TextBox>
+                                <Title>Nike Dunk Low</Title>
+                                <Category>Buty damskie</Category>
+                            </TextBox>
+                            <PriceBox>
+                                <Price>549,99zł</Price>
+                            </PriceBox>
+                        </Description>
+                    </Link>
+                </Item>
             </List>
         </Wrapper>
     );
