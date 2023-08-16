@@ -27,8 +27,7 @@ export const List = styled.ul`
     list-style: none;
     margin: 0;
     padding: 12px 0 30px;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    display: flex;
     gap: 15px;
     overflow-x: scroll;
 `;
