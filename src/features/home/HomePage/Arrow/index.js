@@ -1,4 +1,4 @@
-import arrow from "../../../assets/svg/next_arrow.svg";
+import arrow from "../../../../assets/svg/next_arrow.svg";
 
 import {
     ArrowButton,

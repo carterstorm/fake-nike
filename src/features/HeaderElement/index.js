@@ -4,7 +4,7 @@ import { NikeContainer } from "./LogoContainer";
 import { UserOptions } from "./UserOptions";
 import { SideMenu } from "./SideMenu";
 import { Navigation } from "./Navigation";
-import { HomePage } from "../HomePage";
+import { HomePage } from "../home/HomePage";
 
 import {
     Header

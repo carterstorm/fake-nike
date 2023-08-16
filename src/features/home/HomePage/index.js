@@ -1,4 +1,4 @@
-import { Announcment } from "../../common/Announcment";
+import { Announcment } from "../../../common/Announcment";
 import { ImagesSlider } from "./ImagesSlider";
 import { ProductsSlider } from "./ProductsSlider";
 import { Slider } from "./Slider";

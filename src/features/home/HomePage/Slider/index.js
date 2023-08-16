@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { getView } from "../../../getView";
+import { getView } from "../../../../getView";
 import { Arrow } from "../Arrow";
 
 import {
