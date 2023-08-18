@@ -5,8 +5,19 @@ const productsSliderSlice = createSlice({
     initialState: {
         popularProducts: [],
         loading: null,
+        index: 2,
     },
     reducers: {
+        setNextIndex: state => {
+            if (state.index < 9) {
+                state.index += 1;
+            };
+        },
+        setPrevIndex: state => {
+            if (state.index > 2) {
+                state.index -= 1;
+            };
+        },
         fetchGetPopularProducts: state => {
             state.loading = true;
         },
@@ -24,10 +35,13 @@ export const {
     fetchGetPopularProducts,
     fetchPopularProductsSuccess,
     fetchPopularProductsError,
+    setNextIndex,
+    setPrevIndex,
 } = productsSliderSlice.actions;
 
 export const selectProductsState = state => state.productsSlider;
 export const selectPopularProducts = state => selectProductsState(state).popularProducts;
 export const selectArePopularProductsLoading = state => selectProductsState(state).loading;
+export const selectIndex = state => selectProductsState(state).index;
 
 export default productsSliderSlice.reducer;
