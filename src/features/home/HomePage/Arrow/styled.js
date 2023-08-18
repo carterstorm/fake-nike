@@ -21,6 +21,7 @@ export const ArrowButton = styled.button`
 
     &:disabled {
         background-color: ${({ theme }) => theme.colors.lightGray};
+        cursor: auto;
     };
 `;
 

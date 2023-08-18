@@ -111,10 +111,6 @@ export const Slider = () => {
         };
     };
 
-    const handleDragStart = (event) => {
-        event.preventDefault();
-    };
-
     return (
         <Wrapper>
             <Arrow
@@ -128,7 +124,6 @@ export const Slider = () => {
                 onTouchEnd={handleTouchEnd}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
-                onDragStart={handleDragStart}
             >
                 {categories.map(({ id, description, image, alt }) => (
                     <Item
@@ -138,6 +133,7 @@ export const Slider = () => {
                                 <Image
                                     src={image}
                                     alt={alt}
+                                    draggable={false}
                                 />
                             </ItemImage>
                             <ItemText>

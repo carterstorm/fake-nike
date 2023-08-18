@@ -17,6 +17,7 @@ export const Arrow = ({ direction, onClick, left, right, disabled }) => (
             direction={direction}
             src={arrow}
             alt="Arrow"
+            draggable={false}
         />
     </ArrowButton>
 );
