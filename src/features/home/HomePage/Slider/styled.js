@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
     top: 50%;
     left: 50%;
     transform: translate(-50%,0);
-    width: 96vw;
+    width: 92vw;
 
     @media (max-width: ${({ theme }) => theme.media.desktopMax}px) {
         width: 100vw;

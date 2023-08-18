@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
-    width: 96vw;
+    width: 92vw;
     margin: 16px auto 12px;
 `;
 
@@ -29,6 +29,7 @@ export const List = styled.ul`
     margin: 0;
     padding: 12px 0 30px;
     display: flex;
+    gap: 1vw;
     overflow-x: scroll;
 `;
 
@@ -46,8 +47,8 @@ export const ImageContainer = styled.div`
 
 export const Image = styled.img`
     object-fit: cover;
-    width: 32vw;
-    height: 32vw;
+    width: 30vw;
+    height: 30vw;
 `;
 
 export const Description = styled.figcaption`
