@@ -18,6 +18,10 @@ export const ArrowButton = styled.button`
     cursor: pointer;
     transition: 0.3s;
     border: none;
+
+    &:disabled {
+        background-color: ${({ theme }) => theme.colors.lightGray};
+    };
 `;
 
 export const ArrowImage = styled.img`

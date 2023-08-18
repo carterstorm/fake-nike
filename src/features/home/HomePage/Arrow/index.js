@@ -5,12 +5,13 @@ import {
     ArrowImage
 } from "./styled";
 
-export const Arrow = ({ direction, onClick, left, right }) => (
+export const Arrow = ({ direction, onClick, left, right, disabled }) => (
     <ArrowButton
         direction={direction}
         onClick={onClick}
         left={left}
         right={right}
+        disabled={disabled}
     >
         <ArrowImage
             direction={direction}
