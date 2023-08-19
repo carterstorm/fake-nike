@@ -5,16 +5,16 @@ const productsSliderSlice = createSlice({
     initialState: {
         popularProducts: [],
         loading: null,
-        index: 2,
+        index: 0,
     },
     reducers: {
         setNextIndex: state => {
-            if (state.index < 9) {
+            if (state.index < 7) {
                 state.index += 1;
             };
         },
         setPrevIndex: state => {
-            if (state.index > 2) {
+            if (state.index > 0) {
                 state.index -= 1;
             };
         },

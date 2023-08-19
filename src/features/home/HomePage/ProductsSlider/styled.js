@@ -27,10 +27,15 @@ export const Buttons = styled.div`
 export const List = styled.ul`
     list-style: none;
     margin: 0;
-    padding: 12px 0 30px;
+    padding: 12px 0 60px;
+    overflow-x: hidden;
+`;
+
+export const SliderTrack = styled.div`
     display: flex;
     gap: 1vw;
-    overflow-x: scroll;
+    transition: .5s;
+    transform: translateX(${({ index }) => -index * 31}vw);
 `;
 
 export const Item = styled.li``;
@@ -41,9 +46,7 @@ export const Link = styled.a`
     color: ${({ theme }) => theme.colors.black};
 `;
 
-export const ImageContainer = styled.div`
-    
-`;
+export const ImageContainer = styled.div``;
 
 export const Image = styled.img`
     object-fit: cover;
