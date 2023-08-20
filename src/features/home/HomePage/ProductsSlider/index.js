@@ -5,9 +5,12 @@ import {
     fetchGetPopularProducts,
     selectArePopularProductsLoading,
     selectIndex,
+    selectLeftArrowVisibility,
     selectPopularProducts,
+    selectRightArrowVisibility,
     setNextIndex,
-    setPrevIndex
+    setPrevIndex,
+    setWindowWidth
 } from "../../productsSliderSlice";
 
 import {
@@ -34,9 +37,23 @@ export const ProductsSlider = () => {
     const popularProducts = useSelector(selectPopularProducts);
     const arePopularProductsLoading = useSelector(selectArePopularProductsLoading);
     const index = useSelector(selectIndex);
+    const leftArrowVisibility = useSelector(selectLeftArrowVisibility)
+    const rightArrowVisibility = useSelector(selectRightArrowVisibility)
 
     useEffect(() => {
         dispatch(fetchGetPopularProducts());
+    }, [dispatch]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            dispatch(setWindowWidth(window.innerWidth));
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, [dispatch]);
 
     return (
@@ -48,13 +65,13 @@ export const ProductsSlider = () => {
                         direction="left"
                         left={"0"}
                         onClick={() => dispatch(setPrevIndex())}
-                        disabled={index === 0 ? true : false}
+                        disabled={leftArrowVisibility}
                     />
                     <Arrow
                         direction="right"
                         right={"0"}
                         onClick={() => dispatch(setNextIndex())}
-                        disabled={index === 7 ? true : false}
+                        disabled={rightArrowVisibility}
                     />
                 </Buttons>
             </Header>
