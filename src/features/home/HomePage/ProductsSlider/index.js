@@ -80,6 +80,22 @@ export const ProductsSlider = () => {
         };
     };
 
+    const handleMouseDown = (event) => {
+        dispatch(setTouchPointX(event.clientX));
+    };
+
+    const handleMouseUp = (event) => {
+        const deltaX = event.clientX - touchPointX;
+
+        if (Math.abs(deltaX) > 50) {
+            if (deltaX > 0) {
+                dispatch(setPrevIndex());
+            } else {
+                dispatch(setNextIndex());
+            };
+        };
+    };
+
     return (
         <Wrapper>
             <Header>
@@ -105,6 +121,8 @@ export const ProductsSlider = () => {
                         index={index}
                         onTouchStart={handleTouchStart}
                         onTouchEnd={handleTouchEnd}
+                        onMouseDown={handleMouseDown}
+                        onMouseUp={handleMouseUp}
                     >
                         {popularProducts.map(({ id, description, category, image, price }) => (
                             <Item key={id}>
