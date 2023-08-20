@@ -9,22 +9,44 @@ const productsSliderSlice = createSlice({
         windowWidth: window.innerWidth,
         leftArrowVisibility: true,
         rightArrowVisibility: false,
+        touchPoints: {
+            startX: 0,
+            startY: 0,
+        },
     },
     reducers: {
+        setTouchPointX: (state, { payload }) => {
+            state.touchPoints.startX = payload;
+        },
+        setTouchPointY: (state, { payload }) => {
+            state.touchPoints.startY = payload;
+        },
         setLeftArrowVisibility: state => {
-            state.leftArrowVisibility = !state.leftArrowVisibility;
+            if (state.index === 0) {
+                state.leftArrowVisibility = true;
+            } else {
+                state.leftArrowVisibility = !state.leftArrowVisibility;
+            };
         },
         setRightArrowVisibility: state => {
-            state.rightArrowVisibility = !state.rightArrowVisibility;
+            if (state.index === 9) {
+                state.rightArrowVisibility = true;
+            } else {
+                state.rightArrowVisibility = !state.rightArrowVisibility;
+            };
         },
         setWindowWidth: (state, { payload: windowWidth }) => {
             state.windowWidth = windowWidth;
         },
         setNextIndex: state => {
-            state.index += 1;
+            if (state.index <= 8) {
+                state.index += 1;
+            };
         },
         setPrevIndex: state => {
-            state.index -= 1;
+            if (state.index >= 1) {
+                state.index -= 1;
+            };
         },
         fetchGetPopularProducts: state => {
             state.loading = true;
@@ -48,6 +70,8 @@ export const {
     setWindowWidth,
     setLeftArrowVisibility,
     setRightArrowVisibility,
+    setTouchPointX,
+    setTouchPointY,
 } = productsSliderSlice.actions;
 
 export const selectProductsState = state => state.productsSlider;
@@ -57,5 +81,7 @@ export const selectIndex = state => selectProductsState(state).index;
 export const selectWindowWidth = state => selectProductsState(state).windowWidth;
 export const selectLeftArrowVisibility = state => selectProductsState(state).leftArrowVisibility;
 export const selectRightArrowVisibility = state => selectProductsState(state).rightArrowVisibility;
+export const selectTouchPointX = state => selectProductsState(state).touchPoints.startX;
+export const selectTouchPointY = state => selectProductsState(state).touchPoints.startY;
 
 export default productsSliderSlice.reducer;

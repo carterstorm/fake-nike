@@ -8,8 +8,12 @@ import {
     selectLeftArrowVisibility,
     selectPopularProducts,
     selectRightArrowVisibility,
+    selectTouchPointX,
+    selectTouchPointY,
     setNextIndex,
     setPrevIndex,
+    setTouchPointX,
+    setTouchPointY,
     setWindowWidth
 } from "../../productsSliderSlice";
 
@@ -37,8 +41,10 @@ export const ProductsSlider = () => {
     const popularProducts = useSelector(selectPopularProducts);
     const arePopularProductsLoading = useSelector(selectArePopularProductsLoading);
     const index = useSelector(selectIndex);
-    const leftArrowVisibility = useSelector(selectLeftArrowVisibility)
-    const rightArrowVisibility = useSelector(selectRightArrowVisibility)
+    const leftArrowVisibility = useSelector(selectLeftArrowVisibility);
+    const rightArrowVisibility = useSelector(selectRightArrowVisibility);
+    const touchPointX = useSelector(selectTouchPointX);
+    const touchPointY = useSelector(selectTouchPointY);
 
     useEffect(() => {
         dispatch(fetchGetPopularProducts());
@@ -55,6 +61,24 @@ export const ProductsSlider = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, [dispatch]);
+
+    const handleTouchStart = (event) => {
+        dispatch(setTouchPointX(event.touches[0].clientX));
+        dispatch(setTouchPointY(event.touches[0].clientY));
+    };
+
+    const handleTouchEnd = (event) => {
+        const deltaX = event.changedTouches[0].clientX - touchPointX;
+        const deltaY = event.changedTouches[0].clientY - touchPointY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX > 0) {
+                dispatch(setPrevIndex());
+            } else {
+                dispatch(setNextIndex());
+            };
+        };
+    };
 
     return (
         <Wrapper>
@@ -79,6 +103,8 @@ export const ProductsSlider = () => {
                 {arePopularProductsLoading ? "Loading" : (
                     <SliderTrack
                         index={index}
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
                     >
                         {popularProducts.map(({ id, description, category, image, price }) => (
                             <Item key={id}>
