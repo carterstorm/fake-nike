@@ -36,6 +36,14 @@ export const SliderTrack = styled.div`
     gap: 1vw;
     transition: .5s;
     transform: translateX(${({ index }) => -index * 31}vw);
+
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
+        transform: translateX(${({ index }) => -index * 47}vw);
+    };
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        transform: translateX(${({ index }) => -index * 93}vw);
+    };
 `;
 
 export const Item = styled.li``;
@@ -52,6 +60,16 @@ export const Image = styled.img`
     object-fit: cover;
     width: 30vw;
     height: 30vw;
+
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
+        width: 46vw;
+        height: 46vw;
+    };
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        width: 92vw;
+        height: 92vw;
+    };
 `;
 
 export const Description = styled.figcaption`

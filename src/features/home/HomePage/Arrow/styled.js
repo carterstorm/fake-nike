@@ -16,7 +16,7 @@ export const ArrowButton = styled.button`
     opacity: .5;
     border-radius: 50%;
     cursor: pointer;
-    transition: 0.3s;
+    transition: .75s;
     border: none;
 
     &:disabled {
