@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
     width: 92vw;
-    margin: 16px auto 12px;
+    margin: 60px auto 12px;
 `;
 
 export const Header = styled.header`
@@ -13,7 +13,7 @@ export const Header = styled.header`
 `;
 
 export const Heading = styled.h4`
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
     margin: 0;
 `;
@@ -22,6 +22,10 @@ export const Buttons = styled.div`
     position: relative;
     width: 90px;
     height: 40px;
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        display: none;
+    };
 `;
 
 export const List = styled.ul`
