@@ -7,9 +7,8 @@ import {
     fetchPopularProductsSuccess,
     selectIndex,
     selectWindowWidth,
+    setIndex,
     setLeftArrowVisibility,
-    setNextIndex,
-    setPrevIndex,
     setRightArrowVisibility
 } from "./productsSliderSlice";
 
@@ -24,64 +23,21 @@ function* fetchGetPopularProductsHandler() {
     };
 };
 
-function* setNextIndexHandler() {
-    const windowWidth = yield select(selectWindowWidth);
+function* setArrowVisibilityHandler() {
     const index = yield select(selectIndex);
-
-    if (windowWidth > 960) {
-        if (index === 1) {
-            yield put(setLeftArrowVisibility());
-        };
-        if (index === 7) {
-            yield put(setRightArrowVisibility());
-        };
-    } else if (windowWidth < 960 && windowWidth > 600) {
-        if (index === 1) {
-            yield put(setLeftArrowVisibility());
-        };
-        if (index === 8) {
-            yield put(setRightArrowVisibility());
-        };
-    } else {
-        if (index === 1) {
-            yield put(setLeftArrowVisibility());
-        };
-        if (index === 9) {
-            yield put(setRightArrowVisibility());
-        };
-    };
-};
-
-function* setPrevIndexHandler() {
     const windowWidth = yield select(selectWindowWidth);
-    const index = yield select(selectIndex);
 
-    if (windowWidth > 960) {
-        if (index === 6) {
-            yield put(setRightArrowVisibility());
-        };
-        if (index === 0) {
-            yield put(setLeftArrowVisibility());
-        };
-    } else if (windowWidth < 960 && windowWidth > 600) {
-        if (index === 7) {
-            yield put(setRightArrowVisibility());
-        };
-        if (index === 0) {
-            yield put(setLeftArrowVisibility());
-        };
-    } else {
-        if (index === 8) {
-            yield put(setRightArrowVisibility());
-        };
-        if (index === 0) {
-            yield put(setLeftArrowVisibility());
-        };
-    };
+    const showLeftArrow = index === 0;
+    const showRightArrow =
+        (windowWidth > 960 && index === 7) ||
+        (windowWidth < 960 && windowWidth > 600 && index === 8) ||
+        (windowWidth <= 600 && index === 9);
+
+    yield put(setLeftArrowVisibility(showLeftArrow));
+    yield put(setRightArrowVisibility(showRightArrow));
 };
 
 export function* popularProductsSaga() {
     yield takeEvery(fetchGetPopularProducts.type, fetchGetPopularProductsHandler);
-    yield takeEvery(setNextIndex.type, setNextIndexHandler);
-    yield takeEvery(setPrevIndex.type, setPrevIndexHandler);
+    yield takeEvery(setIndex.type, setArrowVisibilityHandler);
 };
