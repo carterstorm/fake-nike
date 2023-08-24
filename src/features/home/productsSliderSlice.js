@@ -33,22 +33,18 @@ const productsSliderSlice = createSlice({
             state.windowWidth = windowWidth;
         },
         setIndex: (state, { payload }) => {
+            const { windowWidth, index } = state;
+
             if (payload === "right") {
-                if (state.windowWidth > 960) {
-                    if (state.index <= 6) {
-                        state.index += 1;
-                    };
-                } else if (state.windowWidth < 960 && state.windowWidth > 600) {
-                    if (state.index <= 7) {
-                        state.index += 1;
-                    };
-                } else {
-                    if (state.index <= 8) {
+                if (index < 9) {
+                    if ((windowWidth > 960 && index <= 6) ||
+                        (windowWidth < 960 && windowWidth > 600 && index <= 7) ||
+                        (windowWidth <= 600 && index <= 8)) {
                         state.index += 1;
                     };
                 };
-            } else if (payload === "left") {
-                if (state.index >= 1) {
+            } else {
+                if (index > 0) {
                     state.index -= 1;
                 };
             };
