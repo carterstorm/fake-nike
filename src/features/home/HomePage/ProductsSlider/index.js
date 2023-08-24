@@ -10,8 +10,7 @@ import {
     selectRightArrowVisibility,
     selectTouchPointX,
     selectTouchPointY,
-    setNextIndex,
-    setPrevIndex,
+    setIndex,
     setTouchPointX,
     setTouchPointY,
     setWindowWidth
@@ -73,9 +72,9 @@ export const ProductsSlider = () => {
 
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
             if (deltaX > 0) {
-                dispatch(setPrevIndex());
+                dispatch(setIndex("left"));
             } else {
-                dispatch(setNextIndex());
+                dispatch(setIndex("right"));
             };
         };
     };
@@ -89,9 +88,9 @@ export const ProductsSlider = () => {
 
         if (Math.abs(deltaX) > 50) {
             if (deltaX > 0) {
-                dispatch(setPrevIndex());
+                dispatch(setIndex("left"));
             } else {
-                dispatch(setNextIndex());
+                dispatch(setIndex("right"));
             };
         };
     };
@@ -104,13 +103,13 @@ export const ProductsSlider = () => {
                     <Arrow
                         direction="left"
                         left={"0"}
-                        onClick={() => dispatch(setPrevIndex())}
+                        onClick={() => dispatch(setIndex("left"))}
                         disabled={leftArrowVisibility}
                     />
                     <Arrow
                         direction="right"
                         right={"0"}
-                        onClick={() => dispatch(setNextIndex())}
+                        onClick={() => dispatch(setIndex("right"))}
                         disabled={rightArrowVisibility}
                     />
                 </Buttons>

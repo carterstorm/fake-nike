@@ -7,8 +7,10 @@ const productsSliderSlice = createSlice({
         loading: null,
         index: 0,
         windowWidth: window.innerWidth,
-        leftArrowVisibility: true,
-        rightArrowVisibility: false,
+        arrowVisibility: {
+            leftArrowVisibility: true,
+            rightArrowVisibility: false,
+        },
         touchPoints: {
             startX: 0,
             startY: 0,
@@ -21,31 +23,34 @@ const productsSliderSlice = createSlice({
         setTouchPointY: (state, { payload }) => {
             state.touchPoints.startY = payload;
         },
-        setLeftArrowVisibility: state => {
-            if (state.index === 0) {
-                state.leftArrowVisibility = true;
-            } else {
-                state.leftArrowVisibility = !state.leftArrowVisibility;
-            };
+        setLeftArrowVisibility: (state, { payload }) => {
+            state.arrowVisibility.leftArrowVisibility = payload;
         },
-        setRightArrowVisibility: state => {
-            if (state.index === 9) {
-                state.rightArrowVisibility = true;
-            } else {
-                state.rightArrowVisibility = !state.rightArrowVisibility;
-            };
+        setRightArrowVisibility: (state, { payload }) => {
+            state.arrowVisibility.rightArrowVisibility = payload;
         },
         setWindowWidth: (state, { payload: windowWidth }) => {
             state.windowWidth = windowWidth;
         },
-        setNextIndex: state => {
-            if (state.index <= 8) {
-                state.index += 1;
-            };
-        },
-        setPrevIndex: state => {
-            if (state.index >= 1) {
-                state.index -= 1;
+        setIndex: (state, { payload }) => {
+            if (payload === "right") {
+                if (state.windowWidth > 960) {
+                    if (state.index <= 6) {
+                        state.index += 1;
+                    };
+                } else if (state.windowWidth < 960 && state.windowWidth > 600) {
+                    if (state.index <= 7) {
+                        state.index += 1;
+                    };
+                } else {
+                    if (state.index <= 8) {
+                        state.index += 1;
+                    };
+                };
+            } else if (payload === "left") {
+                if (state.index >= 1) {
+                    state.index -= 1;
+                };
             };
         },
         fetchGetPopularProducts: state => {
@@ -65,8 +70,7 @@ export const {
     fetchGetPopularProducts,
     fetchPopularProductsSuccess,
     fetchPopularProductsError,
-    setNextIndex,
-    setPrevIndex,
+    setIndex,
     setWindowWidth,
     setLeftArrowVisibility,
     setRightArrowVisibility,
@@ -79,8 +83,8 @@ export const selectPopularProducts = state => selectProductsState(state).popular
 export const selectArePopularProductsLoading = state => selectProductsState(state).loading;
 export const selectIndex = state => selectProductsState(state).index;
 export const selectWindowWidth = state => selectProductsState(state).windowWidth;
-export const selectLeftArrowVisibility = state => selectProductsState(state).leftArrowVisibility;
-export const selectRightArrowVisibility = state => selectProductsState(state).rightArrowVisibility;
+export const selectLeftArrowVisibility = state => selectProductsState(state).arrowVisibility.leftArrowVisibility;
+export const selectRightArrowVisibility = state => selectProductsState(state).arrowVisibility.rightArrowVisibility;
 export const selectTouchPointX = state => selectProductsState(state).touchPoints.startX;
 export const selectTouchPointY = state => selectProductsState(state).touchPoints.startY;
 
