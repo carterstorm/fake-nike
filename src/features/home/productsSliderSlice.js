@@ -67,6 +67,8 @@ export const {
     fetchPopularProductsSuccess,
     fetchPopularProductsError,
     setIndex,
+    setNextIndex,
+    setPrevIndex,
     setWindowWidth,
     setLeftArrowVisibility,
     setRightArrowVisibility,

@@ -130,6 +130,7 @@ export const ProductsSlider = () => {
                                         <Image
                                             src={image}
                                             alt={description}
+                                            draggable={false}
                                         />
                                     </ImageContainer>
                                     <Description>
