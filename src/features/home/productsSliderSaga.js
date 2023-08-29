@@ -7,8 +7,9 @@ import {
     fetchPopularProductsSuccess,
     selectIndex,
     selectWindowWidth,
-    setIndex,
     setLeftArrowVisibility,
+    setNextIndex,
+    setPrevIndex,
     setRightArrowVisibility
 } from "./productsSliderSlice";
 
@@ -39,5 +40,6 @@ function* setArrowVisibilityHandler() {
 
 export function* popularProductsSaga() {
     yield takeEvery(fetchGetPopularProducts.type, fetchGetPopularProductsHandler);
-    yield takeEvery(setIndex.type, setArrowVisibilityHandler);
+    yield takeEvery(setPrevIndex.type, setArrowVisibilityHandler);
+    yield takeEvery(setNextIndex.type, setArrowVisibilityHandler);
 };

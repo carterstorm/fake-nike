@@ -11,18 +11,8 @@ const productsSliderSlice = createSlice({
             leftArrowVisibility: true,
             rightArrowVisibility: false,
         },
-        touchPoints: {
-            startX: 0,
-            startY: 0,
-        },
     },
     reducers: {
-        setTouchPointX: (state, { payload }) => {
-            state.touchPoints.startX = payload;
-        },
-        setTouchPointY: (state, { payload }) => {
-            state.touchPoints.startY = payload;
-        },
         setLeftArrowVisibility: (state, { payload }) => {
             state.arrowVisibility.leftArrowVisibility = payload;
         },
@@ -32,20 +22,19 @@ const productsSliderSlice = createSlice({
         setWindowWidth: (state, { payload: windowWidth }) => {
             state.windowWidth = windowWidth;
         },
-        setIndex: (state, { payload }) => {
+        setPrevIndex: state => {
+            if (state.index > 0) {
+                state.index -= 1;
+            };
+        },
+        setNextIndex: state => {
             const { windowWidth, index } = state;
 
-            if (payload === "right") {
-                if (index < 9) {
-                    if ((windowWidth > 960 && index <= 6) ||
-                        (windowWidth < 960 && windowWidth > 600 && index <= 7) ||
-                        (windowWidth <= 600 && index <= 8)) {
-                        state.index += 1;
-                    };
-                };
-            } else {
-                if (index > 0) {
-                    state.index -= 1;
+            if (index < 9) {
+                if ((windowWidth > 960 && index <= 6) ||
+                    (windowWidth < 960 && windowWidth > 600 && index <= 7) ||
+                    (windowWidth <= 600 && index <= 8)) {
+                    state.index += 1;
                 };
             };
         },
@@ -66,14 +55,11 @@ export const {
     fetchGetPopularProducts,
     fetchPopularProductsSuccess,
     fetchPopularProductsError,
-    setIndex,
     setNextIndex,
     setPrevIndex,
     setWindowWidth,
     setLeftArrowVisibility,
     setRightArrowVisibility,
-    setTouchPointX,
-    setTouchPointY,
 } = productsSliderSlice.actions;
 
 export const selectProductsState = state => state.productsSlider;
@@ -83,7 +69,5 @@ export const selectIndex = state => selectProductsState(state).index;
 export const selectWindowWidth = state => selectProductsState(state).windowWidth;
 export const selectLeftArrowVisibility = state => selectProductsState(state).arrowVisibility.leftArrowVisibility;
 export const selectRightArrowVisibility = state => selectProductsState(state).arrowVisibility.rightArrowVisibility;
-export const selectTouchPointX = state => selectProductsState(state).touchPoints.startX;
-export const selectTouchPointY = state => selectProductsState(state).touchPoints.startY;
 
 export default productsSliderSlice.reducer;
