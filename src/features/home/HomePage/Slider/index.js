@@ -1,4 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useTouchHandlers } from "../../../../hooks/useTouchHandlers";
 import { getView } from "../../../../getView";
 import { Arrow } from "../Arrow";
 
@@ -13,57 +15,30 @@ import {
     Text,
     Wrapper
 } from "./styled"
-import { useDispatch, useSelector } from "react-redux";
-import { fetchGetCategoriesData, selectCategoriesData, selectIndex, setNextIndex, setPrevIndex } from "../../categoriesSliderSlice";
+
+import {
+    fetchGetCategoriesData,
+    selectCategoriesData,
+    selectIndex,
+    setNextIndex,
+    setPrevIndex
+} from "../../categoriesSliderSlice";
 
 export const Slider = () => {
     const dispatch = useDispatch();
     const categoriesData = useSelector(selectCategoriesData);
     const index = useSelector(selectIndex);
     const categories = getView(categoriesData, index);
+    const [
+        handleTouchStart,
+        handleTouchEnd,
+        handleMouseDown,
+        handleMouseUp
+    ] = useTouchHandlers(setPrevIndex, setNextIndex);
 
     useEffect(() => {
         dispatch(fetchGetCategoriesData());
     }, [dispatch]);
-
-    const touchRef = useRef({
-        startX: 0,
-        startY: 0,
-    });
-
-    const handleTouchStart = (event) => {
-        touchRef.current.startX = event.touches[0].clientX;
-        touchRef.current.startY = event.touches[0].clientY;
-    };
-
-    const handleTouchEnd = (event) => {
-        const deltaX = event.changedTouches[0].clientX - touchRef.current.startX;
-        const deltaY = event.changedTouches[0].clientY - touchRef.current.startY;
-
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            if (deltaX > 0) {
-                dispatch(setPrevIndex());
-            } else {
-                dispatch(setNextIndex());
-            };
-        };
-    };
-
-    const handleMouseDown = (event) => {
-        touchRef.current.startX = event.clientX;
-    };
-
-    const handleMouseUp = (event) => {
-        const deltaX = event.clientX - touchRef.current.startX;
-
-        if (Math.abs(deltaX) > 50) {
-            if (deltaX > 0) {
-                dispatch(setPrevIndex());
-            } else {
-                dispatch(setNextIndex());
-            };
-        };
-    };
 
     return (
         <Wrapper>
@@ -80,8 +55,10 @@ export const Slider = () => {
                 onMouseUp={handleMouseUp}
             >
                 {categories.map(({ id, description, image, alt }, idx) => (
-                    <Item key={idx}>
-                        <ItemLink href="#">
+                    <Item
+                        key={idx}>
+                        <ItemLink
+                            href="#">
                             <ItemImage>
                                 <Image
                                     src={image}
