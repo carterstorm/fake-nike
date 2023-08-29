@@ -5,6 +5,8 @@ import { getView } from "../../../../getView";
 import { Arrow } from "../Arrow";
 
 import {
+    Heading,
+    HeadingContainer,
     Image,
     Item,
     ItemImage,
@@ -24,7 +26,7 @@ import {
     setPrevIndex
 } from "../../categoriesSliderSlice";
 
-export const Slider = () => {
+export const Slider = ({ heading }) => {
     const dispatch = useDispatch();
     const categoriesData = useSelector(selectCategoriesData);
     const index = useSelector(selectIndex);
@@ -41,45 +43,54 @@ export const Slider = () => {
     }, [dispatch]);
 
     return (
-        <Wrapper>
-            <Arrow
-                direction={"left"}
-                left={"30"}
-                onClick={() => dispatch(setPrevIndex())}
-            />
-            <Number>{index + 1}/{categoriesData.length}</Number>
-            <ItemsContainer
-                onTouchStart={handleTouchStart}
-                onTouchEnd={handleTouchEnd}
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-            >
-                {categories.map(({ id, description, image, alt }, idx) => (
-                    <Item
-                        key={idx}>
-                        <ItemLink
-                            href="#">
-                            <ItemImage>
-                                <Image
-                                    src={image}
-                                    alt={alt}
-                                    draggable={false}
-                                />
-                            </ItemImage>
-                            <ItemText>
-                                <Text>
-                                    {id === index + 1 ? description : null}
-                                </Text>
-                            </ItemText>
-                        </ItemLink>
-                    </Item>
-                ))}
-            </ItemsContainer>
-            <Arrow
-                direction={"right"}
-                right={"30"}
-                onClick={() => dispatch(setNextIndex())}
-            />
-        </Wrapper>
+        <>
+            {heading ? (
+                <HeadingContainer>
+                    <Heading>{heading}</Heading>
+                </HeadingContainer>
+            )
+                : null}
+            <Wrapper>
+                <Arrow
+                    direction={"left"}
+                    left={"30"}
+                    onClick={() => dispatch(setPrevIndex())}
+                />
+                <Number>{index + 1}/{categoriesData.length}</Number>
+                <ItemsContainer
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                    onMouseDown={handleMouseDown}
+                    onMouseUp={handleMouseUp}
+                >
+                    {categories.map(({ id, description, image, alt }, idx) => (
+                        <Item
+                            key={idx}>
+                            <ItemLink
+                                href="#">
+                                <ItemImage>
+                                    <Image
+                                        src={image}
+                                        alt={alt}
+                                        draggable={false}
+                                    />
+                                </ItemImage>
+                                <ItemText>
+                                    <Text>
+                                        {id === index + 1 ? description : null}
+                                    </Text>
+                                </ItemText>
+                            </ItemLink>
+                        </Item>
+                    ))}
+                </ItemsContainer>
+                <Arrow
+                    direction={"right"}
+                    right={"30"}
+                    onClick={() => dispatch(setNextIndex())}
+                />
+            </Wrapper>
+        </>
+
     );
 };

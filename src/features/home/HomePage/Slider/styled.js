@@ -13,6 +13,17 @@ export const Wrapper = styled.section`
     };
 `;
 
+export const HeadingContainer = styled.div`
+    width: 92vw;
+    margin: 60px auto 12px;
+`;
+
+export const Heading = styled.h4`
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0;
+`;
+
 export const Number = styled.span`
     position: absolute;
     top: 35px;
