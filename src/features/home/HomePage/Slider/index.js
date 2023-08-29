@@ -48,8 +48,7 @@ export const Slider = ({ heading }) => {
                 <HeadingContainer>
                     <Heading>{heading}</Heading>
                 </HeadingContainer>
-            )
-                : null}
+            ) : null}
             <Wrapper>
                 <Arrow
                     direction={"left"}

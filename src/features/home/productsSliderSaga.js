@@ -1,5 +1,5 @@
 import { call, delay, put, select, takeEvery } from "redux-saga/effects";
-import { getPopularProducts } from "./getPopularProducts";
+import { getPopularProducts } from "./getData";
 
 import {
     fetchGetPopularProducts,
