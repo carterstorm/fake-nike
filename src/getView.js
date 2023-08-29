@@ -11,5 +11,5 @@ export const getView = (data, index) => {
         data[(index + 3) % dataLength],
     ];
 
-    return elementsToDisplay;
+    return elementsToDisplay.map(element => ({ ...element }));
 };
