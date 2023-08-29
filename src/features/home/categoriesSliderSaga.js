@@ -13,6 +13,6 @@ function* fetchGetCategoriesDataHandler() {
     };
 };
 
-export function* categoriresSaga() {
+export function* categoriesSaga() {
     yield takeEvery(fetchGetCategoriesData.type, fetchGetCategoriesDataHandler);
 };
