@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useTouchHandlers } from "../../../../hooks/useTouchHandlers";
+import { useWindowWidth } from "../../../../hooks/useWindowWidth";
 import { Arrow } from "../Arrow";
 import {
     fetchGetPopularProducts,
@@ -40,6 +41,9 @@ export const ProductsSlider = () => {
     const index = useSelector(selectIndex);
     const leftArrowVisibility = useSelector(selectLeftArrowVisibility);
     const rightArrowVisibility = useSelector(selectRightArrowVisibility);
+
+    useWindowWidth(() => setWindowWidth(window.innerWidth));
+
     const [
         handleTouchStart,
         handleTouchEnd,
@@ -50,19 +54,6 @@ export const ProductsSlider = () => {
     useEffect(() => {
         dispatch(fetchGetPopularProducts());
     }, [dispatch]);
-
-    useEffect(() => {
-        const handleResize = () => {
-            dispatch(setWindowWidth(window.innerWidth));
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [dispatch]);
-
 
     return (
         <Wrapper>
