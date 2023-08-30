@@ -27,7 +27,6 @@ function* fetchGetPopularProductsHandler() {
 function* setArrowVisibilityHandler() {
     const index = yield select(selectPopularProductsIndex);
     const windowWidth = yield select(selectPopularProductsWindowWidth);
-
     const showLeftArrow = index === 0;
     const showRightArrow =
         (windowWidth > 960 && index === 7) ||

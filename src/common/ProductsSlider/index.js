@@ -4,14 +4,6 @@ import { useTouchHandlers } from "../../hooks/useTouchHandlers";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { Arrow } from "../../features/home/HomePage/Arrow";
 import {
-    fetchGetPopularProducts,
-    selectArePopularProductsLoading,
-    selectPopularProducts,
-    selectPopularProductsIndex,
-    selectPopularProductsLeftArrowVisibility,
-    selectPopularProductsRightArrowVisibility,
-    setPopularProductsNextIndex,
-    setPopularProductsPrevIndex,
     setPopularProductsWindowWidth,
 } from "../../features/home/popularProductsSliderSlice";
 
@@ -34,13 +26,23 @@ import {
     Wrapper,
 } from "./styled";
 
-export const ProductsSlider = () => {
+export const ProductsSlider = ({
+    heading,
+    selectData,
+    selectAreProductsLoading,
+    selectIndex,
+    selectLeftArrowVisibility,
+    selectRightArrowVisibility,
+    setPrevIndex,
+    setNextIndex,
+    fetchData,
+}) => {
     const dispatch = useDispatch();
-    const popularProducts = useSelector(selectPopularProducts);
-    const arePopularProductsLoading = useSelector(selectArePopularProductsLoading);
-    const index = useSelector(selectPopularProductsIndex);
-    const leftArrowVisibility = useSelector(selectPopularProductsLeftArrowVisibility);
-    const rightArrowVisibility = useSelector(selectPopularProductsRightArrowVisibility);
+    const products = useSelector(selectData);
+    const areProductsLoading = useSelector(selectAreProductsLoading);
+    const index = useSelector(selectIndex);
+    const leftArrowVisibility = useSelector(selectLeftArrowVisibility);
+    const rightArrowVisibility = useSelector(selectRightArrowVisibility);
 
     useWindowWidth(() => setPopularProductsWindowWidth(window.innerWidth));
 
@@ -49,33 +51,33 @@ export const ProductsSlider = () => {
         handleTouchEnd,
         handleMouseDown,
         handleMouseUp
-    ] = useTouchHandlers(setPopularProductsPrevIndex, setPopularProductsNextIndex);
+    ] = useTouchHandlers(setPrevIndex, setNextIndex);
 
     useEffect(() => {
-        dispatch(fetchGetPopularProducts());
-    }, [dispatch]);
+        dispatch(fetchData());
+    }, [dispatch, fetchData]);
 
     return (
         <Wrapper>
             <Header>
-                <Heading>Popularne w tym tygodniu</Heading>
+                <Heading>{heading}</Heading>
                 <Buttons>
                     <Arrow
                         direction="left"
                         left={"0"}
-                        onClick={() => dispatch(setPopularProductsPrevIndex())}
+                        onClick={() => dispatch(setPrevIndex())}
                         disabled={leftArrowVisibility}
                     />
                     <Arrow
                         direction="right"
                         right={"0"}
-                        onClick={() => dispatch(setPopularProductsNextIndex())}
+                        onClick={() => dispatch(setNextIndex())}
                         disabled={rightArrowVisibility}
                     />
                 </Buttons>
             </Header>
             <List>
-                {arePopularProductsLoading ? "Loading" : (
+                {areProductsLoading ? "Loading" : (
                     <SliderTrack
                         index={index}
                         onTouchStart={handleTouchStart}
@@ -83,9 +85,11 @@ export const ProductsSlider = () => {
                         onMouseDown={handleMouseDown}
                         onMouseUp={handleMouseUp}
                     >
-                        {popularProducts.map(({ id, description, category, image, price }) => (
-                            <Item key={id}>
-                                <Link href="#">
+                        {products.map(({ id, description, category, image, price }) => (
+                            <Item
+                                key={id}>
+                                <Link
+                                    href="#">
                                     <ImageContainer>
                                         <Image
                                             src={image}

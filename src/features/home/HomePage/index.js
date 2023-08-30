@@ -11,6 +11,16 @@ import {
     setNextIndex,
     setPrevIndex
 } from "../categoriesSlice";
+import {
+    fetchGetPopularProducts,
+    selectArePopularProductsLoading,
+    selectPopularProducts,
+    selectPopularProductsIndex,
+    selectPopularProductsLeftArrowVisibility,
+    selectPopularProductsRightArrowVisibility,
+    setPopularProductsNextIndex,
+    setPopularProductsPrevIndex
+} from "../popularProductsSliderSlice";
 
 export const HomePage = () => {
     return (
@@ -26,7 +36,15 @@ export const HomePage = () => {
                 fetchData={fetchGetCategoriesData}
             />
             <ProductsSlider
-
+                heading={"Popularne w tym tygodniu"}
+                selectData={selectPopularProducts}
+                selectAreProductsLoading={selectArePopularProductsLoading}
+                selectIndex={selectPopularProductsIndex}
+                selectLeftArrowVisibility={selectPopularProductsLeftArrowVisibility}
+                selectRightArrowVisibility={selectPopularProductsRightArrowVisibility}
+                setPrevIndex={setPopularProductsPrevIndex}
+                setNextIndex={setPopularProductsNextIndex}
+                fetchData={fetchGetPopularProducts}
             />
         </Main>
     );
