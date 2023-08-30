@@ -1,6 +1,6 @@
 import { Announcment } from "../../../common/Announcment";
 import { ImagesSlider } from "./ImagesSlider";
-import { ProductsSlider } from "./ProductsSlider";
+import { ProductsSlider } from "../../../common/ProductsSlider";
 import { Slider } from "../../../common/Slider";
 import { ThematicSection } from "./ThematicSection";
 import { Main } from "./styled";
@@ -25,7 +25,9 @@ export const HomePage = () => {
                 setNextIndex={setNextIndex}
                 fetchData={fetchGetCategoriesData}
             />
-            <ProductsSlider />
+            <ProductsSlider
+
+            />
         </Main>
     );
 };

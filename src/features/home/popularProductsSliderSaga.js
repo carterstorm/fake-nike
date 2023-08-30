@@ -5,12 +5,12 @@ import {
     fetchGetPopularProducts,
     fetchPopularProductsError,
     fetchPopularProductsSuccess,
-    selectIndex,
-    selectWindowWidth,
-    setLeftArrowVisibility,
-    setNextIndex,
-    setPrevIndex,
-    setRightArrowVisibility
+    selectPopularProductsIndex,
+    selectPopularProductsWindowWidth,
+    setPopularProductsLeftArrowVisibility,
+    setPopularProductsNextIndex,
+    setPopularProductsPrevIndex,
+    setPopularProductsRightArrowVisibility,
 } from "./popularProductsSliderSlice";
 
 function* fetchGetPopularProductsHandler() {
@@ -25,8 +25,8 @@ function* fetchGetPopularProductsHandler() {
 };
 
 function* setArrowVisibilityHandler() {
-    const index = yield select(selectIndex);
-    const windowWidth = yield select(selectWindowWidth);
+    const index = yield select(selectPopularProductsIndex);
+    const windowWidth = yield select(selectPopularProductsWindowWidth);
 
     const showLeftArrow = index === 0;
     const showRightArrow =
@@ -34,12 +34,12 @@ function* setArrowVisibilityHandler() {
         (windowWidth < 960 && windowWidth > 600 && index === 8) ||
         (windowWidth <= 600 && index === 9);
 
-    yield put(setLeftArrowVisibility(showLeftArrow));
-    yield put(setRightArrowVisibility(showRightArrow));
+    yield put(setPopularProductsLeftArrowVisibility(showLeftArrow));
+    yield put(setPopularProductsRightArrowVisibility(showRightArrow));
 };
 
 export function* popularProductsSaga() {
     yield takeEvery(fetchGetPopularProducts.type, fetchGetPopularProductsHandler);
-    yield takeEvery(setPrevIndex.type, setArrowVisibilityHandler);
-    yield takeEvery(setNextIndex.type, setArrowVisibilityHandler);
+    yield takeEvery(setPopularProductsPrevIndex.type, setArrowVisibilityHandler);
+    yield takeEvery(setPopularProductsNextIndex.type, setArrowVisibilityHandler);
 };

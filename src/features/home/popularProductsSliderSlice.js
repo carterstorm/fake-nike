@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const productsSliderSlice = createSlice({
-    name: 'productsSlider',
+const popularProductsSliderSlice = createSlice({
+    name: 'popularProductsSlider',
     initialState: {
         popularProducts: [],
         loading: null,
@@ -13,21 +13,21 @@ const productsSliderSlice = createSlice({
         },
     },
     reducers: {
-        setLeftArrowVisibility: (state, { payload }) => {
+        setPopularProductsLeftArrowVisibility: (state, { payload }) => {
             state.arrowVisibility.leftArrowVisibility = payload;
         },
-        setRightArrowVisibility: (state, { payload }) => {
+        setPopularProductsRightArrowVisibility: (state, { payload }) => {
             state.arrowVisibility.rightArrowVisibility = payload;
         },
-        setWindowWidth: (state, { payload: windowWidth }) => {
+        setPopularProductsWindowWidth: (state, { payload: windowWidth }) => {
             state.windowWidth = windowWidth;
         },
-        setPrevIndex: state => {
+        setPopularProductsPrevIndex: state => {
             if (state.index > 0) {
                 state.index -= 1;
             };
         },
-        setNextIndex: state => {
+        setPopularProductsNextIndex: state => {
             const { windowWidth, index } = state;
 
             if (index < 9) {
@@ -55,19 +55,19 @@ export const {
     fetchGetPopularProducts,
     fetchPopularProductsSuccess,
     fetchPopularProductsError,
-    setNextIndex,
-    setPrevIndex,
-    setWindowWidth,
-    setLeftArrowVisibility,
-    setRightArrowVisibility,
-} = productsSliderSlice.actions;
+    setPopularProductsNextIndex,
+    setPopularProductsPrevIndex,
+    setPopularProductsWindowWidth,
+    setPopularProductsLeftArrowVisibility,
+    setPopularProductsRightArrowVisibility,
+} = popularProductsSliderSlice.actions;
 
-export const selectProductsState = state => state.productsSlider;
-export const selectPopularProducts = state => selectProductsState(state).popularProducts;
-export const selectArePopularProductsLoading = state => selectProductsState(state).loading;
-export const selectIndex = state => selectProductsState(state).index;
-export const selectWindowWidth = state => selectProductsState(state).windowWidth;
-export const selectLeftArrowVisibility = state => selectProductsState(state).arrowVisibility.leftArrowVisibility;
-export const selectRightArrowVisibility = state => selectProductsState(state).arrowVisibility.rightArrowVisibility;
+export const selectPopularProductsState = state => state.popularProductsSlider;
+export const selectPopularProducts = state => selectPopularProductsState(state).popularProducts;
+export const selectArePopularProductsLoading = state => selectPopularProductsState(state).loading;
+export const selectPopularProductsIndex = state => selectPopularProductsState(state).index;
+export const selectPopularProductsWindowWidth = state => selectPopularProductsState(state).windowWidth;
+export const selectPopularProductsLeftArrowVisibility = state => selectPopularProductsState(state).arrowVisibility.leftArrowVisibility;
+export const selectPopularProductsRightArrowVisibility = state => selectPopularProductsState(state).arrowVisibility.rightArrowVisibility;
 
-export default productsSliderSlice.reducer;
+export default popularProductsSliderSlice.reducer;

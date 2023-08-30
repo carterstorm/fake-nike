@@ -1,19 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useTouchHandlers } from "../../../../hooks/useTouchHandlers";
-import { useWindowWidth } from "../../../../hooks/useWindowWidth";
-import { Arrow } from "../Arrow";
+import { useTouchHandlers } from "../../hooks/useTouchHandlers";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { Arrow } from "../../features/home/HomePage/Arrow";
 import {
     fetchGetPopularProducts,
     selectArePopularProductsLoading,
-    selectIndex,
-    selectLeftArrowVisibility,
     selectPopularProducts,
-    selectRightArrowVisibility,
-    setNextIndex,
-    setPrevIndex,
-    setWindowWidth
-} from "../../popularProductsSliderSlice";
+    selectPopularProductsIndex,
+    selectPopularProductsLeftArrowVisibility,
+    selectPopularProductsRightArrowVisibility,
+    setPopularProductsNextIndex,
+    setPopularProductsPrevIndex,
+    setPopularProductsWindowWidth,
+} from "../../features/home/popularProductsSliderSlice";
 
 import {
     Buttons,
@@ -38,18 +38,18 @@ export const ProductsSlider = () => {
     const dispatch = useDispatch();
     const popularProducts = useSelector(selectPopularProducts);
     const arePopularProductsLoading = useSelector(selectArePopularProductsLoading);
-    const index = useSelector(selectIndex);
-    const leftArrowVisibility = useSelector(selectLeftArrowVisibility);
-    const rightArrowVisibility = useSelector(selectRightArrowVisibility);
+    const index = useSelector(selectPopularProductsIndex);
+    const leftArrowVisibility = useSelector(selectPopularProductsLeftArrowVisibility);
+    const rightArrowVisibility = useSelector(selectPopularProductsRightArrowVisibility);
 
-    useWindowWidth(() => setWindowWidth(window.innerWidth));
+    useWindowWidth(() => setPopularProductsWindowWidth(window.innerWidth));
 
     const [
         handleTouchStart,
         handleTouchEnd,
         handleMouseDown,
         handleMouseUp
-    ] = useTouchHandlers(setPrevIndex, setNextIndex);
+    ] = useTouchHandlers(setPopularProductsPrevIndex, setPopularProductsNextIndex);
 
     useEffect(() => {
         dispatch(fetchGetPopularProducts());
@@ -63,13 +63,13 @@ export const ProductsSlider = () => {
                     <Arrow
                         direction="left"
                         left={"0"}
-                        onClick={() => dispatch(setPrevIndex())}
+                        onClick={() => dispatch(setPopularProductsPrevIndex())}
                         disabled={leftArrowVisibility}
                     />
                     <Arrow
                         direction="right"
                         right={"0"}
-                        onClick={() => dispatch(setNextIndex())}
+                        onClick={() => dispatch(setPopularProductsNextIndex())}
                         disabled={rightArrowVisibility}
                     />
                 </Buttons>
