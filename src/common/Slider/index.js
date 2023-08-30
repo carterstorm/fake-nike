@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useTouchHandlers } from "../../../../hooks/useTouchHandlers";
-import { getView } from "../../../../getView";
-import { Arrow } from "../Arrow";
+import { useTouchHandlers } from "../../hooks/useTouchHandlers";
+import { getView } from "../../getView";
+import { Arrow } from "../../features/home/HomePage/Arrow";
 
 import {
     Heading,
@@ -18,19 +18,11 @@ import {
     Wrapper
 } from "./styled"
 
-import {
-    fetchGetCategoriesData,
-    selectCategoriesData,
-    selectIndex,
-    setNextIndex,
-    setPrevIndex
-} from "../../categoriesSliderSlice";
-
-export const Slider = ({ heading }) => {
+export const Slider = ({ heading, selectData, selectIndex, setPrevIndex, setNextIndex, fetchData }) => {
     const dispatch = useDispatch();
-    const categoriesData = useSelector(selectCategoriesData);
+    const data = useSelector(selectData);
     const index = useSelector(selectIndex);
-    const categories = getView(categoriesData, index);
+    const formattedData = getView(data, index);
     const [
         handleTouchStart,
         handleTouchEnd,
@@ -39,8 +31,8 @@ export const Slider = ({ heading }) => {
     ] = useTouchHandlers(setPrevIndex, setNextIndex);
 
     useEffect(() => {
-        dispatch(fetchGetCategoriesData());
-    }, [dispatch]);
+        dispatch(fetchData());
+    }, [dispatch, fetchData]);
 
     return (
         <>
@@ -55,14 +47,14 @@ export const Slider = ({ heading }) => {
                     left={"30"}
                     onClick={() => dispatch(setPrevIndex())}
                 />
-                <Number>{index + 1}/{categoriesData.length}</Number>
+                <Number>{index + 1}/{data.length}</Number>
                 <ItemsContainer
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
                     onMouseDown={handleMouseDown}
                     onMouseUp={handleMouseUp}
                 >
-                    {categories.map(({ id, description, image, alt }, idx) => (
+                    {formattedData.map(({ id, description, image, alt }, idx) => (
                         <Item
                             key={idx}>
                             <ItemLink
@@ -90,6 +82,5 @@ export const Slider = ({ heading }) => {
                 />
             </Wrapper>
         </>
-
     );
 };

@@ -31,7 +31,7 @@ export const Buttons = styled.div`
 export const List = styled.ul`
     list-style: none;
     margin: 0;
-    padding: 12px 0 60px;
+    padding: 12px 0 40px;
     overflow-x: hidden;
 `;
 

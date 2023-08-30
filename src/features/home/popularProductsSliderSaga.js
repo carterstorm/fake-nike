@@ -1,6 +1,10 @@
 import { call, delay, put, takeEvery } from "redux-saga/effects";
-import { fetchGetCategoriesData, fetchGetCategoriesDataError, fetchGetCategoriesDataSuccess } from "./categoriesSliderSlice";
 import { getCategoriesData } from "./getData";
+import {
+    fetchGetCategoriesData,
+    fetchGetCategoriesDataError,
+    fetchGetCategoriesDataSuccess
+} from "./popularProductsSliderSlice";
 
 function* fetchGetCategoriesDataHandler() {
     try {

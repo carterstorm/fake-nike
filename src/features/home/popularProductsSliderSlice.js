@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const categoriesSliderSlice = createSlice({
-    name: "categoriesSlice",
+export const popularProductsSlider = createSlice({
+    name: "popularProductsSlider",
     initialState: {
         categoriesData: [],
         index: 0,
@@ -41,10 +41,10 @@ export const {
     fetchGetCategoriesData,
     fetchGetCategoriesDataSuccess,
     fetchGetCategoriesDataError,
-} = categoriesSliderSlice.actions;
+} = popularProductsSlider.actions;
 
-export const selectCategoriesState = state => state.categoriesSlice;
-export const selectCategoriesData = state => selectCategoriesState(state).categoriesData;
-export const selectIndex = state => selectCategoriesState(state).index;
+export const selectPopularProductsState = state => state.popularProductsSlider;
+export const selectCategoriesData = state => selectPopularProductsState(state).categoriesData;
+export const selectIndex = state => selectPopularProductsState(state).index;
 
-export default categoriesSliderSlice.reducer;
+export default popularProductsSlider.reducer;

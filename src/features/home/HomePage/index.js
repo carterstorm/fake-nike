@@ -1,9 +1,16 @@
 import { Announcment } from "../../../common/Announcment";
 import { ImagesSlider } from "./ImagesSlider";
 import { ProductsSlider } from "./ProductsSlider";
-import { Slider } from "./Slider";
+import { Slider } from "../../../common/Slider";
 import { ThematicSection } from "./ThematicSection";
 import { Main } from "./styled";
+import {
+    fetchGetCategoriesData,
+    selectCategoriesData,
+    selectIndex,
+    setNextIndex,
+    setPrevIndex
+} from "../popularProductsSliderSlice";
 
 export const HomePage = () => {
     return (
@@ -11,7 +18,13 @@ export const HomePage = () => {
             <Announcment />
             <ThematicSection />
             <ImagesSlider />
-            <Slider />
+            <Slider
+                selectData={selectCategoriesData}
+                selectIndex={selectIndex}
+                setPrevIndex={setPrevIndex}
+                setNextIndex={setNextIndex}
+                fetchData={fetchGetCategoriesData}
+            />
             <ProductsSlider />
         </Main>
     );

@@ -15,7 +15,7 @@ export const Wrapper = styled.section`
 
 export const HeadingContainer = styled.div`
     width: 92vw;
-    margin: 60px auto 12px;
+    margin: 60px auto 30px;
 `;
 
 export const Heading = styled.h4`
