@@ -13,7 +13,7 @@ import {
     setNextIndex,
     setPrevIndex,
     setWindowWidth
-} from "../../productsSliderSlice";
+} from "../../popularProductsSliderSlice";
 
 import {
     Buttons,

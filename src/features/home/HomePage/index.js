@@ -10,7 +10,7 @@ import {
     selectIndex,
     setNextIndex,
     setPrevIndex
-} from "../popularProductsSliderSlice";
+} from "../categoriesSlice";
 
 export const HomePage = () => {
     return (

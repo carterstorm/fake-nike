@@ -1,22 +1,45 @@
-import { call, delay, put, takeEvery } from "redux-saga/effects";
-import { getCategoriesData } from "./getData";
+import { call, delay, put, select, takeEvery } from "redux-saga/effects";
+import { getPopularProducts } from "./getData";
+
 import {
-    fetchGetCategoriesData,
-    fetchGetCategoriesDataError,
-    fetchGetCategoriesDataSuccess
+    fetchGetPopularProducts,
+    fetchPopularProductsError,
+    fetchPopularProductsSuccess,
+    selectIndex,
+    selectWindowWidth,
+    setLeftArrowVisibility,
+    setNextIndex,
+    setPrevIndex,
+    setRightArrowVisibility
 } from "./popularProductsSliderSlice";
 
-function* fetchGetCategoriesDataHandler() {
+function* fetchGetPopularProductsHandler() {
     try {
         yield delay(1000);
-        const categoriesData = yield call(getCategoriesData);
-        yield put(fetchGetCategoriesDataSuccess(categoriesData));
+        const popularProducts = yield call(getPopularProducts);
+        yield put(fetchPopularProductsSuccess(popularProducts));
     } catch {
         console.error("Coś poszło nie tak...");
-        yield put(fetchGetCategoriesDataError());
+        yield put(fetchPopularProductsError());
     };
 };
 
-export function* categoriesSaga() {
-    yield takeEvery(fetchGetCategoriesData.type, fetchGetCategoriesDataHandler);
+function* setArrowVisibilityHandler() {
+    const index = yield select(selectIndex);
+    const windowWidth = yield select(selectWindowWidth);
+
+    const showLeftArrow = index === 0;
+    const showRightArrow =
+        (windowWidth > 960 && index === 7) ||
+        (windowWidth < 960 && windowWidth > 600 && index === 8) ||
+        (windowWidth <= 600 && index === 9);
+
+    yield put(setLeftArrowVisibility(showLeftArrow));
+    yield put(setRightArrowVisibility(showRightArrow));
+};
+
+export function* popularProductsSaga() {
+    yield takeEvery(fetchGetPopularProducts.type, fetchGetPopularProductsHandler);
+    yield takeEvery(setPrevIndex.type, setArrowVisibilityHandler);
+    yield takeEvery(setNextIndex.type, setArrowVisibilityHandler);
 };
