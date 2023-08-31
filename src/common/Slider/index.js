@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useGetData } from "../../hooks/useGetData";
 import { useTouchHandlers } from "../../hooks/useTouchHandlers";
+import { useIndex } from "../../hooks/useIndex";
 import { getView } from "../../getView";
 import { Arrow } from "../../features/home/HomePage/Arrow";
 
@@ -18,21 +18,17 @@ import {
     Wrapper
 } from "./styled"
 
-export const Slider = ({ heading, selectData, selectIndex, setPrevIndex, setNextIndex, fetchData }) => {
-    const dispatch = useDispatch();
-    const data = useSelector(selectData);
-    const index = useSelector(selectIndex);
-    const formattedData = getView(data, index);
+export const Slider = ({ heading, fetchLink }) => {
+    const { data } = useGetData(fetchLink, 1);
+    const [index, setPrevIndex, setNextIndex] = useIndex(data);
+    const formattedData = getView(data || [], index);
+
     const [
         handleTouchStart,
         handleTouchEnd,
         handleMouseDown,
         handleMouseUp
     ] = useTouchHandlers(setPrevIndex, setNextIndex);
-
-    useEffect(() => {
-        dispatch(fetchData());
-    }, [dispatch, fetchData]);
 
     return (
         <>
@@ -45,9 +41,9 @@ export const Slider = ({ heading, selectData, selectIndex, setPrevIndex, setNext
                 <Arrow
                     direction={"left"}
                     left={"30"}
-                    onClick={() => dispatch(setPrevIndex())}
+                    onClick={() => setPrevIndex()}
                 />
-                <Number>{index + 1}/{data.length}</Number>
+                <Number>{index + 1}/{formattedData.length}</Number>
                 <ItemsContainer
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
@@ -78,7 +74,7 @@ export const Slider = ({ heading, selectData, selectIndex, setPrevIndex, setNext
                 <Arrow
                     direction={"right"}
                     right={"30"}
-                    onClick={() => dispatch(setNextIndex())}
+                    onClick={() => setNextIndex()}
                 />
             </Wrapper>
         </>

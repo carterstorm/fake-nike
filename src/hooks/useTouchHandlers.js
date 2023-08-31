@@ -1,8 +1,6 @@
-import { useDispatch } from "react-redux";
 import { useRef } from "react";
 
 export const useTouchHandlers = (setPrevIndex, setNextIndex) => {
-    const dispatch = useDispatch();
     const touchRef = useRef({
         startX: 0,
         startY: 0,
@@ -19,9 +17,9 @@ export const useTouchHandlers = (setPrevIndex, setNextIndex) => {
 
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
             if (deltaX > 0) {
-                dispatch(setPrevIndex());
+                setPrevIndex();
             } else {
-                dispatch(setNextIndex());
+                setNextIndex();
             };
         };
     };
@@ -35,9 +33,9 @@ export const useTouchHandlers = (setPrevIndex, setNextIndex) => {
 
         if (Math.abs(deltaX) > 50) {
             if (deltaX > 0) {
-                dispatch(setPrevIndex());
+                setPrevIndex();
             } else {
-                dispatch(setNextIndex());
+                setNextIndex();
             };
         };
     };

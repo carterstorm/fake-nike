@@ -1,17 +1,10 @@
 import { Announcment } from "../../../common/Announcment";
 import { ImagesSlider } from "../../../common/ImagesSlider";
 import { ProductsSlider } from "../../../common/ProductsSlider";
-import { Slider } from "../../../common/Slider";
 import { ThematicSection } from "../../../common/ThematicSection";
 import { homeImagesSliderData } from "../../../getData";
 import { Main } from "./styled";
-import {
-    fetchGetCategoriesData,
-    selectCategoriesData,
-    selectIndex,
-    setNextIndex,
-    setPrevIndex
-} from "../categoriesSlice";
+
 import {
     fetchGetPopularProducts,
     selectArePopularProductsLoading,
@@ -23,6 +16,7 @@ import {
     setPopularProductsPrevIndex,
     setPopularProductsWindowWidth
 } from "../popularProductsSliderSlice";
+import { Slider } from "../../../common/Slider";
 
 export const HomePage = () => {
     return (
@@ -38,11 +32,7 @@ export const HomePage = () => {
                 images={homeImagesSliderData}
             />
             <Slider
-                selectData={selectCategoriesData}
-                selectIndex={selectIndex}
-                setPrevIndex={setPrevIndex}
-                setNextIndex={setNextIndex}
-                fetchData={fetchGetCategoriesData}
+                fetchLink={"./categoriesData.json"}
             />
             <ProductsSlider
                 heading="Popularne w tym tygodniu"
@@ -56,6 +46,7 @@ export const HomePage = () => {
                 fetchData={fetchGetPopularProducts}
                 selectWindowWidth={setPopularProductsWindowWidth}
             />
+
         </Main>
     );
 };
