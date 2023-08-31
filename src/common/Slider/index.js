@@ -1,6 +1,6 @@
 import { useGetData } from "../../hooks/useGetData";
 import { useTouchHandlers } from "../../hooks/useTouchHandlers";
-import { useIndex } from "../../hooks/useIndex";
+import { useSliderIndex } from "../../hooks/useSliderIndex";
 import { getView } from "../../getView";
 import { Arrow } from "../../features/home/HomePage/Arrow";
 
@@ -20,7 +20,7 @@ import {
 
 export const Slider = ({ heading, fetchLink }) => {
     const { data } = useGetData(fetchLink, 1);
-    const [index, setPrevIndex, setNextIndex] = useIndex(data);
+    const [index, setPrevIndex, setNextIndex] = useSliderIndex(data);
     const formattedData = getView(data || [], index);
 
     const [
