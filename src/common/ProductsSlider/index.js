@@ -3,9 +3,6 @@ import { useEffect } from "react";
 import { useTouchHandlers } from "../../hooks/useTouchHandlers";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { Arrow } from "../../features/home/HomePage/Arrow";
-import {
-    setPopularProductsWindowWidth,
-} from "../../features/home/popularProductsSliderSlice";
 
 import {
     Buttons,
@@ -36,6 +33,7 @@ export const ProductsSlider = ({
     setPrevIndex,
     setNextIndex,
     fetchData,
+    selectWindowWidth
 }) => {
     const dispatch = useDispatch();
     const products = useSelector(selectData);
@@ -44,7 +42,7 @@ export const ProductsSlider = ({
     const leftArrowVisibility = useSelector(selectLeftArrowVisibility);
     const rightArrowVisibility = useSelector(selectRightArrowVisibility);
 
-    useWindowWidth(() => setPopularProductsWindowWidth(window.innerWidth));
+    useWindowWidth(() => selectWindowWidth(window.innerWidth));
 
     const [
         handleTouchStart,

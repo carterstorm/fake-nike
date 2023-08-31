@@ -19,7 +19,8 @@ import {
     selectPopularProductsLeftArrowVisibility,
     selectPopularProductsRightArrowVisibility,
     setPopularProductsNextIndex,
-    setPopularProductsPrevIndex
+    setPopularProductsPrevIndex,
+    setPopularProductsWindowWidth
 } from "../popularProductsSliderSlice";
 
 export const HomePage = () => {
@@ -45,6 +46,7 @@ export const HomePage = () => {
                 setPrevIndex={setPopularProductsPrevIndex}
                 setNextIndex={setPopularProductsNextIndex}
                 fetchData={fetchGetPopularProducts}
+                selectWindowWidth={setPopularProductsWindowWidth}
             />
         </Main>
     );
