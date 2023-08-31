@@ -1,9 +1,5 @@
-import homePageImage1 from "../../../../assets/images/homepage_image_1.jpg";
-import homePageImage2 from "../../../../assets/images/homepage_image_2.jpg";
-import homePageImage3 from "../../../../assets/images/homepage_image_3.jpg";
-
 import { useState } from "react";
-import { Arrow } from "../Arrow";
+import { Arrow } from "../../features/home/HomePage/Arrow";
 
 import {
     Image,
@@ -12,20 +8,15 @@ import {
     Wrapper
 } from "./styled";
 
-export const imagesSliderData = [
-    { id: 1, src: homePageImage1, alt: "Shoes - Nike Air Force 1" },
-    { id: 2, src: homePageImage2, alt: "Women playing soccer" },
-    { id: 3, src: homePageImage3, alt: "Running man" },
-];
-
-export const ImagesSlider = () => {
+export const ImagesSlider = ({ images }) => {
     const [slideIndex, setSlideIndex] = useState(0);
+    const imagesLength = images.length;
 
     const handleClick = (direction) => {
         if (direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : imagesSliderData.length - 1);
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : imagesLength - 1);
         } else {
-            setSlideIndex(slideIndex < imagesSliderData.length - 1 ? slideIndex + 1 : 0);
+            setSlideIndex(slideIndex < imagesLength - 1 ? slideIndex + 1 : 0);
         };
     };
 
@@ -37,7 +28,7 @@ export const ImagesSlider = () => {
                 onClick={() => handleClick("left")}
             />
             <ImagesContainer>
-                {imagesSliderData.map(({ id, src, alt }) => (
+                {images.map(({ id, src, alt }) => (
                     <ImageContainer
                         slideIndex={slideIndex}
                         key={id}

@@ -1,8 +1,9 @@
 import { Announcment } from "../../../common/Announcment";
-import { ImagesSlider } from "./ImagesSlider";
+import { ImagesSlider } from "../../../common/ImagesSlider";
 import { ProductsSlider } from "../../../common/ProductsSlider";
 import { Slider } from "../../../common/Slider";
 import { ThematicSection } from "../../../common/ThematicSection";
+import { homeImagesSliderData } from "../../../getData";
 import { Main } from "./styled";
 import {
     fetchGetCategoriesData,
@@ -33,7 +34,9 @@ export const HomePage = () => {
                 firstButtonText="Kup produkty dla dzieci"
                 secoundButtonText="Przeglądaj wszystko"
             />
-            <ImagesSlider />
+            <ImagesSlider
+                images={homeImagesSliderData}
+            />
             <Slider
                 selectData={selectCategoriesData}
                 selectIndex={selectIndex}
