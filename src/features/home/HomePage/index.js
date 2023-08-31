@@ -2,7 +2,7 @@ import { Announcment } from "../../../common/Announcment";
 import { ImagesSlider } from "./ImagesSlider";
 import { ProductsSlider } from "../../../common/ProductsSlider";
 import { Slider } from "../../../common/Slider";
-import { ThematicSection } from "./ThematicSection";
+import { ThematicSection } from "../../../common/ThematicSection";
 import { Main } from "./styled";
 import {
     fetchGetCategoriesData,
@@ -27,7 +27,12 @@ export const HomePage = () => {
     return (
         <Main>
             <Announcment />
-            <ThematicSection />
+            <ThematicSection
+                heading="Razem na starcie"
+                subtitle="Niezawodne produkty na mocny powrót do szkoły."
+                firstButtonText="Kup produkty dla dzieci"
+                secoundButtonText="Przeglądaj wszystko"
+            />
             <ImagesSlider />
             <Slider
                 selectData={selectCategoriesData}
@@ -37,7 +42,7 @@ export const HomePage = () => {
                 fetchData={fetchGetCategoriesData}
             />
             <ProductsSlider
-                heading={"Popularne w tym tygodniu"}
+                heading="Popularne w tym tygodniu"
                 selectData={selectPopularProducts}
                 selectAreProductsLoading={selectArePopularProductsLoading}
                 selectIndex={selectPopularProductsIndex}
