@@ -6,6 +6,7 @@ import {
     fetchGetPopularProducts,
     fetchPopularProductsError,
     fetchPopularProductsSuccess,
+    selectPopularProducts,
     selectPopularProductsIndex,
     selectPopularProductsWindowWidth,
     setPopularProductsLeftArrowVisibility,
@@ -28,13 +29,15 @@ function* fetchGetPopularProductsHandler() {
 function* setArrowVisibilityHandler() {
     const index = yield select(selectPopularProductsIndex);
     const windowWidth = yield select(selectPopularProductsWindowWidth);
+    const popularProducts = yield select(selectPopularProducts);
+    const popularProductsLength = popularProducts.length;
     const { mobile, tablet } = theme.media;
 
     const showLeftArrow = index === 0;
     const showRightArrow =
-        (windowWidth > tablet && index === 7) ||
-        (windowWidth < tablet && windowWidth > mobile && index === 8) ||
-        (windowWidth <= mobile && index === 9);
+        (windowWidth > tablet && index === popularProductsLength - 3) ||
+        (windowWidth < tablet && windowWidth > mobile && index === popularProductsLength - 2) ||
+        (windowWidth <= mobile && index === popularProductsLength - 1);
 
     yield put(setPopularProductsLeftArrowVisibility(showLeftArrow));
     yield put(setPopularProductsRightArrowVisibility(showRightArrow));

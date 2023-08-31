@@ -29,13 +29,14 @@ const popularProductsSliderSlice = createSlice({
             };
         },
         setPopularProductsNextIndex: state => {
-            const { windowWidth, index } = state;
+            const { windowWidth, index, popularProducts } = state;
             const { mobile, tablet } = theme.media;
+            const popularProductsLength = popularProducts.length;
 
             if (index < 9) {
-                if ((windowWidth > tablet && index <= 6) ||
-                    (windowWidth < tablet && windowWidth > mobile && index <= 7) ||
-                    (windowWidth <= mobile && index <= 8)) {
+                if ((windowWidth > tablet && index <= popularProductsLength - 4) ||
+                    (windowWidth < tablet && windowWidth > mobile && index <= popularProductsLength - 3) ||
+                    (windowWidth <= mobile && index <= popularProductsLength - 2)) {
                     state.index += 1;
                 };
             };
