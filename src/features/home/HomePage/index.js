@@ -1,22 +1,23 @@
 import { Announcment } from "../../../common/Announcment";
 import { ImagesSlider } from "../../../common/ImagesSlider";
-import { ProductsSlider } from "../../../common/ProductsSlider";
+// import { ProductsSlider } from "../../../common/ProductsSlider";
 import { ThematicSection } from "../../../common/ThematicSection";
 import { homeImagesSliderData } from "../../../getData";
 import { Main } from "./styled";
 
-import {
-    fetchGetPopularProducts,
-    selectArePopularProductsLoading,
-    selectPopularProducts,
-    selectPopularProductsIndex,
-    selectPopularProductsLeftArrowVisibility,
-    selectPopularProductsRightArrowVisibility,
-    setPopularProductsNextIndex,
-    setPopularProductsPrevIndex,
-    setPopularProductsWindowWidth
-} from "../popularProductsSliderSlice";
+// import {
+//     fetchGetPopularProducts,
+//     selectArePopularProductsLoading,
+//     selectPopularProducts,
+//     selectPopularProductsIndex,
+//     selectPopularProductsLeftArrowVisibility,
+//     selectPopularProductsRightArrowVisibility,
+//     setPopularProductsNextIndex,
+//     setPopularProductsPrevIndex,
+//     setPopularProductsWindowWidth
+// } from "../popularProductsSliderSlice";
 import { Slider } from "../../../common/Slider";
+import { ProductsSliderTest } from "../../../common/ProductsSliderTest";
 
 export const HomePage = () => {
     return (
@@ -34,7 +35,7 @@ export const HomePage = () => {
             <Slider
                 fetchLink={"./categoriesData.json"}
             />
-            <ProductsSlider
+            {/* <ProductsSlider
                 heading="Popularne w tym tygodniu"
                 selectData={selectPopularProducts}
                 selectAreProductsLoading={selectArePopularProductsLoading}
@@ -45,8 +46,8 @@ export const HomePage = () => {
                 setNextIndex={setPopularProductsNextIndex}
                 fetchData={fetchGetPopularProducts}
                 selectWindowWidth={setPopularProductsWindowWidth}
-            />
-
+            /> */}
+            <ProductsSliderTest />
         </Main>
     );
 };
