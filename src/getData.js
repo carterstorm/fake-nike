@@ -7,23 +7,3 @@ export const homeImagesSliderData = [
     { id: 2, src: homePageImage2, alt: "Women playing soccer" },
     { id: 3, src: homePageImage3, alt: "Running man" },
 ];
-
-export const getCategoriesData = async () => {
-    const response = await fetch("./categoriesData.json");
-
-    if (!response.ok) {
-        new Error(response.statusText);
-    };
-
-    return await response.json();
-};
-
-export const getPopularProducts = async () => {
-    const response = await fetch("./popularProducts.json");
-
-    if (!response.ok) {
-        new Error(response.statusText);
-    };
-
-    return await response.json();
-};

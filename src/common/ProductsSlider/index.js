@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useGetData } from "../../hooks/useGetData";
 import { useTouchHandlers } from "../../hooks/useTouchHandlers";
-import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { useProductsIndex } from "../../hooks/useProductsIndex";
 import { Arrow } from "../../features/home/HomePage/Arrow";
 
 import {
@@ -23,26 +23,38 @@ import {
     Wrapper,
 } from "./styled";
 
-export const ProductsSlider = ({
-    heading,
-    selectData,
-    selectAreProductsLoading,
-    selectIndex,
-    selectLeftArrowVisibility,
-    selectRightArrowVisibility,
-    setPrevIndex,
-    setNextIndex,
-    fetchData,
-    selectWindowWidth
-}) => {
-    const dispatch = useDispatch();
-    const products = useSelector(selectData);
-    const areProductsLoading = useSelector(selectAreProductsLoading);
-    const index = useSelector(selectIndex);
-    const leftArrowVisibility = useSelector(selectLeftArrowVisibility);
-    const rightArrowVisibility = useSelector(selectRightArrowVisibility);
+export const ProductsSlider = ({ fetchLink }) => {
+    const { state, data } = useGetData(fetchLink, 1);
+    const dataLength = data && data.length;
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [index, setPrevIndex, setNextIndex] = useProductsIndex(dataLength, windowWidth);
+    const [leftArrowVisibility, setLeftArrowVisibility] = useState(true);
+    const [rightArrowVisibility, setRightArrowVisibility] = useState(false);
 
-    useWindowWidth(() => selectWindowWidth(window.innerWidth));
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth)
+        };
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        index === 0 ? setLeftArrowVisibility(true) : setLeftArrowVisibility(false);
+    }, [index]);
+
+    useEffect(() => {
+        if ((windowWidth > 960 && index === dataLength - 3) ||
+            (windowWidth < 960 && windowWidth > 600 && index === dataLength - 2) ||
+            (windowWidth <= 600 && index === dataLength - 1)) {
+            setRightArrowVisibility(true);
+        } else {
+            setRightArrowVisibility(false);
+        }
+    }, [index, windowWidth, dataLength]);
 
     const [
         handleTouchStart,
@@ -51,64 +63,64 @@ export const ProductsSlider = ({
         handleMouseUp
     ] = useTouchHandlers(setPrevIndex, setNextIndex);
 
-    useEffect(() => {
-        dispatch(fetchData());
-    }, [dispatch, fetchData]);
-
     return (
         <Wrapper>
             <Header>
-                <Heading>{heading}</Heading>
+                <Heading></Heading>
                 <Buttons>
                     <Arrow
                         direction="left"
                         left={"0"}
-                        onClick={() => dispatch(setPrevIndex())}
+                        onClick={() => setPrevIndex()}
                         disabled={leftArrowVisibility}
                     />
                     <Arrow
                         direction="right"
                         right={"0"}
-                        onClick={() => dispatch(setNextIndex())}
+                        onClick={() => setNextIndex()}
                         disabled={rightArrowVisibility}
                     />
                 </Buttons>
             </Header>
             <List>
-                {areProductsLoading ? "Loading" : (
-                    <SliderTrack
-                        index={index}
-                        onTouchStart={handleTouchStart}
-                        onTouchEnd={handleTouchEnd}
-                        onMouseDown={handleMouseDown}
-                        onMouseUp={handleMouseUp}
-                    >
-                        {products.map(({ id, description, category, image, price }) => (
-                            <Item
-                                key={id}>
-                                <Link
-                                    href="#">
-                                    <ImageContainer>
-                                        <Image
-                                            src={image}
-                                            alt={description}
-                                            draggable={false}
-                                        />
-                                    </ImageContainer>
-                                    <Description>
-                                        <TextBox>
-                                            <Title>{description}</Title>
-                                            <Category>{category}</Category>
-                                        </TextBox>
-                                        <PriceBox>
-                                            <Price>{price} zł</Price>
-                                        </PriceBox>
-                                    </Description>
-                                </Link>
-                            </Item>
-                        ))}
-                    </SliderTrack>
-                )}
+                {state === "loading" ?
+                    (<>Loading</>)
+                    :
+                    state === "error" ?
+                        (<>Error</>)
+                        :
+                        (<SliderTrack
+                            index={index}
+                            onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}
+                            onMouseDown={handleMouseDown}
+                            onMouseUp={handleMouseUp}
+                        >
+                            {data.map(({ id, description, category, image, price }) => (
+                                <Item
+                                    key={id}>
+                                    <Link
+                                        href="#">
+                                        <ImageContainer>
+                                            <Image
+                                                src={image}
+                                                alt={description}
+                                                draggable={false}
+                                            />
+                                        </ImageContainer>
+                                        <Description>
+                                            <TextBox>
+                                                <Title>{description}</Title>
+                                                <Category>{category}</Category>
+                                            </TextBox>
+                                            <PriceBox>
+                                                <Price>{price} zł</Price>
+                                            </PriceBox>
+                                        </Description>
+                                    </Link>
+                                </Item>
+                            ))}
+                        </SliderTrack>)}
             </List>
         </Wrapper >
     );

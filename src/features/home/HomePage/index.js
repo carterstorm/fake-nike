@@ -4,20 +4,8 @@ import { ImagesSlider } from "../../../common/ImagesSlider";
 import { ThematicSection } from "../../../common/ThematicSection";
 import { homeImagesSliderData } from "../../../getData";
 import { Main } from "./styled";
-
-// import {
-//     fetchGetPopularProducts,
-//     selectArePopularProductsLoading,
-//     selectPopularProducts,
-//     selectPopularProductsIndex,
-//     selectPopularProductsLeftArrowVisibility,
-//     selectPopularProductsRightArrowVisibility,
-//     setPopularProductsNextIndex,
-//     setPopularProductsPrevIndex,
-//     setPopularProductsWindowWidth
-// } from "../popularProductsSliderSlice";
 import { Slider } from "../../../common/Slider";
-import { ProductsSliderTest } from "../../../common/ProductsSliderTest";
+import { ProductsSlider } from "../../../common/ProductsSlider";
 
 export const HomePage = () => {
     return (
@@ -35,19 +23,9 @@ export const HomePage = () => {
             <Slider
                 fetchLink={"./categoriesData.json"}
             />
-            {/* <ProductsSlider
-                heading="Popularne w tym tygodniu"
-                selectData={selectPopularProducts}
-                selectAreProductsLoading={selectArePopularProductsLoading}
-                selectIndex={selectPopularProductsIndex}
-                selectLeftArrowVisibility={selectPopularProductsLeftArrowVisibility}
-                selectRightArrowVisibility={selectPopularProductsRightArrowVisibility}
-                setPrevIndex={setPopularProductsPrevIndex}
-                setNextIndex={setPopularProductsNextIndex}
-                fetchData={fetchGetPopularProducts}
-                selectWindowWidth={setPopularProductsWindowWidth}
-            /> */}
-            <ProductsSliderTest />
+            <ProductsSlider
+                fetchLink={"./popularProducts.json"}
+            />
         </Main>
     );
 };
