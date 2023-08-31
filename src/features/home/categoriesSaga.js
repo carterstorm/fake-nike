@@ -1,5 +1,5 @@
 import { call, delay, put, takeEvery } from "redux-saga/effects";
-import { getCategoriesData } from "./getData";
+import { getCategoriesData } from "../../getData";
 import {
     fetchGetCategoriesData,
     fetchGetCategoriesDataError,
