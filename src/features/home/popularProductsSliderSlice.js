@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { theme } from "../../theme";
 
 const popularProductsSliderSlice = createSlice({
     name: 'popularProductsSlider',
@@ -29,11 +30,12 @@ const popularProductsSliderSlice = createSlice({
         },
         setPopularProductsNextIndex: state => {
             const { windowWidth, index } = state;
+            const { mobile, tablet } = theme.media;
 
             if (index < 9) {
-                if ((windowWidth > 960 && index <= 6) ||
-                    (windowWidth < 960 && windowWidth > 600 && index <= 7) ||
-                    (windowWidth <= 600 && index <= 8)) {
+                if ((windowWidth > tablet && index <= 6) ||
+                    (windowWidth < tablet && windowWidth > mobile && index <= 7) ||
+                    (windowWidth <= mobile && index <= 8)) {
                     state.index += 1;
                 };
             };

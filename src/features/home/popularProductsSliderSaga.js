@@ -1,5 +1,6 @@
 import { call, delay, put, select, takeEvery } from "redux-saga/effects";
 import { getPopularProducts } from "./getData";
+import { theme } from "../../theme";
 
 import {
     fetchGetPopularProducts,
@@ -27,11 +28,13 @@ function* fetchGetPopularProductsHandler() {
 function* setArrowVisibilityHandler() {
     const index = yield select(selectPopularProductsIndex);
     const windowWidth = yield select(selectPopularProductsWindowWidth);
+    const { mobile, tablet } = theme.media;
+
     const showLeftArrow = index === 0;
     const showRightArrow =
-        (windowWidth > 960 && index === 7) ||
-        (windowWidth < 960 && windowWidth > 600 && index === 8) ||
-        (windowWidth <= 600 && index === 9);
+        (windowWidth > tablet && index === 7) ||
+        (windowWidth < tablet && windowWidth > mobile && index === 8) ||
+        (windowWidth <= mobile && index === 9);
 
     yield put(setPopularProductsLeftArrowVisibility(showLeftArrow));
     yield put(setPopularProductsRightArrowVisibility(showRightArrow));
