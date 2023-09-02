@@ -2,7 +2,7 @@ import { useGetData } from "../../hooks/useGetData";
 import { useTouchHandlers } from "../../hooks/useTouchHandlers";
 import { useSliderIndex } from "../../hooks/useSliderIndex";
 import { getView } from "../../getView";
-import { Arrow } from "../../features/home/HomePage/Arrow";
+import { Arrow } from "../Arrow";
 
 import {
     Heading,

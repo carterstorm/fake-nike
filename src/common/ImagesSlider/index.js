@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Arrow } from "../../features/home/HomePage/Arrow";
+import { Arrow } from "../Arrow";
 
 import {
     Image,

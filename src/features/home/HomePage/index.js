@@ -1,6 +1,5 @@
 import { Announcment } from "../../../common/Announcment";
 import { ImagesSlider } from "../../../common/ImagesSlider";
-// import { ProductsSlider } from "../../../common/ProductsSlider";
 import { ThematicSection } from "../../../common/ThematicSection";
 import { homeImagesSliderData } from "../../../getData";
 import { Main } from "./styled";

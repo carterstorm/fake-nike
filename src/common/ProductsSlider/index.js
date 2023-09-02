@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useGetData } from "../../hooks/useGetData";
 import { useTouchHandlers } from "../../hooks/useTouchHandlers";
 import { useProductsIndex } from "../../hooks/useProductsIndex";
-import { Arrow } from "../../features/home/HomePage/Arrow";
+import { Arrow } from "../Arrow";
 
 import {
     Buttons,

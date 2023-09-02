@@ -17,7 +17,7 @@ export const HeaderElement = () => (
             <NikeContainer />
             <Navigation />
             <UserOptions />
-            <SideMenu></SideMenu>
+            <SideMenu />
         </Header>
 
         <Switch>

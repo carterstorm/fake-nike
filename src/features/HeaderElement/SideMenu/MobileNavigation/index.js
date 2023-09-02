@@ -1,4 +1,4 @@
-import nextArrow from "../../../../assets/svg/next_arrow.svg";
+import nextArrow from "../../../../assets/svg/arrow.svg";
 
 import {
     NavButton,
