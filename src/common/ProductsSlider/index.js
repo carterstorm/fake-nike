@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useGetData } from "../../hooks/useGetData";
 import { useTouchHandlers } from "../../hooks/useTouchHandlers";
 import { useProductsIndex } from "../../hooks/useProductsIndex";
@@ -23,28 +22,14 @@ import {
     Wrapper,
 } from "./styled";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { useArrowVisibility } from "../../hooks/useArrowVisibility";
 
 export const ProductsSlider = ({ fetchLink }) => {
     const { state, data } = useGetData(fetchLink, 1);
     const windowWidth = useWindowWidth();
     const dataLength = data && data.length;
     const [index, setPrevIndex, setNextIndex] = useProductsIndex(dataLength, windowWidth);
-    const [leftArrowVisibility, setLeftArrowVisibility] = useState(true);
-    const [rightArrowVisibility, setRightArrowVisibility] = useState(false);
-
-    useEffect(() => {
-        index === 0 ? setLeftArrowVisibility(true) : setLeftArrowVisibility(false);
-    }, [index]);
-
-    useEffect(() => {
-        if ((windowWidth > 960 && index === dataLength - 3) ||
-            (windowWidth < 960 && windowWidth > 600 && index === dataLength - 2) ||
-            (windowWidth <= 600 && index === dataLength - 1)) {
-            setRightArrowVisibility(true);
-        } else {
-            setRightArrowVisibility(false);
-        }
-    }, [index, windowWidth, dataLength]);
+    const [leftArrowVisibility, rightArrowVisibility] = useArrowVisibility(index, windowWidth, dataLength);
 
     const [
         handleTouchStart,
