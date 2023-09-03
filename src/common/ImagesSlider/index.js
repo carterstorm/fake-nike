@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Arrow } from "../Arrow";
 
 import {
@@ -7,30 +6,22 @@ import {
     ImagesContainer,
     Wrapper
 } from "./styled";
+import { useSliderIndex } from "../../hooks/useSliderIndex";
 
 export const ImagesSlider = ({ images }) => {
-    const [slideIndex, setSlideIndex] = useState(0);
-    const imagesLength = images.length;
-
-    const handleClick = (direction) => {
-        if (direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : imagesLength - 1);
-        } else {
-            setSlideIndex(slideIndex < imagesLength - 1 ? slideIndex + 1 : 0);
-        };
-    };
+    const [index, setPrevIndex, setNextIndex] = useSliderIndex(images);
 
     return (
         <Wrapper>
             <Arrow
                 direction="left"
                 left={"30"}
-                onClick={() => handleClick("left")}
+                onClick={() => setPrevIndex()}
             />
             <ImagesContainer>
                 {images.map(({ id, src, alt }) => (
                     <ImageContainer
-                        slideIndex={slideIndex}
+                        slideIndex={index}
                         key={id}
                     >
                         <Image
@@ -43,7 +34,7 @@ export const ImagesSlider = ({ images }) => {
             <Arrow
                 direction="right"
                 right={"30"}
-                onClick={() => handleClick("right")}
+                onClick={() => setNextIndex()}
             />
         </Wrapper>
     );
