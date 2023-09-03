@@ -22,25 +22,15 @@ import {
     Title,
     Wrapper,
 } from "./styled";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export const ProductsSlider = ({ fetchLink }) => {
     const { state, data } = useGetData(fetchLink, 1);
+    const windowWidth = useWindowWidth();
     const dataLength = data && data.length;
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [index, setPrevIndex, setNextIndex] = useProductsIndex(dataLength, windowWidth);
     const [leftArrowVisibility, setLeftArrowVisibility] = useState(true);
     const [rightArrowVisibility, setRightArrowVisibility] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth)
-        };
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     useEffect(() => {
         index === 0 ? setLeftArrowVisibility(true) : setLeftArrowVisibility(false);

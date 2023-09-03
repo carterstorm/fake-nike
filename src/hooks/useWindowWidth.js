@@ -1,17 +1,18 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 
-export const useWindowWidth = (setWindowWidthAction) => {
-    const dispatch = useDispatch();
+export const useWindowWidth = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         const handleResize = () => {
-            dispatch(setWindowWidthAction(window.innerWidth));
+            setWindowWidth(window.innerWidth)
         };
         window.addEventListener('resize', handleResize);
 
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [dispatch, setWindowWidthAction]);
+    }, []);
+
+    return windowWidth;
 };
