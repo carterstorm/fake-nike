@@ -24,7 +24,7 @@ import {
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { useArrowVisibility } from "../../hooks/useArrowVisibility";
 
-export const ProductsSlider = ({ fetchLink }) => {
+export const ProductsSlider = ({ heading, fetchLink }) => {
     const { state, data } = useGetData(fetchLink, 1);
     const windowWidth = useWindowWidth();
     const dataLength = data && data.length;
@@ -41,7 +41,7 @@ export const ProductsSlider = ({ fetchLink }) => {
     return (
         <Wrapper>
             <Header>
-                <Heading></Heading>
+                <Heading>{heading}</Heading>
                 <Buttons>
                     <Arrow
                         direction="left"

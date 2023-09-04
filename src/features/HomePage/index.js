@@ -5,6 +5,7 @@ import { homeImagesSliderData } from "../../getData";
 import { Main } from "./styled";
 import { Slider } from "../../common/Slider";
 import { ProductsSlider } from "../../common/ProductsSlider";
+import { MoreProducts } from "../../common/MoreProducts";
 
 export const HomePage = () => {
     return (
@@ -23,7 +24,12 @@ export const HomePage = () => {
                 fetchLink={"./categoriesData.json"}
             />
             <ProductsSlider
+                heading="Popularne w tym tygodniu"
                 fetchLink={"./popularProducts.json"}
+            />
+            <MoreProducts
+                heading={"Odkryj więcej produktów"}
+                fetchLink={"./moreProductsData.json"}
             />
         </Main>
     );
