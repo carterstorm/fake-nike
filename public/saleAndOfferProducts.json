@@ -1,0 +1,73 @@
+
+[ 
+    {
+          "id": 1,
+          "description": "Jordan Brooklyn",
+          "category": "Damskie spodnie z dzianiny",
+          "image": "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.0/w_599,c_limit/3ad3a473-f479-432e-afbc-f6bcd289b7ff/spodnie-z-dzianiny-jordan-brooklyn-1GcdFP.png",
+          "price": 299.99
+      },
+      {
+          "id": 2,
+          "description": "Nike Sportswear Phoenix Fleece",
+          "category": "Damska bluza z kapturem o kroju oversize",
+          "image": "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.0/w_599,c_limit/6a3ee045-963e-45f2-bfbb-9ca611e32af7/bluza-z-kapturem-o-kroju-oversize-sportswear-phoenix-fleece-mxF91x.png",
+          "price": 279.99
+        },
+      {
+          "id": 3,
+          "description": "Nike Sportswear",
+          "category": "Damska długa kurtka ze sztucznego futra",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/30ab78ae-34b9-4f01-ae8f-dd16433d21a5/dluga-kurtka-ze-sztucznego-futra-sportswear-TFZKg9.png",
+          "price": 949.99
+      },
+      {
+          "id": 4,
+          "description": "Nike Air Max SYSTM",
+          "category": "Buty damskie",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f791f3ac-fcb4-48bd-bd88-490dd0efe9f3/buty-air-max-systm-0dx8Rm.png",
+          "price": 499.99
+      },
+      {
+          "id": 5,
+          "description": "Nike One",
+          "category": "Damskie legginsy z wysokim stanem",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b0102d30-ea84-454c-87b5-afabad838624/legginsy-z-wysokim-stanem-one-k8v085.png",
+          "price": 219.99
+      },
+      {
+        "id": 6,
+        "description": "Nike Sportswear Phoenix Fleece",
+        "category": "Damska bluza dresowa z półokrągłym dekoltem o kroju oversize",
+        "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/49a2a0d3-990b-4aff-9b6e-f9dd66812d95/bluza-dresowa-z-polokraglym-dekoltem-o-kroju-oversize-sportswear-phoenix-fleece-1pVNlc.png",
+        "price": 299.99
+      },
+      {
+        "id": 7,
+        "description": "Nike Air Force 1 PLT.AF.ORM",
+        "category": "Buty damskie",
+        "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6465ceb1-a9a9-48b5-874f-438c25b0563d/buty-air-force-1-pltaform-jXdthw.png",
+        "price": 599.99
+      },
+      {
+        "id": 8,
+        "description": "Nike City Trainer 3",
+        "category": "Damskie buty treningowe",
+        "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1bc31c8a-175d-4673-a0fb-b516857a7c4c/buty-treningowe-city-trainer-3-6ZC9Ck.png",
+        "price": 299.99
+      },
+      {
+        "id": 9,
+        "description": "Nike Air Force 1 Shadow",
+        "category": "Buty damskie",
+        "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a96294d3-f118-4fd8-a895-edb505a660f0/buty-air-force-1-shadow-2Xcbj2.png",
+        "price": 649.99
+      },
+      {
+        "id": 10,
+        "description": "Nike Air Force 1 Shadow",
+        "category": "Buty damskie",
+        "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/bfed0978-39c9-47d3-b33f-b27b5f15030a/buty-air-force-1-shadow-kBT5nc.png",
+        "price": 599.99
+      }
+  ]

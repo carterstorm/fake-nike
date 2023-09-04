@@ -2,14 +2,13 @@ import { Announcment } from "../../common/Announcment";
 import { ImagesSlider } from "../../common/ImagesSlider";
 import { ThematicSection } from "../../common/ThematicSection";
 import { homeImagesSliderData } from "../../getData";
-import { Main } from "./styled";
 import { Slider } from "../../common/Slider";
 import { ProductsSlider } from "../../common/ProductsSlider";
 import { MoreProducts } from "../../common/MoreProducts";
 
 export const HomePage = () => {
     return (
-        <Main>
+        <main>
             <Announcment />
             <ThematicSection
                 heading="Razem na starcie"
@@ -31,6 +30,10 @@ export const HomePage = () => {
                 heading={"Odkryj więcej produktów"}
                 fetchLink={"./moreProductsData.json"}
             />
-        </Main>
+            <ProductsSlider
+                heading="Odkryj naszą wyprzedaż i oferty"
+                fetchLink={"./saleAndOfferProducts.json"}
+            />
+        </main>
     );
 };
