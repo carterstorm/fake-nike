@@ -1,7 +1,11 @@
-import { Button } from "./styled";
+import { Button, EyeIcon, Wrapper } from "./styled";
+import eye from "../../assets/svg/eye.svg";
 
-export const ButtonElement = ({ children }) => (
+export const ButtonElement = ({ children, eyeIcon }) => (
     <Button>
-        {children}
+        <Wrapper>
+            {eyeIcon ? <EyeIcon color="red" src={eye} /> : null}
+            {children}
+        </Wrapper>
     </Button>
 );

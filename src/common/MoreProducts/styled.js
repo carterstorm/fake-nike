@@ -48,7 +48,10 @@ export const ButtonsContainer = styled.div`
     position: absolute;
     bottom: 50px;
     left: 40px;
-
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
     @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         bottom: 30px;
         left: 20px;

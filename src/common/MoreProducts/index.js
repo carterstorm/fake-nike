@@ -35,7 +35,7 @@ export const MoreProducts = ({ heading, fetchLink }) => {
                                         </ImageContainer>
                                         <ButtonsContainer>
                                             <ButtonElement>{persons}</ButtonElement>
-                                            <ButtonElement>Przeglądaj stylizację</ButtonElement>
+                                            <ButtonElement eyeIcon={true}>Przeglądaj stylizację</ButtonElement>
                                         </ButtonsContainer>
                                     </Link>
                                 </Item>
