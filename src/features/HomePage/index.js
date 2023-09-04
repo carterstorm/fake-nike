@@ -21,6 +21,7 @@ export const HomePage = () => {
             />
             <Slider
                 fetchLink={"./categoriesData.json"}
+                numberOfItems={7}
             />
             <ProductsSlider
                 heading="Popularne w tym tygodniu"
@@ -33,6 +34,11 @@ export const HomePage = () => {
             <ProductsSlider
                 heading="Odkryj naszą wyprzedaż i oferty"
                 fetchLink={"./saleAndOfferProducts.json"}
+            />
+            <Slider
+                heading="Przeglądaj wg dyscypliny sportu"
+                fetchLink={"./searchBySportName.json"}
+                numberOfItems={8}
             />
         </main>
     );

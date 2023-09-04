@@ -18,7 +18,7 @@ import {
     Wrapper
 } from "./styled"
 
-export const Slider = ({ heading, fetchLink }) => {
+export const Slider = ({ heading, fetchLink, numberOfItems }) => {
     const { data } = useGetData(fetchLink, 1);
     const [index, setPrevIndex, setNextIndex] = useSliderIndex(data);
     const formattedData = getView(data || [], index);
@@ -43,7 +43,7 @@ export const Slider = ({ heading, fetchLink }) => {
                     left={"30"}
                     onClick={() => setPrevIndex()}
                 />
-                <Number>{index + 1}/{formattedData.length}</Number>
+                <Number>{index + 1}/{numberOfItems}</Number>
                 <ItemsContainer
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
