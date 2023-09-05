@@ -1,5 +1,8 @@
 import { useGetData } from "../../hooks/useGetData";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { ButtonElement } from "../ButtonElement";
+import { theme } from "../../theme";
+
 import {
     Header,
     Heading,
@@ -12,9 +15,10 @@ import {
     ButtonsContainer
 } from "./styled";
 
-export const MoreProducts = ({ heading, fetchLink }) => {
+export const MoreProducts = ({ heading, fetchLink, ourApplications }) => {
     const { state, data } = useGetData(fetchLink, 1);
     const dataLength = data && data.length;
+    const windowWidth = useWindowWidth();
 
     return (
         <>
@@ -22,20 +26,31 @@ export const MoreProducts = ({ heading, fetchLink }) => {
                 <Heading>{heading}</Heading>
             </Header>
             <Wrapper>
-                <List number={dataLength}>
+                <List
+                    number={dataLength}
+                    ourApplications={ourApplications}>
                     {state === "loading" ?
                         (<>Loading</>) :
                         state === "error" ?
                             (<>Error</>) :
-                            (data.map(({ id, persons, alt, image }) => (
+                            (data.map(({ id, persons, alt, image, mobileImage, buttonText }) => (
                                 <Item key={id}>
                                     <Link>
                                         <ImageContainer>
-                                            <Image src={image} alt={alt} />
+                                            <Image
+                                                src={windowWidth < theme.media.mobile ? mobileImage : image}
+                                                alt={alt}
+                                                ourApplications={ourApplications}
+                                            />
                                         </ImageContainer>
                                         <ButtonsContainer>
-                                            <ButtonElement>{persons}</ButtonElement>
-                                            <ButtonElement eyeIcon={true}>Przeglądaj stylizację</ButtonElement>
+                                            {persons ? (<ButtonElement bright>{persons}</ButtonElement>) : null}
+                                            <ButtonElement
+                                                bright
+                                                eyeIcon={persons ? true : false}
+                                            >
+                                                {buttonText}
+                                            </ButtonElement>
                                         </ButtonsContainer>
                                     </Link>
                                 </Item>

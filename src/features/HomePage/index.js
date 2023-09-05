@@ -40,6 +40,11 @@ export const HomePage = () => {
                 fetchLink={"./searchBySportName.json"}
                 numberOfItems={8}
             />
+            <MoreProducts
+                heading={"Odkryj nasze aplikacje"}
+                fetchLink={"./ourApplications.json"}
+                ourApplications
+            />
         </main>
     );
 };

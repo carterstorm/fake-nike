@@ -24,8 +24,11 @@ export const List = styled.ul`
     gap: 15px;
 
     @media (max-width: ${({ theme }) => theme.media.tablet}px) {
-       display: flex;
-       width: 210vw;
+       width: ${({ ourApplications }) => ourApplications ? 92 : 215}vw;
+    };
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+       grid-template-columns: repeat(${({ ourApplications }) => ourApplications ? 1 : 3}, 1fr);
     };
 `;
 
@@ -37,11 +40,18 @@ export const Link = styled.div`
     left: 0;
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div`  
 `;
 
 export const Image = styled.img`
     width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: ${({ ourApplications }) => ourApplications ? 300 : null}px;
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        height: ${({ ourApplications }) => ourApplications ? 60 : null}vh;
+    };
 `;
 
 export const ButtonsContainer = styled.div`

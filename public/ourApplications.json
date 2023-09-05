@@ -1,0 +1,19 @@
+
+[
+    {
+        "id": 1,
+        "element": "Aplikacja Nike",
+        "alt": "Zdobądź najnowsze produkty w aplikacji Nike",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_906,c_limit/b572e1b2-6b9b-4457-bd6c-c0161cd3a662/oficjalna-strona-internetowa-nike.png",
+        "mobileImage": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_641,c_limit/00a64594-25b2-499d-8181-26fd13c72541/oficjalna-strona-internetowa-nike.png",
+        "buttonText": "Aplikacja Nike"
+    },
+    {
+        "id": 2,
+        "element": "SNKRS",
+        "alt": "Wszystko o sneakersach",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_906,c_limit/61cf2b43-ad07-4c7a-a8f2-79f1eba156c2/oficjalna-strona-internetowa-nike.jpg",
+        "mobileImage": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/993aa90b-9890-4eaf-8c40-6e5b5c6a1c35/oficjalna-strona-internetowa-nike.jpg",
+        "buttonText": "SNKRS"
+    }
+]

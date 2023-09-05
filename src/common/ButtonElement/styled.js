@@ -8,8 +8,8 @@ export const Button = styled.a`
     padding: 10px 20px;
     margin-top: 8px;
     border-radius: 30px;
-    background-color: ${({ theme }) => theme.colors.black};
-    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ bright }) => bright ? "white" : "black"};
+    color: ${({ bright }) => bright ? "black" : "white"};
     cursor: pointer;
 
     &:nth-child(1) {
@@ -41,5 +41,4 @@ export const Login = styled(Button)`
 export const EyeIcon = styled.img`
     width: 24px;
     margin-right: 8px;
-    filter: invert(1);
 `;
