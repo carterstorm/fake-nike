@@ -12,7 +12,8 @@ import {
     Link,
     Image,
     ImageContainer,
-    ButtonsContainer
+    Box,
+    Paragraph
 } from "./styled";
 
 export const MoreProducts = ({ heading, fetchLink, ourApplications }) => {
@@ -33,7 +34,7 @@ export const MoreProducts = ({ heading, fetchLink, ourApplications }) => {
                         (<>Loading</>) :
                         state === "error" ?
                             (<>Error</>) :
-                            (data.map(({ id, persons, alt, image, mobileImage, buttonText }) => (
+                            (data.map(({ id, persons, alt, image, mobileImage, buttonText, paragraphText }) => (
                                 <Item key={id}>
                                     <Link>
                                         <ImageContainer>
@@ -43,7 +44,8 @@ export const MoreProducts = ({ heading, fetchLink, ourApplications }) => {
                                                 ourApplications={ourApplications}
                                             />
                                         </ImageContainer>
-                                        <ButtonsContainer>
+                                        <Box ourApplications={ourApplications}>
+                                            {ourApplications ? <Paragraph>{paragraphText}</Paragraph> : null}
                                             {persons ? (<ButtonElement bright>{persons}</ButtonElement>) : null}
                                             <ButtonElement
                                                 bright
@@ -51,7 +53,7 @@ export const MoreProducts = ({ heading, fetchLink, ourApplications }) => {
                                             >
                                                 {buttonText}
                                             </ButtonElement>
-                                        </ButtonsContainer>
+                                        </Box>
                                     </Link>
                                 </Item>
                             ))

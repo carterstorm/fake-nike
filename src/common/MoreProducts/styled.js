@@ -54,16 +54,28 @@ export const Image = styled.img`
     };
 `;
 
-export const ButtonsContainer = styled.div`
+export const Box = styled.div`
     position: absolute;
     bottom: 50px;
     left: 40px;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    
+    flex-direction: ${({ ourApplications }) => ourApplications ? "column" : "row"};;
+
     @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         bottom: 30px;
         left: 20px;
+    };
+`;
+
+export const Paragraph = styled.p`
+    color: ${({ theme }) => theme.colors.white};
+    margin: 24px 10px;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.5;
+
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
+        font-size: 16px;
     };
 `;
