@@ -45,6 +45,11 @@ export const HomePage = () => {
                 fetchLink={"./ourApplications.json"}
                 ourApplications
             />
+            <Slider
+                heading="Członkowstwo Nike"
+                fetchLink={"./membershipData.json"}
+                numberOfItems={6}
+            />
         </main>
     );
 };

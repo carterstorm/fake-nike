@@ -15,7 +15,7 @@ export const Wrapper = styled.section`
 
 export const HeadingContainer = styled.div`
     width: 92vw;
-    margin: 60px auto 30px;
+    margin: 60px auto 10px;
 `;
 
 export const Heading = styled.h4`
@@ -84,5 +84,5 @@ export const ItemText = styled.figcaption`
 export const Text = styled.h4`
     font-weight: 300;
     color: ${({ theme }) => theme.colors.gray};
-    margin: 0;
+    margin: 0 25px 0 0;
 `;
