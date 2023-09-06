@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetData } from "../../hooks/useGetData";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { theme } from "../../theme";
@@ -14,16 +14,25 @@ import {
 
 export const MerchMenu = ({ fetchLink }) => {
     const { state, data } = useGetData(fetchLink, 1);
-    const [visibleMenu, setVisibleMenu] = useState(false);
+    const [visibleMerchMenu, setVisibleMerchMenu] = useState(false);
+    const [heightMerchMenu, setHeightMerchMenu] = useState(140);
     const windowWidth = useWindowWidth();
 
     const handleMouseMenuVisibility = () => {
         if (windowWidth > theme.media.mobile) {
-            setVisibleMenu(visibleMenu => !visibleMenu);
+            setVisibleMerchMenu(visibleMenu => !visibleMenu);
         } else {
-            setVisibleMenu(false);
+            setVisibleMerchMenu(false);
         };
     };
+
+    useEffect(() => {
+        if (windowWidth < theme.media.mobile) {
+            setHeightMerchMenu(0);
+        } else {
+            setHeightMerchMenu(140);
+        };
+    }, [windowWidth]);
 
     return (
         <Wrapper
@@ -40,19 +49,20 @@ export const MerchMenu = ({ fetchLink }) => {
                         {data.map(({ id, name, elements }) => (
                             <Category key={id}>
                                 <Heading
-                                    visibleMenu={visibleMenu}
+                                    visibleMerchMenu={visibleMerchMenu}
                                 >
                                     {name}
                                 </Heading>
                                 <List
-                                    visibleMenu={visibleMenu}
+                                    visibleMerchMenu={visibleMerchMenu}
+                                    heightMerchMenu={heightMerchMenu}
                                 >
                                     {elements.map((item, index) => (
                                         <Item
-                                            visibleMenu={visibleMenu}
+                                            visibleMerchMenu={visibleMerchMenu}
                                             key={index}>
                                             <Link
-                                                visibleMenu={visibleMenu}
+                                                visibleMerchMenu={visibleMerchMenu}
                                                 href="#">
                                                 {item}
                                             </Link>

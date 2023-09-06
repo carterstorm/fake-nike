@@ -17,6 +17,11 @@ export const Wrapper = styled.section`
         width: 92vw;
         grid-template-columns: repeat(4, 130px);
     };
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        width: 92vw;
+        grid-template-columns: repeat(1, 200px);
+    };
 `;
 
 export const Category = styled.div`
@@ -27,7 +32,7 @@ export const Heading = styled.h4`
     line-height: 25px;
     height: 25px;
 
-    ${({ visibleMenu }) => !visibleMenu && css`
+    ${({ visibleMerchMenu }) => !visibleMerchMenu && css`
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -40,11 +45,11 @@ export const List = styled.ul`
     padding: 10px 0 0;
     margin: 0;
     list-style: none;
-    height: 140px;
+    height: ${({ heightMerchMenu }) => heightMerchMenu}px;
     overflow: hidden;
     transition: .3s;
 
-    ${({ visibleMenu }) => visibleMenu && css`
+    ${({ visibleMerchMenu }) => visibleMerchMenu && css`
         height: 100%;
     `}
 `;
@@ -52,7 +57,7 @@ export const List = styled.ul`
 export const Item = styled.li`
     margin: 0 0 10px 0;
 
-    ${({ visibleMenu }) => !visibleMenu && css`
+    ${({ visibleMerchMenu }) => !visibleMerchMenu && css`
         overflow: hidden;
     `}
 `;
@@ -64,7 +69,7 @@ export const Link = styled.a`
     line-height: 24px;
     font-weight: 500;
 
-    ${({ visibleMenu }) => !visibleMenu && css`
+    ${({ visibleMerchMenu }) => !visibleMerchMenu && css`
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
