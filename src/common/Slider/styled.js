@@ -79,6 +79,7 @@ export const Image = styled.img`
 
 export const ItemText = styled.figcaption`
     margin-top: 14px;
+    height: 50px;
 `;
 
 export const Text = styled.h4`
