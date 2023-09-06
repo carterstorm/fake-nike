@@ -1,0 +1,60 @@
+[ 
+    {
+    "id": 1,
+    "name": "Buty",
+    "elements": [
+        "Buty do golfa",
+        "Zimowe buty sportowe",
+        "Buty sportowe z Gore Texu",
+        "Buty sportowe do chodzenia",
+        "Air Max 90 białe",
+        "Buty do podnoszenia cięzarów",
+        "Sandals & Slides",
+        "Black Running Shoes",
+        "White Running Shoes",
+        "Trail Running Shoes",
+        "Running Shoes Sale"
+    ]
+},
+
+{
+    "id": 2,
+    "name": "Ubrania",
+    "elements": [
+        "Wszystkie ubrania",
+        "Spodnie do jogi",
+        "Joggery Tech Fleece",
+        "Spodenie Tech Fleece",
+        "Bluza z kapturem Tech Fleece",
+        "Dresy do gry w piłkę nożną",
+        "Tech Fleece",
+        "Plus Size"
+    ]
+},
+
+{
+    "id": 3,
+    "name": "Produkty dla dzieci",
+    "elements": [
+        "Klapki dziecięce",
+        "Wyprzedaż dresów dziecięcych",
+        "Dziecięca kurtka puchowa"
+    ]
+},
+
+{
+    "id": 4,
+    "name": "Polecane",
+    "elements": [
+        "Kluby piłkarskie",
+        "Piłka nożna",
+        "Nike Run Club",
+        "Nike Training Club",
+        "Sandały i klapki",
+        "Buty do biegania, czarne",
+        "Buty do biegania, białe",
+        "Buty do piłki nożnej, niebieskie",
+        "Buty do piłki nożnej, czerwone"
+    ]
+}
+]

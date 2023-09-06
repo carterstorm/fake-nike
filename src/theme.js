@@ -9,6 +9,7 @@ export const theme = {
     },
     media: {
         mobile: 600,
+        tabletMin: 760,
         tablet: 960,
         desktopMax: 1900,
     },

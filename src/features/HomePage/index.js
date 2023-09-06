@@ -5,6 +5,7 @@ import { homeImagesSliderData } from "../../getData";
 import { Slider } from "../../common/Slider";
 import { ProductsSlider } from "../../common/ProductsSlider";
 import { MoreProducts } from "../../common/MoreProducts";
+import { MerchMenu } from "../../common/MerchMenu";
 
 export const HomePage = () => {
     return (
@@ -49,6 +50,9 @@ export const HomePage = () => {
                 heading="Członkowstwo Nike"
                 fetchLink={"./membershipData.json"}
                 numberOfItems={6}
+            />
+            <MerchMenu
+                fetchLink={"./merchMenuData.json"}
             />
         </main>
     );
