@@ -1,13 +1,20 @@
 import { useState } from "react";
 import { useGetData } from "../../hooks/useGetData";
-import { Category, Heading, Item, Link, List, Wrapper } from "./styled";
+import {
+    Category,
+    Heading,
+    Item,
+    Link,
+    List,
+    Wrapper
+} from "./styled";
 
 export const MerchMenu = ({ fetchLink }) => {
     const { state, data } = useGetData(fetchLink, 1);
-    const [visible, setVisible] = useState(false);
+    const [visibleMenu, setVisibleMenu] = useState(false);
 
     const changeVisibility = () => {
-        setVisible(visible => !visible);
+        setVisibleMenu(visibleMenu => !visibleMenu);
     };
 
     return (
@@ -25,19 +32,19 @@ export const MerchMenu = ({ fetchLink }) => {
                         {data.map(({ id, name, elements }) => (
                             <Category key={id}>
                                 <Heading
-                                    visible={visible}
+                                    visibleMenu={visibleMenu}
                                 >
                                     {name}
                                 </Heading>
                                 <List
-                                    visible={visible}
+                                    visibleMenu={visibleMenu}
                                 >
                                     {elements.map((item, index) => (
                                         <Item
-                                            visible={visible}
+                                            visibleMenu={visibleMenu}
                                             key={index}>
                                             <Link
-                                                visible={visible}
+                                                visibleMenu={visibleMenu}
                                                 href="#">
                                                 {item}
                                             </Link>

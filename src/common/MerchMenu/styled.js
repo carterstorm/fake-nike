@@ -26,11 +26,14 @@ export const Heading = styled.h4`
     margin: 0 0 25px 0;
     line-height: 25px;
     height: 25px;
-    overflow: ${({ visible }) => !visible && "hidden"};
-    display: ${({ visible }) => !visible && "-webkit-box"};
-    -webkit-box-orient: ${({ visible }) => !visible && "vertical"};
-    -webkit-line-clamp: ${({ visible }) => !visible && "1"};
-    white-space: ${({ visible }) => !visible && "pre-wrap"}; 
+
+    ${({ visibleMenu }) => visibleMenu && css`
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        white-space: pre-wrap;
+    `};
 `;
 
 export const List = styled.ul`
@@ -41,27 +44,33 @@ export const List = styled.ul`
     overflow: hidden;
     transition: .3s;
 
-    ${({ visible }) => visible && css`
+    ${({ visibleMenu }) => visibleMenu && css`
         height: 100%;
-    `}
+    `};
 `;
 
 export const Item = styled.li`
     margin: 0 0 10px 0;
-    overflow: ${({ visible }) => !visible && "hidden"};
+
+    ${({ visibleMenu }) => visibleMenu && css`
+        overflow: hidden;
+    `};
 `;
 
 export const Link = styled.a`
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.gray};
-    overflow: ${({ visible }) => !visible && "hidden"};
-    display: ${({ visible }) => !visible && "-webkit-box"};
-    -webkit-box-orient: ${({ visible }) => !visible && "vertical"};
-    -webkit-line-clamp: ${({ visible }) => !visible && "1"};
-    white-space: ${({ visible }) => !visible && "pre-wrap"}; 
+    color: ${({ theme }) => theme.colors.gray}; 
     transition: .3s;
     line-height: 24px;
     font-weight: 500;
+
+    ${({ visibleMenu }) => visibleMenu && css`
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        white-space: pre-wrap;
+    `};
 
     &:hover {
         color: ${({ theme }) => theme.colors.black};
