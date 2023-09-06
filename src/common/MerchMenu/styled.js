@@ -27,13 +27,13 @@ export const Heading = styled.h4`
     line-height: 25px;
     height: 25px;
 
-    ${({ visibleMenu }) => visibleMenu && css`
+    ${({ visibleMenu }) => !visibleMenu && css`
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
         white-space: pre-wrap;
-    `};
+    `}
 `;
 
 export const List = styled.ul`
@@ -46,31 +46,31 @@ export const List = styled.ul`
 
     ${({ visibleMenu }) => visibleMenu && css`
         height: 100%;
-    `};
+    `}
 `;
 
 export const Item = styled.li`
     margin: 0 0 10px 0;
 
-    ${({ visibleMenu }) => visibleMenu && css`
+    ${({ visibleMenu }) => !visibleMenu && css`
         overflow: hidden;
-    `};
+    `}
 `;
 
 export const Link = styled.a`
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.gray}; 
+    color: ${({ theme }) => theme.colors.gray};
     transition: .3s;
     line-height: 24px;
     font-weight: 500;
 
-    ${({ visibleMenu }) => visibleMenu && css`
+    ${({ visibleMenu }) => !visibleMenu && css`
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
         white-space: pre-wrap;
-    `};
+    `}
 
     &:hover {
         color: ${({ theme }) => theme.colors.black};
