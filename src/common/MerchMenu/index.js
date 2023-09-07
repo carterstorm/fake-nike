@@ -16,7 +16,9 @@ export const MerchMenu = ({ fetchLink }) => {
     const { state, data } = useGetData(fetchLink, 1);
     const [visibleMerchMenu, setVisibleMerchMenu] = useState(false);
     const [heightMerchMenu, setHeightMerchMenu] = useState(140);
+    const [indexElement, setIndexElement] = useState(0);
     const windowWidth = useWindowWidth();
+    const mobile = theme.media.mobile;
 
     const handleMouseMenuVisibility = () => {
         if (windowWidth > theme.media.mobile) {
@@ -26,13 +28,24 @@ export const MerchMenu = ({ fetchLink }) => {
         };
     };
 
+    const setIndexOfClickedElement = (id) => {
+        if (windowWidth < mobile) {
+            setIndexElement(id);
+            if (indexElement !== id) {
+                setIndexElement(id);
+            } else {
+                setIndexElement(0);
+            };
+        };
+    };
+
     useEffect(() => {
-        if (windowWidth < theme.media.mobile) {
+        if (windowWidth < mobile) {
             setHeightMerchMenu(0);
         } else {
             setHeightMerchMenu(140);
         };
-    }, [windowWidth]);
+    }, [windowWidth, mobile]);
 
     return (
         <Wrapper
@@ -49,6 +62,7 @@ export const MerchMenu = ({ fetchLink }) => {
                         {data.map(({ id, name, elements }) => (
                             <Category key={id}>
                                 <Heading
+                                    onClick={() => setIndexOfClickedElement(id)}
                                     visibleMerchMenu={visibleMerchMenu}
                                 >
                                     {name}
