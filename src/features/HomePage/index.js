@@ -6,7 +6,7 @@ import { Slider } from "../../common/Slider";
 import { ProductsSlider } from "../../common/ProductsSlider";
 import { MoreProducts } from "../../common/MoreProducts";
 import { MerchMenu } from "../../common/MerchMenu";
-import { Footer } from "../../common/Footer";
+import { Footer } from "../Footer";
 
 export const HomePage = () => {
     return (
