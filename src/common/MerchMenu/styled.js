@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
     justify-content: space-between;
     width: 880px;
     margin: 0 auto;
-    padding-top: 60px;
+    padding: 50px 0;
 
     @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         width: 92vw;

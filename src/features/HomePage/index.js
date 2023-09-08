@@ -6,6 +6,7 @@ import { Slider } from "../../common/Slider";
 import { ProductsSlider } from "../../common/ProductsSlider";
 import { MoreProducts } from "../../common/MoreProducts";
 import { MerchMenu } from "../../common/MerchMenu";
+import { Footer } from "../../common/Footer";
 
 export const HomePage = () => {
     return (
@@ -54,6 +55,7 @@ export const HomePage = () => {
             <MerchMenu
                 fetchLink={"./merchMenuData.json"}
             />
+            <Footer />
         </main>
     );
 };
