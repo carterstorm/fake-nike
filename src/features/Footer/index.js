@@ -1,4 +1,5 @@
 import { OptionsList } from "./OptionsList";
+import { SocialMedia } from "./SocialMedia";
 import {
     aboutNike,
     asideOptions,
@@ -37,6 +38,7 @@ export const Footer = () => (
                     otherItems
                 />
             </Navigation>
+            <SocialMedia />
         </FooterContainer>
     </Wrapper>
 );
