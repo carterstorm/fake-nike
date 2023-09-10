@@ -4,8 +4,7 @@ export const List = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0;
-    max-width: 18vw;
-    width: 100%;
+    width: 18vw;
 `;
 
 export const Item = styled.li`

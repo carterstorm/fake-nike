@@ -8,19 +8,17 @@ export const Wrapper = styled.footer`
 `;
 
 export const FooterContainer = styled.div`
-    width: 92vw;
+    display: flex;
     margin: 0 auto;
+    width: 92vw;
 `;
 
 export const Navigation = styled.nav`
-    display: flex;
-    flex-wrap: wrap;
     padding-bottom: 16px;
+    display: flex;
 `;
 
 export const Aside = styled.aside`
-    max-width: 18vw;
-    width: 100%;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
