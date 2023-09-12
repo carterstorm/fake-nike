@@ -15,6 +15,7 @@ export const SocialMediaItem = styled.li`
 `;
 
 export const SocialMediaImage = styled.img`
-        width: 30px;
+    width: 30px;
     height: 30px;
+    filter: invert(1);
 `;
