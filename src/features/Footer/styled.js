@@ -6,11 +6,14 @@ export const Wrapper = styled.footer`
     font-size: 12px;
 `;
 
-export const FooterContainer = styled.div`
-    display: flex;
+export const Container = styled.div`
     margin: 0 auto;
     max-width: 1440px;
     padding: 40px 40px 0 40px;
+`;
+
+export const FooterContainer = styled.div`
+    display: flex;
 `;
 
 export const Navigation = styled.nav`

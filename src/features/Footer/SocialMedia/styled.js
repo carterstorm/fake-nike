@@ -5,6 +5,7 @@ export const SocialMediaList = styled.ul`
     padding: 0;
     list-style: none;
     display: flex;
+    justify-self: flex-end;
 `;
 
 export const SocialMediaItem = styled.li`
