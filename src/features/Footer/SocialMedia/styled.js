@@ -4,10 +4,7 @@ export const SocialMediaList = styled.ul`
     margin: 0;
     padding: 0;
     list-style: none;
-    width: 100%;
-    height: auto;
     display: flex;
-    justify-content: flex-end;
 `;
 
 export const SocialMediaItem = styled.li`
@@ -17,5 +14,11 @@ export const SocialMediaItem = styled.li`
 export const SocialMediaImage = styled.img`
     width: 30px;
     height: 30px;
-    filter: invert(1);
+    transition: .2s;
+    filter: invert(0.5);
+    cursor: pointer;
+
+    &:hover {
+        filter: invert(1);
+    };
 `;

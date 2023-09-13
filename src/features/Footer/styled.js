@@ -4,22 +4,26 @@ export const Wrapper = styled.footer`
     background-color: ${({ theme }) => theme.colors.black};
     font-weight: 100;
     font-size: 12px;
-    padding-top: 40px;
 `;
 
 export const FooterContainer = styled.div`
     display: flex;
     margin: 0 auto;
-    width: 92vw;
+    max-width: 1440px;
+    padding: 40px 40px 0 40px;
 `;
 
 export const Navigation = styled.nav`
-    padding-bottom: 16px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
+        grid-template-columns: repeat(3, 1fr);
+    };
 `;
 
 export const Aside = styled.aside`
     text-transform: uppercase;
-    font-size: 12px;
     font-weight: 600;
 `;

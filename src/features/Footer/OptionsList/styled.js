@@ -3,15 +3,14 @@ import { css, styled } from "styled-components";
 export const List = styled.ul`
     list-style: none;
     padding: 0;
-    margin: 0;
-    width: 18vw;
+    margin: 0 0 16px 0;
 `;
 
 export const Item = styled.li`
     display: flex;
     align-items: center;
-    margin-bottom: 3px;
     height: 30px;
+    margin-bottom: 3px;
 
     &:nth-last-child(1) {
         margin: 0;
