@@ -43,9 +43,7 @@ export const Footer = () => (
                 </Navigation>
                 <SocialMedia />
             </FooterContainer>
-            <SubFooter>
-
-            </SubFooter>
+            <SubFooter />
         </Container>
     </Wrapper>
 );

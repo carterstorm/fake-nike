@@ -5,11 +5,20 @@ export const SocialMediaList = styled.ul`
     padding: 0;
     list-style: none;
     display: flex;
-    justify-self: flex-end;
+    align-content: flex-start;
+
+    @media (max-width: ${({ theme }) => theme.media.tabletMin}px) {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    };
 `;
 
 export const SocialMediaItem = styled.li`
     margin-left: 16px;
+
+    @media (max-width: ${({ theme }) => theme.media.tabletMin}px) {
+        margin-bottom: 16px;
+    };
 `;
 
 export const SocialMediaImage = styled.img`

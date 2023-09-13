@@ -4,6 +4,10 @@ export const List = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0 0 16px 0;
+
+    @media (max-width: ${({ theme }) => theme.media.tabletMin}px) {
+        width: 37vw;
+    };
 `;
 
 export const Item = styled.li`

@@ -24,6 +24,10 @@ export const Navigation = styled.nav`
     @media (max-width: ${({ theme }) => theme.media.tablet}px) {
         grid-template-columns: repeat(3, 1fr);
     };
+
+    @media (max-width: ${({ theme }) => theme.media.tabletMin}px) {
+        grid-template-columns: repeat(2, 1fr);
+    };
 `;
 
 export const Aside = styled.aside`
