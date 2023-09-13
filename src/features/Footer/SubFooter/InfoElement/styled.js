@@ -10,6 +10,11 @@ export const Info = styled.div`
         order: 1;
         width: 100%;
     };
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        flex-direction: column;
+        align-items: flex-start;
+    };
 `;
 
 export const Location = styled.a`
@@ -32,4 +37,8 @@ export const Copyright = styled.p`
     margin: 0 0 2px 16px;
     padding-top: 20px;
     color: ${({ theme }) => theme.colors.gray};
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        margin-left: 0;
+    };
 `;

@@ -11,6 +11,10 @@ export const SocialMediaList = styled.ul`
         flex-wrap: wrap;
         justify-content: flex-end;
     };
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        justify-content: flex-start;
+    };
 `;
 
 export const SocialMediaItem = styled.li`
@@ -18,6 +22,12 @@ export const SocialMediaItem = styled.li`
 
     @media (max-width: ${({ theme }) => theme.media.tabletMin}px) {
         margin-bottom: 16px;
+    };
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        &:nth-child(1) {
+            margin-left: 0;
+        };
     };
 `;
 

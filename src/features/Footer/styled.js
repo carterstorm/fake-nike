@@ -10,10 +10,18 @@ export const Container = styled.div`
     margin: 0 auto;
     max-width: 1440px;
     padding: 40px 40px 0 40px;
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        padding-left: 20px;
+    };
 `;
 
 export const FooterContainer = styled.div`
     display: flex;
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        flex-direction: column;
+    };
 `;
 
 export const Navigation = styled.nav`
@@ -27,6 +35,10 @@ export const Navigation = styled.nav`
 
     @media (max-width: ${({ theme }) => theme.media.tabletMin}px) {
         grid-template-columns: repeat(2, 1fr);
+    };
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        grid-template-columns: repeat(1, 1fr);
     };
 `;
 
