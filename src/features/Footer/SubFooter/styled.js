@@ -6,5 +6,6 @@ export const Wrapper = styled.div`
 
     @media (max-width: ${({ theme }) => theme.media.tabletMin}px) {
         flex-direction: column;
+        padding-left: 20px;
     };
 `;

@@ -14,6 +14,7 @@ export const SocialMediaList = styled.ul`
 
     @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         justify-content: flex-start;
+        padding-left: 20px;
     };
 `;
 

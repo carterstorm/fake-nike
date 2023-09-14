@@ -2,10 +2,11 @@ import { OptionsList } from "./OptionsList";
 import { SocialMedia } from "./SocialMedia";
 import { SubFooter } from "./SubFooter";
 import {
-    aboutNike,
-    asideOptions,
-    helpOptions,
-    joinUs
+    subTitleAboutNike,
+    subTitleHelpOptions,
+    subTitleJoinUs,
+    titleAsideOptions,
+    titleOptions
 } from "./footerData";
 import {
     Aside,
@@ -22,23 +23,23 @@ export const Footer = () => (
                 <Navigation>
                     <Aside>
                         <OptionsList
-                            optionsData={asideOptions}
+                            titleOptions={titleAsideOptions}
                         />
                     </Aside>
                     <OptionsList
-                        optionsData={helpOptions}
-                        firstItem
-                        otherItems
+                        titleOptions={titleOptions}
+                        subTitle={subTitleHelpOptions}
+                        index={0}
                     />
                     <OptionsList
-                        optionsData={aboutNike}
-                        firstItem
-                        otherItems
+                        titleOptions={titleOptions}
+                        subTitle={subTitleAboutNike}
+                        index={1}
                     />
                     <OptionsList
-                        optionsData={joinUs}
-                        firstItem
-                        otherItems
+                        titleOptions={titleOptions}
+                        subTitle={subTitleJoinUs}
+                        index={2}
                     />
                 </Navigation>
                 <SocialMedia />

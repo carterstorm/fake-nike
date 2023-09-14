@@ -1,31 +1,44 @@
-import { Anchor, Item, List } from "./styled";
+import { titleAsideOptions } from "../footerData";
+import { Anchor, Item, List, SubTitleContainer, TitleContainer } from "./styled";
 
-export const OptionsList = ({ optionsData, firstItem, otherItems }) => {
-    const setFirstItem = (id) => {
-        if (firstItem && id === 1) {
-            return true;
-        };
-    };
-
-    const setOthersItems = (id) => {
-        if (otherItems && id !== 1) {
-            return true;
-        };
-    };
-
-    return (
-        <List>
-            {optionsData.map(({ id, itemText }) => (
-                <Item key={id}>
-                    <Anchor
-                        firstItem={setFirstItem(id)}
-                        otherItems={setOthersItems(id)}
-                        href="#"
-                    >
-                        {itemText}
-                    </Anchor>
-                </Item>
-            ))}
-        </List>
-    )
+export const OptionsList = ({ titleOptions, subTitle, index }) => {
+    if (titleOptions === titleAsideOptions) {
+        return (
+            <List>
+                {titleAsideOptions.map(({ id, title }) => (
+                    <Item key={id}>
+                        <Anchor
+                            href="#"
+                        >
+                            {title}
+                        </Anchor>
+                    </Item>
+                ))}
+            </List>
+        );
+    } else {
+        return (
+            <List>
+                <TitleContainer>
+                    <Item>
+                        <Anchor href="#">
+                            {titleOptions[index].title}
+                        </Anchor>
+                    </Item>
+                </TitleContainer>
+                {subTitle.map(({ id, title }) => (
+                    <SubTitleContainer key={id}>
+                        <Item>
+                            <Anchor
+                                otherItems
+                                href="#"
+                            >
+                                {title}
+                            </Anchor>
+                        </Item>
+                    </SubTitleContainer>
+                ))}
+            </List>
+        )
+    }
 };
