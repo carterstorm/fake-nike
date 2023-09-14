@@ -1,7 +1,14 @@
 import { titleAsideOptions } from "../footerData";
-import { Anchor, Item, List, SubTitleContainer, TitleContainer } from "./styled";
+import { useWindowWidth } from "../../../hooks/useWindowWidth"
+import { theme } from "../../../theme";
+import { Anchor, AnchorButton, Item, List, SubTitleContainer, TitleContainer, ToogleIcon } from "./styled";
+import plus from "../../../assets/svg/plus.svg";
+import minus from "../../../assets/svg/minus.svg";
 
 export const OptionsList = ({ titleOptions, subTitle, index }) => {
+    const windowWidth = useWindowWidth();
+    const mobile = theme.media.mobile;
+
     if (titleOptions === titleAsideOptions) {
         return (
             <List>
@@ -15,22 +22,35 @@ export const OptionsList = ({ titleOptions, subTitle, index }) => {
                     </Item>
                 ))}
             </List>
-        );
+        )
     } else {
         return (
             <List>
                 <TitleContainer>
                     <Item>
-                        <Anchor href="#">
-                            {titleOptions[index].title}
-                        </Anchor>
+                        {windowWidth < mobile ?
+                            (
+                                <AnchorButton as="button"
+                                    href="#">
+                                    {titleOptions[index].title}
+                                    <ToogleIcon
+                                        src={plus} />
+                                </AnchorButton>
+                            )
+                            :
+                            (
+                                <Anchor
+                                    href="#">
+                                    {titleOptions[index].title}
+                                </Anchor>)}
                     </Item>
                 </TitleContainer>
                 {subTitle.map(({ id, title }) => (
-                    <SubTitleContainer key={id}>
+                    <SubTitleContainer
+                        key={id}>
                         <Item>
                             <Anchor
-                                otherItems
+                                colorItems
                                 href="#"
                             >
                                 {title}

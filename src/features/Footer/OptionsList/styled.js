@@ -44,15 +44,39 @@ export const Item = styled.li`
 `;
 
 export const Anchor = styled.a`
+    display: flex;
+    align-items: center;
     cursor: pointer;
     color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
 
-    ${({ otherItems }) => otherItems && css`
+    ${({ colorItems }) => colorItems && css`
         color: ${({ theme }) => theme.colors.gray};
 
         &:hover {
             color: ${({ theme }) => theme.colors.white};
         };
     `};
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        width: 100%;
+        justify-content: space-between;
+    };
+`;
+
+export const AnchorButton = styled(Anchor)`
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: black;
+    border: none;
+    padding: 0;
+`;
+
+export const ToogleIcon = styled.img`
+    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        width: 20px;
+        height: 20px;
+        margin: 0 20px 0 0;
+        filter: invert(1);
+    };
 `;
