@@ -40,63 +40,67 @@ export const ProductsSlider = ({ heading, fetchLink }) => {
 
     return (
         <Wrapper>
-            <Header>
-                <Heading>{heading}</Heading>
-                <Buttons>
-                    <Arrow
-                        direction="left"
-                        left={"0"}
-                        onClick={() => setPrevIndex()}
-                        disabled={leftArrowVisibility}
-                    />
-                    <Arrow
-                        direction="right"
-                        right={"0"}
-                        onClick={() => setNextIndex()}
-                        disabled={rightArrowVisibility}
-                    />
-                </Buttons>
-            </Header>
-            <List>
-                {state === "loading" ?
-                    (<>Loading</>)
+            {state === "loading" ?
+                (<>Loading</>)
+                :
+                state === "error" ?
+                    (<>Error</>)
                     :
-                    state === "error" ?
-                        (<>Error</>)
-                        :
-                        (<SliderTrack
-                            index={index}
-                            onTouchStart={handleTouchStart}
-                            onTouchEnd={handleTouchEnd}
-                            onMouseDown={handleMouseDown}
-                            onMouseUp={handleMouseUp}
-                        >
-                            {data.map(({ id, description, category, image, price }) => (
-                                <Item
-                                    key={id}>
-                                    <Link
-                                        href="#">
-                                        <ImageContainer>
-                                            <Image
-                                                src={image}
-                                                alt={description}
-                                                draggable={false}
-                                            />
-                                        </ImageContainer>
-                                        <Description>
-                                            <TextBox>
-                                                <Title>{description}</Title>
-                                                <Category>{category}</Category>
-                                            </TextBox>
-                                            <PriceBox>
-                                                <Price>{price} zł</Price>
-                                            </PriceBox>
-                                        </Description>
-                                    </Link>
-                                </Item>
-                            ))}
-                        </SliderTrack>)}
-            </List>
+                    (
+                        <>
+                            <Header>
+                                <Heading>{heading}</Heading>
+                                <Buttons>
+                                    <Arrow
+                                        direction="left"
+                                        left={"0"}
+                                        onClick={() => setPrevIndex()}
+                                        disabled={leftArrowVisibility}
+                                    />
+                                    <Arrow
+                                        direction="right"
+                                        right={"0"}
+                                        onClick={() => setNextIndex()}
+                                        disabled={rightArrowVisibility}
+                                    />
+                                </Buttons>
+                            </Header>
+                            <List>
+                                <SliderTrack
+                                    index={index}
+                                    onTouchStart={handleTouchStart}
+                                    onTouchEnd={handleTouchEnd}
+                                    onMouseDown={handleMouseDown}
+                                    onMouseUp={handleMouseUp}
+                                >
+                                    {data.map(({ id, description, category, image, price }) => (
+                                        <Item
+                                            key={id}>
+                                            <Link
+                                                href="#">
+                                                <ImageContainer>
+                                                    <Image
+                                                        src={image}
+                                                        alt={description}
+                                                        draggable={false}
+                                                    />
+                                                </ImageContainer>
+                                                <Description>
+                                                    <TextBox>
+                                                        <Title>{description}</Title>
+                                                        <Category>{category}</Category>
+                                                    </TextBox>
+                                                    <PriceBox>
+                                                        <Price>{price} zł</Price>
+                                                    </PriceBox>
+                                                </Description>
+                                            </Link>
+                                        </Item>
+                                    ))}
+                                </SliderTrack>
+                            </List>
+                        </>
+                    )}
         </Wrapper >
     );
 };
