@@ -54,20 +54,34 @@ export const OptionsList = ({ titleOptions, subTitle, index }) => {
                                 <Anchor
                                     href="#">
                                     {titleOptions[index].title}
-                                </Anchor>)}
+                                </Anchor>)
+                        }
                     </Item>
                 </TitleContainer>
-                {(windowWidth < mobile) && openOptionIndex === index && (
-                    subTitle.map(({ id, title }) => (
-                        <SubTitleContainer key={id}>
-                            <Item>
-                                <Anchor colorItems href="#">
-                                    {title}
-                                </Anchor>
-                            </Item>
-                        </SubTitleContainer>
-                    ))
-                )}
+                {(windowWidth < mobile) && (openOptionIndex === index) &&
+                    (
+                        subTitle.map(({ id, title }) => (
+                            <SubTitleContainer key={id}>
+                                <Item>
+                                    <Anchor colorItems href="#">
+                                        {title}
+                                    </Anchor>
+                                </Item>
+                            </SubTitleContainer>
+                        ))
+                    )}
+                {windowWidth >= mobile &&
+                    (
+                        subTitle.map(({ id, title }) => (
+                            <SubTitleContainer key={id}>
+                                <Item>
+                                    <Anchor colorItems href="#">
+                                        {title}
+                                    </Anchor>
+                                </Item>
+                            </SubTitleContainer>
+                        ))
+                    )}
             </List>
         )
     }
