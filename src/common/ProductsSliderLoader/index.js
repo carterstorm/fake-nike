@@ -18,8 +18,8 @@ export const ProductsSliderLoader = () => {
     const generateItems = (numberOfElements) => {
         return Array.from({ length: numberOfElements }).map((_, index) => (
             <Item key={index}>
-                <BoxElement></BoxElement>
-                <Description></Description>
+                <BoxElement />
+                <Description />
             </Item>
         ));
     };
