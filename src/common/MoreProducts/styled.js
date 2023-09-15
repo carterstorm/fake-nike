@@ -1,19 +1,22 @@
 import { styled } from "styled-components";
 
-export const Header = styled.header`
+export const Wrapper = styled.section`
     width: 92vw;
-    margin: 10px auto;
+    margin: 60px auto 12px;
+    overflow-x: scroll;
+`;
+
+export const Header = styled.header`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
 `;
 
 export const Heading = styled.h4`
     font-size: 26px;
     font-weight: 600;
-`;
-
-export const Wrapper = styled.section`
-    width: 92vw;
-    margin: 20px auto 12px;
-    overflow-x: scroll;
+    margin: 0;
 `;
 
 export const List = styled.ul`
@@ -22,6 +25,8 @@ export const List = styled.ul`
     display: grid;
     grid-template-columns: repeat(${({ number }) => number}, 1fr);
     gap: 15px;
+    padding: 12px 0 40px;
+    margin: 0;
 
     @media (max-width: ${({ theme }) => theme.media.tablet}px) {
        width: ${({ ourApplications }) => ourApplications ? 92 : 215}vw;

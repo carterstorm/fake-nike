@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const Wrapper = styled.section`
     width: 92vw;
     margin: 60px auto 12px;
+    overflow-x: scroll;
 `;
 
 export const Header = styled.header`
