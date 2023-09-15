@@ -1,13 +1,23 @@
 import { titleAsideOptions } from "../footerData";
 import { useWindowWidth } from "../../../hooks/useWindowWidth"
 import { theme } from "../../../theme";
-import { Anchor, AnchorButton, Item, List, SubTitleContainer, TitleContainer, ToogleIcon } from "./styled";
 import plus from "../../../assets/svg/plus.svg";
 import minus from "../../../assets/svg/minus.svg";
+import { Anchor, AnchorButton, Item, List, SubTitleContainer, TitleContainer, ToogleIcon } from "./styled";
+import { useState } from "react";
 
 export const OptionsList = ({ titleOptions, subTitle, index }) => {
+    const [openOptionIndex, setOpenOptionIndex] = useState(null);
     const windowWidth = useWindowWidth();
     const mobile = theme.media.mobile;
+
+    const handleOptionClick = (clickedIndex) => {
+        if (openOptionIndex === clickedIndex) {
+            setOpenOptionIndex(null);
+        } else {
+            setOpenOptionIndex(clickedIndex);
+        };
+    };
 
     if (titleOptions === titleAsideOptions) {
         return (
@@ -31,10 +41,12 @@ export const OptionsList = ({ titleOptions, subTitle, index }) => {
                         {windowWidth < mobile ?
                             (
                                 <AnchorButton as="button"
-                                    href="#">
+                                    href="#"
+                                    onClick={() => handleOptionClick(index)}
+                                >
                                     {titleOptions[index].title}
                                     <ToogleIcon
-                                        src={plus} />
+                                        src={openOptionIndex === index ? minus : plus} />
                                 </AnchorButton>
                             )
                             :
@@ -45,19 +57,17 @@ export const OptionsList = ({ titleOptions, subTitle, index }) => {
                                 </Anchor>)}
                     </Item>
                 </TitleContainer>
-                {subTitle.map(({ id, title }) => (
-                    <SubTitleContainer
-                        key={id}>
-                        <Item>
-                            <Anchor
-                                colorItems
-                                href="#"
-                            >
-                                {title}
-                            </Anchor>
-                        </Item>
-                    </SubTitleContainer>
-                ))}
+                {(windowWidth < mobile) && openOptionIndex === index && (
+                    subTitle.map(({ id, title }) => (
+                        <SubTitleContainer key={id}>
+                            <Item>
+                                <Anchor colorItems href="#">
+                                    {title}
+                                </Anchor>
+                            </Item>
+                        </SubTitleContainer>
+                    ))
+                )}
             </List>
         )
     }

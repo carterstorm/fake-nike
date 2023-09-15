@@ -27,10 +27,6 @@ export const SubTitleContainer = styled.div`
     &:nth-last-child(1) {
         margin: 0;
     };
-
-    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-       display: none;
-    };
 `;
 
 export const Item = styled.li`
