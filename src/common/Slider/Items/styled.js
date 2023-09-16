@@ -6,7 +6,7 @@ export const ItemsContainer = styled.ul`
     justify-content: center;
     grid-gap: 15px;
     list-style: none;
-    padding: 0;
+    padding: 12px 0 0;
     margin: 0;
     overflow: hidden;
 `;

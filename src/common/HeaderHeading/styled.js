@@ -4,7 +4,8 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 12px;
+    width: 92vw;
+    margin: 0 auto 12px;
 `;
 
 export const Heading = styled.h4`
