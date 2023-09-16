@@ -1,21 +1,23 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
-    padding: 10px 0;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,0);
     width: 92vw;
-
+    margin: 60px auto 12px;
+    overflow-x: scroll;
+    
     @media (max-width: ${({ theme }) => theme.media.desktopMax}px) {
         width: 100vw;
     };
 `;
 
-export const HeadingContainer = styled.div`
-    width: 92vw;
-    margin: 60px auto 10px;
+export const Header = styled.header`
+        width: 92vw;
+        margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
 `;
 
 export const Heading = styled.h4`

@@ -2,16 +2,12 @@ import { useGetData } from "../../hooks/useGetData";
 import { useTouchHandlers } from "../../hooks/useTouchHandlers";
 import { useProductsIndex } from "../../hooks/useProductsIndex";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
-import { useArrowVisibility } from "../../hooks/useArrowVisibility";
-import { Arrow } from "../Arrow";
 import { ProductsSliderLoader } from "../ProductsSliderLoader";
+import { HeaderHeading } from "../HeaderHeading";
 
 import {
-    Buttons,
     Category,
     Description,
-    Header,
-    Heading,
     Image,
     ImageContainer,
     Item,
@@ -30,7 +26,6 @@ export const ProductsSlider = ({ heading, fetchLink }) => {
     const windowWidth = useWindowWidth();
     const dataLength = data && data.length;
     const [index, setPrevIndex, setNextIndex] = useProductsIndex(dataLength, windowWidth);
-    const [leftArrowVisibility, rightArrowVisibility] = useArrowVisibility(index, windowWidth, dataLength);
 
     const [
         handleTouchStart,
@@ -49,23 +44,13 @@ export const ProductsSlider = ({ heading, fetchLink }) => {
                     :
                     (
                         <>
-                            <Header>
-                                <Heading>{heading}</Heading>
-                                <Buttons>
-                                    <Arrow
-                                        direction="left"
-                                        left={"0"}
-                                        onClick={() => setPrevIndex()}
-                                        disabled={leftArrowVisibility}
-                                    />
-                                    <Arrow
-                                        direction="right"
-                                        right={"0"}
-                                        onClick={() => setNextIndex()}
-                                        disabled={rightArrowVisibility}
-                                    />
-                                </Buttons>
-                            </Header>
+                            <HeaderHeading
+                                heading={heading}
+                                index={index}
+                                dataLength={dataLength}
+                                setPrevIndex={setPrevIndex}
+                                setNextIndex={setNextIndex}
+                            />
                             <List>
                                 <SliderTrack
                                     index={index}

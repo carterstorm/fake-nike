@@ -6,29 +6,6 @@ export const Wrapper = styled.section`
     overflow-x: scroll;
 `;
 
-export const Header = styled.header`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 12px;
-`;
-
-export const Heading = styled.h4`
-    font-size: 26px;
-    font-weight: 600;
-    margin: 0;
-`;
-
-export const Buttons = styled.div`
-    position: relative;
-    width: 90px;
-    height: 40px;
-
-    @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        display: none;
-    };
-`;
-
 export const List = styled.ul`
     list-style: none;
     margin: 0;

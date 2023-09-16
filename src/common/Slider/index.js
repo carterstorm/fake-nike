@@ -3,10 +3,9 @@ import { useTouchHandlers } from "../../hooks/useTouchHandlers";
 import { useSliderIndex } from "../../hooks/useSliderIndex";
 import { getView } from "../../getView";
 import { Arrow } from "../Arrow";
+import { HeaderHeading } from "../HeaderHeading";
 
 import {
-    Heading,
-    HeadingContainer,
     Image,
     Item,
     ItemImage,
@@ -32,24 +31,20 @@ export const Slider = ({ heading, fetchLink, numberOfItems }) => {
 
     return (
         <>
-            {heading ? (
-                <HeadingContainer>
-                    <Heading>{heading}</Heading>
-                </HeadingContainer>
-            ) : null}
             <Wrapper>
+                <HeaderHeading heading={heading} membership />
                 <Arrow
                     direction={"left"}
                     left={"30"}
                     onClick={() => setPrevIndex()}
                 />
-                <Number>{index + 1}/{numberOfItems}</Number>
                 <ItemsContainer
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
                     onMouseDown={handleMouseDown}
                     onMouseUp={handleMouseUp}
                 >
+                    <Number>{index + 1}/{numberOfItems}</Number>
                     {formattedData.map(({ id, description, image, alt }, idx) => (
                         <Item
                             key={idx}>

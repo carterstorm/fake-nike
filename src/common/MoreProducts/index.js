@@ -1,11 +1,10 @@
 import { useGetData } from "../../hooks/useGetData";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { ButtonElement } from "../ButtonElement";
+import { HeaderHeading } from "../HeaderHeading";
 import { theme } from "../../theme";
 
 import {
-    Header,
-    Heading,
     List,
     Item,
     Wrapper,
@@ -29,9 +28,10 @@ export const MoreProducts = ({ heading, fetchLink, ourApplications }) => {
                     state === "error" ?
                         (<>Error</>) : (
                             <>
-                                <Header>
-                                    <Heading>{heading}</Heading>
-                                </Header>
+                                <HeaderHeading
+                                    heading={heading}
+                                    products
+                                />
                                 <List
                                     number={dataLength}
                                     ourApplications={ourApplications}>
