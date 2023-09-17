@@ -3,6 +3,7 @@ import { useSliderIndex } from "../../hooks/useSliderIndex";
 import { Arrow } from "../Arrow";
 import { HeaderHeading } from "../HeaderHeading";
 import { Items } from "./Items";
+import { SliderLoader } from "./SliderLoader";
 
 import {
     Wrapper
@@ -15,7 +16,7 @@ export const Slider = ({ heading, fetchLink, numberOfItems }) => {
     return (
         <Wrapper>
             {state === "loading" ?
-                (<>Loading</>)
+                (<SliderLoader />)
                 :
                 state === "error" ?
                     (<>Error</>)
