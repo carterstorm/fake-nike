@@ -3,6 +3,7 @@ import { skeleton } from "../../../keyframes/skeleton";
 
 export const Wrapper = styled.section`
     width: 92vw;
+    margin: 0 auto;
 `;
 
 export const Header = styled.header`
