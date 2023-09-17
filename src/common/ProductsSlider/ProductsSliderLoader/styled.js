@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { skeleton } from "../../keyframes/skeleton";
+import { skeleton } from "../../../keyframes/skeleton";
 
 export const Wrapper = styled.section`
     width: 92vw;

@@ -1,5 +1,5 @@
-import { useWindowWidth } from "../../hooks/useWindowWidth";
-import { theme } from "../../theme";
+import { useWindowWidth } from "../../../hooks/useWindowWidth";
+import { theme } from "../../../theme";
 import {
     BoxElement,
     Description,

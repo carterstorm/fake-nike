@@ -2,7 +2,7 @@ import { useGetData } from "../../hooks/useGetData";
 import { useTouchHandlers } from "../../hooks/useTouchHandlers";
 import { useProductsIndex } from "../../hooks/useProductsIndex";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
-import { ProductsSliderLoader } from "../ProductsSliderLoader";
+import { ProductsSliderLoader } from "./ProductsSliderLoader";
 import { HeaderHeading } from "../HeaderHeading";
 
 import {
