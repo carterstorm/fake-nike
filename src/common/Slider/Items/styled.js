@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ItemsContainer = styled.ul`
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(${({ numberOfItems }) => numberOfItems}, 1fr);
     justify-content: center;
     grid-gap: 15px;
     list-style: none;
