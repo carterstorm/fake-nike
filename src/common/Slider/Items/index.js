@@ -26,7 +26,6 @@ export const Items = ({ index, numberOfItems, data, setPrevIndex, setNextIndex }
             onTouchEnd={handleTouchEnd}
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
-            numberOfItems={numberOfItems}
         >
             <Number>{index + 1}/{numberOfItems}</Number>
             {formattedData.map(({ id, description, image, alt }, idx) => (
