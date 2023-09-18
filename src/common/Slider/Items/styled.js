@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ItemsContainer = styled.ul`
+    position: relative;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     justify-content: center;
@@ -56,11 +57,27 @@ export const Text = styled.h4`
 
 export const Number = styled.span`
     position: absolute;
-    top: 35px;
-    left: 55vw;
+    top: 50px;
+    left: 54vw;
     background-color: ${({ theme }) => theme.colors.numberColor};
     color: ${({ theme }) => theme.colors.white};
     padding: 6px 16px;
     border-radius: 20px;
     font-weight: 200;
+
+    @media (max-width: ${({ theme }) => theme.media.desktopMax}px) {
+        top: 35px;
+    };
+
+    @media (max-width: ${({ theme }) => theme.media.desktop}px) {
+        left: 56vw;
+    };
+
+    @media (max-width: ${({ theme }) => theme.media.tablet}px) {
+        left: 58vw;
+    };
+
+    @media (max-width: ${({ theme }) => theme.media.tabletMin}px) {
+        left: 60vw;
+    };
 `;
