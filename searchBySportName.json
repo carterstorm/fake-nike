@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "description": "Bieganie",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_500,c_limit/3aef76c8-46c5-4f2a-a18c-3e9bdc148433/oficjalna-strona-internetowa-nike.jpg",
+        "alt": "Bieganie"
+    },
+    {
+        "id": 2,
+        "description": "Piłka nożna",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_500,c_limit/5027a28c-3984-4287-94d1-ee6198238ce9/oficjalna-strona-internetowa-nike.jpg",
+        "alt": "Piłka nożna"
+    },
+    {
+        "id": 3,
+        "description": "Koszykówka",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_300,c_limit/be13cfe4-b5a9-4c26-bee0-b716e98b099d/oficjalna-strona-internetowa-nike.jpg",
+        "alt": "Koszykówka"
+    },
+    {
+        "id": 4,
+        "description": "Trening",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_300,c_limit/b4722f0f-c0e4-4a1b-8050-9f026ef947e9/oficjalna-strona-internetowa-nike.jpg",
+        "alt": "Trening"
+    },
+    {
+        "id": 5,
+        "description": "Tenis",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_300,c_limit/5f432ab0-7ed1-48b9-b8c8-9eb3f5dcb63d/oficjalna-strona-internetowa-nike.jpg",
+        "alt": "Tenis"
+    },
+    {
+        "id": 6,
+        "description": "Taniec",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_300,c_limit/11550514-c82b-46b2-afd8-e5dd62698371/oficjalna-strona-internetowa-nike.jpg",
+        "alt": "Taniec"
+    },
+    {
+        "id": 7,
+        "description": "Yoga",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_300,c_limit/ed6efa3d-bb62-4d41-89f1-49d01418fe49/oficjalna-strona-internetowa-nike.jpg",
+        "alt": "Yoga"
+    },
+    {
+        "id": 8,
+        "description": "Skatebording",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_300,c_limit/1d2fd0c4-a7dd-4159-84c0-a0364c0990e3/oficjalna-strona-internetowa-nike.jpg",
+        "alt": "Skatebording"
+    }
+]

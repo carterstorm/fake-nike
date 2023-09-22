@@ -1,0 +1,27 @@
+
+[ 
+    {
+          "id": 1,
+          "persons": "Kobiety",
+          "alt": "Kobiety",
+          "image": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/49177c21-d45f-4fc8-9f94-aebf6fd6b7d2/oficjalna-strona-internetowa-nike.png",
+          "mobileImage": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/49177c21-d45f-4fc8-9f94-aebf6fd6b7d2/oficjalna-strona-internetowa-nike.png",
+          "buttonText": "Przeglądaj stylizację"
+      },
+      {
+          "id": 2,
+          "persons": "Mężczyźni",
+          "alt": "Mężczyźni",
+          "image": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/77ff8022-6818-4757-8597-d9f9ecea2bb7/oficjalna-strona-internetowa-nike.png",
+          "mobileImage": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/77ff8022-6818-4757-8597-d9f9ecea2bb7/oficjalna-strona-internetowa-nike.png",
+          "buttonText": "Przeglądaj stylizację"
+      },
+      {
+          "id": 3,
+          "persons": "Dzieci",
+          "alt": "Dzieci",
+          "image": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/76126bee-ecc8-4164-99dc-33adae8aeff0/oficjalna-strona-internetowa-nike.png",
+          "mobileImage": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/76126bee-ecc8-4164-99dc-33adae8aeff0/oficjalna-strona-internetowa-nike.png",
+          "buttonText": "Przeglądaj stylizację"
+      }
+  ]

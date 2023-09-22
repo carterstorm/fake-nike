@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/fake-nike/static/css/main.58462fbc.css",
+    "main.js": "/fake-nike/static/js/main.2e9af860.js",
+    "static/media/homepage_image_2.jpg": "/fake-nike/static/media/homepage_image_2.e4dec94babb843a72f4f.jpg",
+    "static/media/homepage_image_3.jpg": "/fake-nike/static/media/homepage_image_3.beda9a82bc00032597a7.jpg",
+    "static/media/homepage_image_1.jpg": "/fake-nike/static/media/homepage_image_1.26872df5cb1498eef570.jpg",
+    "static/media/jordanLogo.svg": "/fake-nike/static/media/jordanLogo.fa16570721724c4610a996f8dacb6c98.svg",
+    "static/media/youtube.svg": "/fake-nike/static/media/youtube.5d05b6526f2e0fc5f990a8196f55cddd.svg",
+    "static/media/instagram.svg": "/fake-nike/static/media/instagram.053c0f6701637b939f2d677a3914e7c0.svg",
+    "index.html": "/fake-nike/index.html",
+    "static/media/eye.svg": "/fake-nike/static/media/eye.d3cfba4c2231fd6fff694412cface4b5.svg",
+    "static/media/facebook.svg": "/fake-nike/static/media/facebook.ae1500a7c5f300ebfb8a05225acaebd7.svg",
+    "static/media/help.svg": "/fake-nike/static/media/help.870f57da5f7dbf8889ac79e316a98987.svg",
+    "static/media/favorite_icon.svg": "/fake-nike/static/media/favorite_icon.73078b2c9420f726e767bf7126929788.svg",
+    "static/media/twitter.svg": "/fake-nike/static/media/twitter.9507a17a5de960b0706e6ad740252a73.svg",
+    "static/media/nike_logo.svg": "/fake-nike/static/media/nike_logo.425446556bac666da56145f4e743e245.svg",
+    "static/media/shoppingBag_icon.svg": "/fake-nike/static/media/shoppingBag_icon.6f879221a99b28d974fc460a25fa2bda.svg",
+    "static/media/localMall.svg": "/fake-nike/static/media/localMall.5fb18d757928de1cdc9444b1c4f89c94.svg",
+    "static/media/location_pin.svg": "/fake-nike/static/media/location_pin.83fe2e94b1be8ecf59b0bb1fd6669c51.svg",
+    "static/media/search_icon.svg": "/fake-nike/static/media/search_icon.84b9a72fde3c2843819e946708857634.svg",
+    "static/media/store.svg": "/fake-nike/static/media/store.3dbdbc85e87c94cf1aa1768eb75767fe.svg",
+    "static/media/close.svg": "/fake-nike/static/media/close.f9e1fd884e38ced99e021f1ac47b347d.svg",
+    "static/media/menu_icon.svg": "/fake-nike/static/media/menu_icon.62156aa1f3f8ed08b3c42f31823cbef1.svg",
+    "static/media/plus.svg": "/fake-nike/static/media/plus.3be0ea4ac64cead2bf9590910d375914.svg",
+    "static/media/arrow.svg": "/fake-nike/static/media/arrow.43d657784c67c9d0a9938018a7ca6adf.svg",
+    "static/media/minus.svg": "/fake-nike/static/media/minus.f28c3bd79730c23529eb56e15589159b.svg",
+    "main.58462fbc.css.map": "/fake-nike/static/css/main.58462fbc.css.map",
+    "main.2e9af860.js.map": "/fake-nike/static/js/main.2e9af860.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58462fbc.css",
+    "static/js/main.2e9af860.js"
+  ]
+}

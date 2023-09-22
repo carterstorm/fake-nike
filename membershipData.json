@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "description": "Dostęp do produktów członkowskich",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/82581424-385a-4f79-816d-0f91e6a531a3/oficjalna-strona-internetowa-nike.png",
+        "alt": "Dostęp do produktów członkowskich"
+    },
+    {
+        "id": 2,
+        "description": "Uprawiaj sport i ciesz się dobrą kondycją",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/0adeba8e-1935-4470-aa71-49fd666bbc3b/oficjalna-strona-internetowa-nike.png",
+        "alt": "Uprawiaj sport i ciesz się dobrą kondycją"
+    },
+    {
+        "id": 3,
+        "description": "Bierz udział w wydarzeniach dla członków i członkiń",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/7969cc4e-a711-4b2d-ba24-be2dcf79dca5/oficjalna-strona-internetowa-nike.png",
+        "alt": "Bierz udział w wydarzeniach dla członków i członkiń"
+    },
+    {
+        "id": 4,
+        "description": "Więcej zalet członkowstwa",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/1163f9d5-7b28-46e5-b73b-4d3d2ff4dbc3/oficjalna-strona-internetowa-nike.png",
+        "alt": "Więcej zalet członkowstwa"
+    },
+    {
+        "id": 5,
+        "description": "Personalizuj z Nike By You",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/5e36df8e-007f-4b18-bea3-47af5a7ea0d2/oficjalna-strona-internetowa-nike.png",
+        "alt": "Personalizuj z Nike By You"
+    },
+    {
+        "id": 6,
+        "description": "Dostęp do ofert tylko dla członków i członkiń",
+        "image": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/11ca5257-bffa-4fb0-b3cc-b020cd5a7eb2/oficjalna-strona-internetowa-nike.png",
+        "alt": "Dostęp do ofert tylko dla członków i członkiń"
+    }
+]
