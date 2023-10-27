@@ -1,4 +1,4 @@
-export const getView = (data, index) => {
+export const getSlidersView = (data, index) => {
     const dataLength = data.length;
 
     const elementsToDisplay = [

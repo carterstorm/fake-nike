@@ -1,4 +1,4 @@
-import { getView } from "../../../getView";
+import { getSlidersView } from "../../../getSlidersView";
 import { useTouchHandlers } from "../../../hooks/useTouchHandlers";
 import {
     Image,
@@ -12,7 +12,7 @@ import {
 } from "./styled";
 
 export const Items = ({ index, numberOfItems, data, setPrevIndex, setNextIndex }) => {
-    const formattedData = getView(data || [], index);
+    const formattedData = getSlidersView(data || [], index);
     const [
         handleTouchStart,
         handleTouchEnd,
