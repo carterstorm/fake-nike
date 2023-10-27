@@ -1,5 +1,5 @@
-import { JordanBrand } from "../../../common/JordanBrand";
 import {
+    JordanIcon,
     Menu,
     UserMenuItem,
     UserMenuList
@@ -15,7 +15,7 @@ export const userMenuData = [
 export const DesktopMenu = () => {
     return (
         <Menu>
-            <JordanBrand />
+            <JordanIcon />
             <UserMenuList>
                 {userMenuData.map(({ id, title }) => (
                     <UserMenuItem key={id}>

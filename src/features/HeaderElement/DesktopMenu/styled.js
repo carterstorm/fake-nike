@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { ReactComponent as JordanElement } from "../../../assets/svg/jordan.svg";
 
 export const Menu = styled.aside`
     display: flex;
@@ -36,4 +37,10 @@ export const UserMenuItem = styled.li`
         padding-right: 0;
         margin-right: 0;
     };
+`;
+
+export const JordanIcon = styled(JordanElement)`
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
 `;
