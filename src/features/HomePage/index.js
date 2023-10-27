@@ -1,12 +1,12 @@
 import { Announcment } from "../../common/Announcment";
 import { ImagesSlider } from "../../common/ImagesSlider";
 import { ThematicSection } from "../../common/ThematicSection";
-import { homeImagesSliderData } from "../../getData";
 import { Slider } from "../../common/Slider";
 import { ProductsSlider } from "../../common/ProductsSlider";
 import { MoreProducts } from "../../common/MoreProducts";
 import { MerchMenu } from "../../common/MerchMenu";
 import { Footer } from "../Footer";
+import { homeImagesSliderData } from "../../common/commonValues";
 
 export const HomePage = () => {
     return (
