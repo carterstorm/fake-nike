@@ -7,6 +7,7 @@ import App from './App';
 import { GlobalStyle } from './GlobalStyle';
 import { theme } from './theme';
 import store from './store';
+import { Normalize } from 'styled-normalize';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
     <StyleSheetManager shouldForwardProp={isPropsValid} disableVendorPrefixes={false}>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
+          <Normalize />
           <GlobalStyle />
           <App />
         </ThemeProvider>
