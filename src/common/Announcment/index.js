@@ -1,5 +1,4 @@
-import { useAnnouncmentEffect } from "../../hooks/useAnnouncmentEffect";
-
+import { useAnnouncementEffect } from "../../hooks/useAnnouncementEffect";
 import {
     Wrapper,
     Item,
@@ -11,7 +10,7 @@ import {
     LinkContainer,
 } from "./styled";
 
-const announcmentData = [
+const announcementData = [
     {
         id: 1,
         heading: "Odkryj nasze wyprzedaże",
@@ -35,14 +34,13 @@ const announcmentData = [
     },
 ];
 
-
-export const Announcment = () => {
-    const index = useAnnouncmentEffect(announcmentData, 5);
+export const Announcement = () => {
+    const index = useAnnouncementEffect(announcementData, 5);
 
     return (
         <Wrapper>
-            <List announcmentLength={announcmentData.length}>
-                {announcmentData.map(({ id, heading, text, firstLink, secoundLink }) => (
+            <List announcementDataLength={announcementData.length}>
+                {announcementData.map(({ id, heading, text, firstLink, secoundLink }) => (
                     <Item key={id} index={index}>
                         <Title>{heading}</Title>
                         <TextBox>

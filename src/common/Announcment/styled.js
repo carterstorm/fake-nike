@@ -14,7 +14,7 @@ export const List = styled.ul`
     list-style: none;
     margin: 0;
     padding: 0;
-    width: ${({ announcmentLength }) => announcmentLength * (100)}vw;
+    width: ${({ announcementDataLength }) => announcementDataLength * (100)}vw;
 `;
 
 export const Item = styled.li`
@@ -24,7 +24,7 @@ export const Item = styled.li`
     text-align: center;
     width: 100vw;
     transition: .5s ease;
-    transform: translateX(${({ index }) => index * (-100)}vw);  
+    transform: translateX(${({ index }) => index * (-100)}vw);
 `;
 
 export const Title = styled.p`

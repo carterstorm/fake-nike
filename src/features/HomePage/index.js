@@ -1,4 +1,4 @@
-import { Announcment } from "../../common/Announcment";
+import { Announcement } from "../../common/Announcment";
 import { ImagesSlider } from "../../common/ImagesSlider";
 import { ThematicSection } from "../../common/ThematicSection";
 import { Slider } from "../../common/Slider";
@@ -11,7 +11,7 @@ import { homeImagesSliderData } from "../../common/commonValues";
 export const HomePage = () => {
     return (
         <main>
-            <Announcment />
+            <Announcement />
             <ThematicSection
                 heading="Razem na starcie"
                 subtitle="Niezawodne produkty na mocny powrót do szkoły."
