@@ -8,7 +8,7 @@ import {
     // Title
 } from "./styled";
 
-export const ThematicSection = ({ heading, subtitle, firstButtonText, secoundButtonText }) => (
+export const ThematicSection = ({ heading, subtitle, firstButtonText, secondButtonText }) => (
     <Section>
         <Container>
             {/* <Title></Title> */}
@@ -16,7 +16,7 @@ export const ThematicSection = ({ heading, subtitle, firstButtonText, secoundBut
             <SubTitle>{subtitle}</SubTitle>
             <LinksContainer>
                 <ButtonElement>{firstButtonText}</ButtonElement>
-                <ButtonElement>{secoundButtonText}</ButtonElement>
+                <ButtonElement>{secondButtonText}</ButtonElement>
             </LinksContainer>
         </Container>
     </Section>

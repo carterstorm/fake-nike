@@ -1,4 +1,4 @@
-import { Announcement } from "../../common/Announcment";
+import { Announcement } from "../../common/Announcement";
 import { ImagesSlider } from "../../common/ImagesSlider";
 import { ThematicSection } from "../../common/ThematicSection";
 import { Slider } from "../../common/Slider";
@@ -16,7 +16,7 @@ export const HomePage = () => {
                 heading="Razem na starcie"
                 subtitle="Niezawodne produkty na mocny powrót do szkoły."
                 firstButtonText="Kup produkty dla dzieci"
-                secoundButtonText="Przeglądaj wszystko"
+                secondButtonText="Przeglądaj wszystko"
             />
             <ImagesSlider
                 images={homeImagesSliderData}
