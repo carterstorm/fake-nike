@@ -4,6 +4,10 @@ A fully responsive main page of a well-known online store of Nike company. This 
 
 In the future, when I become more knowledgeable, I would like to create a full copy of this website.
 
+## Demo
+
+Link for demo page: https://carterstorm.github.io/fake-nike/
+
 ## Used technologies:
 
 - create-react-app
