@@ -21,15 +21,15 @@ In the future, when I become more knowledgeable, I would like to create a full c
 
 ### Desktop view
 
-![Desktop view](https://github.com/carterstorm/react-todos-list/blob/main/images/desktop?raw=true)
+![Desktop view](https://github.com/carterstorm/fake-nike/blob/main/images/desktop.gif?raw=true)
 
 ### Tablet view
 
-![Tablet view](https://github.com/carterstorm/react-todos-list/blob/main/images/tablet.gif?raw=true)
+![Tablet view](https://github.com/carterstorm/fake-nike/blob/main/images/tablet.gif?raw=true)
 
 ### Mobile view
 
-![Mobile view](https://github.com/carterstorm/react-todos-list/blob/main/images/mobile.gif?raw=true)
+![Mobile view](https://github.com/carterstorm/fake-nike/blob/main/images/mobile.gif?raw=true)
 
 ## Getting Started
 
